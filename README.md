@@ -28,11 +28,33 @@ The Python files below are intentionally empty placeholders. Implementation deta
       - Download size: about 2.1 GB.
 
 - `scripts/preprocess_data.py`
-  - TODO: Read raw inputs from `data/raw/`.
-  - TODO: Normalize, filter, and align gene identifiers across bulk and single-cell datasets.
   - TODO: Split donors into train, validation, and test sets while avoiding donor leakage.
-  - TODO: Build single-cell pseudobulk summaries and any cell-type-resolved comparison tables.
-  - TODO: Save cleaned matrices, metadata, masks, and split files into `data/processed/`.
+  - TODO: Save split files and any artificial dropout/masking files into `data/processed/`.
+  - Current CLI:
+    - `python3 scripts/preprocess_data.py`
+    - Add `--raw-dir <path>` to read from somewhere other than `data/raw`.
+    - Add `--output-dir <path>` to write somewhere other than `data/processed`.
+    - Add `--top-genes <n>` to change the number of selected shared variable genes. Default: `2000`.
+    - Add `--chunk-size <n>` to tune HCA sparse-matrix processing memory use. Default: `5000`.
+  - Current behavior:
+    - Reads GTEx bulk counts from `data/raw/gene_reads_v11_whole_blood.gct.gz`.
+    - Reads HCA single-cell raw counts from `data/raw/BL_standard_design.h5ad`.
+    - Aligns both datasets by Ensembl gene ID after removing version suffixes.
+    - Found 24,461 overlapping genes in the current raw inputs.
+    - Normalizes counts to counts per million, applies `log1p`, ranks genes by combined bulk/single-cell variance, and keeps the top 2,000 genes by default.
+    - Builds HCA pseudobulk count matrices by donor and by donor-cell-type.
+  - Current outputs in `data/processed/`:
+    - `bulk_counts.npy`: GTEx raw counts, shape `(803, 2000)`.
+    - `bulk_log_cpm.npy`: GTEx log-CPM matrix, shape `(803, 2000)`.
+    - `bulk_sample_ids.txt`: GTEx sample IDs.
+    - `hca_counts_csr.npz`: HCA selected raw counts as CSR sparse arrays, shape `(323269, 2000)`.
+    - `hca_log_cpm_csr.npz`: HCA selected log-CPM values as CSR sparse arrays, shape `(323269, 2000)`.
+    - `hca_cell_metadata.tsv`: HCA cell barcode, donor, channel, cell type, total counts, detected genes, and mitochondrial percentage.
+    - `hca_pseudobulk_counts_by_donor.npy`: HCA raw counts aggregated by donor, shape `(8, 2000)`.
+    - `hca_pseudobulk_counts_by_donor_celltype.npy`: HCA raw counts aggregated by donor-cell-type, shape `(120, 2000)`.
+    - `hca_pseudobulk_donor_celltype_metadata.tsv`: row metadata for donor-cell-type pseudobulk matrix.
+    - `hca_donors.txt` and `hca_cell_types.txt`: category labels.
+    - `gene_metadata.tsv`: selected gene IDs, symbols, and variance scores.
 
 - `models/drvi_model.py`
   - TODO: Implement the DRVI-inspired variational model architecture.
