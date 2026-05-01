@@ -63,17 +63,38 @@ The Python files below are intentionally empty placeholders. Implementation deta
   - TODO: Expose reusable model classes or factory functions for the training and evaluation scripts.
 
 - `scripts/train.py`
-  - TODO: Load processed bulk training data from `data/processed/`.
   - TODO: Train the DRVI-inspired model with dropout or masking-aware objectives.
-  - TODO: Track validation reconstruction, biological-signal preservation, and robustness metrics.
-  - TODO: Save trained checkpoints, configs, and training logs into `outputs/`.
+  - TODO: Track biological-signal preservation and robustness metrics beyond reconstruction.
+  - Current CLI:
+    - `python3 scripts/train.py --model ae`
+    - Add `--data-dir <path>` to read processed data from somewhere other than `data/processed`.
+    - Add `--output-dir <path>` to write model outputs somewhere other than `outputs/ae`.
+    - Add `--latent-dim <n>`, `--hidden-dim <n>`, `--max-iter <n>`, `--batch-size <n>`, or `--learning-rate <value>` to tune the baseline autoencoder.
+  - Current behavior for `--model ae`:
+    - Trains a simple dense scikit-learn autoencoder on `data/processed/bulk_log_cpm.npy`.
+    - Uses GTEx bulk log-CPM vectors as both input and target for reconstruction.
+    - Saves a checkpoint and train/validation reconstruction metrics.
+  - Current outputs:
+    - `outputs/ae/ae_model.pkl`: saved autoencoder checkpoint.
+    - `outputs/ae/ae_train_metrics.json`: train/validation MSE and MAE.
+    - `outputs/ae/ae_train_indices.txt` and `outputs/ae/ae_val_indices.txt`: split indices.
 
 - `scripts/evaluate.py`
-  - TODO: Load trained checkpoints from `outputs/` and held-out test data from `data/processed/`.
   - TODO: Evaluate reconstruction quality on unmasked and artificially masked inputs.
-  - TODO: Compare bulk embeddings against single-cell-derived pseudobulk representations.
   - TODO: Report gene-wise correlation, rank concordance, clustering or classification quality, and downstream donor/tissue prediction metrics.
-  - TODO: Save metrics, figures, and result tables into `outputs/`.
+  - Current CLI:
+    - `python3 scripts/evaluate.py --model ae`
+    - Add `--checkpoint <path>` to evaluate a checkpoint other than `outputs/ae/ae_model.pkl`.
+    - Add `--data-dir <path>` to read processed data from somewhere other than `data/processed`.
+    - Add `--output-dir <path>` to write evaluation outputs somewhere other than `outputs/ae`.
+  - Current behavior for `--model ae`:
+    - Loads the trained autoencoder.
+    - Loads HCA donor pseudobulk raw counts from `data/processed/hca_pseudobulk_counts_by_donor.npy`.
+    - Normalizes HCA pseudobulk with donor total counts from all genes, applies `log1p`, reconstructs with the AE, and reports reconstruction error.
+  - Current outputs:
+    - `outputs/ae/ae_hca_pseudobulk_eval_metrics.json`: aggregate HCA pseudobulk MSE and MAE.
+    - `outputs/ae/ae_hca_pseudobulk_eval_by_donor.tsv`: donor-level MSE and MAE.
+    - `outputs/ae/ae_hca_pseudobulk_reconstruction.npy`: reconstructed HCA donor pseudobulk matrix.
 
 ## Data Inspection
 
@@ -139,3 +160,18 @@ scripts/
   train.py
   evaluate.py
 ```
+
+## Baseline Results
+
+The current baseline is a simple dense autoencoder trained on GTEx whole-blood bulk log-CPM data and evaluated on HCA donor pseudobulk log-CPM data.
+
+Latest run:
+
+```text
+GTEx bulk validation MSE: 0.100
+GTEx bulk validation MAE: 0.234
+HCA donor pseudobulk MSE: 1.236
+HCA donor pseudobulk MAE: 0.898
+```
+
+The HCA pseudobulk error is higher than the held-out GTEx validation error, which is expected because the model is trained on GTEx bulk samples and evaluated on single-cell-derived pseudobulk. This gap is a useful baseline signal for bulk-to-pseudobulk domain shift.
