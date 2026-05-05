@@ -20,19 +20,26 @@ from models.ae_model import SklearnAutoEncoder
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Evaluate project models.")
-    parser.add_argument("--model", required=True, choices=["ae"])
-    parser.add_argument("--checkpoint", default="outputs/ae/ae_model.pkl")
+    parser.add_argument("--model", required=True, choices=["ae", "vae"])
+    parser.add_argument("--checkpoint")
     parser.add_argument("--data-dir", default="data/processed")
-    parser.add_argument("--output-dir", default="outputs/ae")
+    parser.add_argument("--output-dir")
     parser.add_argument("--scale-factor", type=float, default=1_000_000.0)
+    parser.add_argument("--device", default="auto", help="Torch device for --model vae: auto, cpu, mps, or cuda.")
     return parser.parse_args()
 
 
 def main() -> int:
     args = parse_args()
+    if args.output_dir is None:
+        args.output_dir = f"outputs/{args.model}"
+    if args.checkpoint is None:
+        args.checkpoint = f"outputs/{args.model}/{args.model}_model.{checkpoint_suffix(args.model)}"
 
     if args.model == "ae":
         metrics = evaluate_autoencoder(args)
+    elif args.model == "vae":
+        metrics = evaluate_vae(args)
     else:
         raise ValueError(f"Unsupported model: {args.model}")
 
@@ -81,6 +88,50 @@ def evaluate_autoencoder(args: argparse.Namespace) -> dict[str, object]:
     return metrics
 
 
+def evaluate_vae(args: argparse.Namespace) -> dict[str, object]:
+    from models.vae_model import load_vae_checkpoint, reconstruct_numpy
+
+    data_dir = Path(args.data_dir)
+    output_dir = Path(args.output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    device = select_device(args.device)
+    model, feature_mean, feature_std = load_vae_checkpoint(Path(args.checkpoint), device)
+
+    pseudobulk_counts = np.load(data_dir / "hca_pseudobulk_counts_by_donor.npy").astype(np.float32)
+    donors = read_lines(data_dir / "hca_donors.txt")
+    library_sizes = hca_pseudobulk_library_sizes(data_dir / "hca_cell_metadata.tsv", donors)
+    pseudobulk_log_cpm = log_cpm(pseudobulk_counts, library_sizes, args.scale_factor)
+    reconstruction = reconstruct_numpy(model, pseudobulk_log_cpm, feature_mean, feature_std, device)
+
+    per_sample_mse = np.mean((pseudobulk_log_cpm - reconstruction) ** 2, axis=1)
+    per_sample_mae = np.mean(np.abs(pseudobulk_log_cpm - reconstruction), axis=1)
+
+    metrics = {
+        "model": "vae",
+        "checkpoint": str(args.checkpoint),
+        "evaluation_data": "hca_pseudobulk_counts_by_donor",
+        "n_samples": int(pseudobulk_log_cpm.shape[0]),
+        "n_genes": int(pseudobulk_log_cpm.shape[1]),
+        "normalization": "log1p(selected_gene_counts / donor_total_counts_all_genes * scale_factor)",
+        "mse": float(np.mean(per_sample_mse)),
+        "mae": float(np.mean(per_sample_mae)),
+        "per_sample_mse_min": float(np.min(per_sample_mse)),
+        "per_sample_mse_max": float(np.max(per_sample_mse)),
+    }
+
+    with (output_dir / "vae_hca_pseudobulk_eval_metrics.json").open("w", encoding="utf-8") as handle:
+        json.dump(metrics, handle, indent=2)
+
+    np.save(output_dir / "vae_hca_pseudobulk_reconstruction.npy", reconstruction.astype(np.float32))
+    with (output_dir / "vae_hca_pseudobulk_eval_by_donor.tsv").open("w", encoding="utf-8") as handle:
+        handle.write("donor\tmse\tmae\n")
+        for donor, mse, mae in zip(donors, per_sample_mse, per_sample_mae):
+            handle.write(f"{donor}\t{float(mse):.8g}\t{float(mae):.8g}\n")
+
+    return metrics
+
+
 def log_cpm(counts: np.ndarray, library_sizes: np.ndarray, scale_factor: float) -> np.ndarray:
     library_sizes = np.maximum(library_sizes.reshape(-1, 1), 1.0)
     return np.log1p((counts / library_sizes) * scale_factor).astype(np.float32)
@@ -88,6 +139,26 @@ def log_cpm(counts: np.ndarray, library_sizes: np.ndarray, scale_factor: float) 
 
 def read_lines(path: Path) -> list[str]:
     return [line.strip() for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
+
+
+def checkpoint_suffix(model: str) -> str:
+    if model == "ae":
+        return "pkl"
+    if model == "vae":
+        return "pt"
+    raise ValueError(f"Unsupported model: {model}")
+
+
+def select_device(device_arg: str):
+    import torch
+
+    if device_arg != "auto":
+        return torch.device(device_arg)
+    if torch.backends.mps.is_available():
+        return torch.device("mps")
+    if torch.cuda.is_available():
+        return torch.device("cuda")
+    return torch.device("cpu")
 
 
 def hca_pseudobulk_library_sizes(metadata_path: Path, donors: list[str]) -> np.ndarray:

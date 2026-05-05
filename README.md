@@ -67,34 +67,49 @@ The Python files below are intentionally empty placeholders. Implementation deta
   - TODO: Track biological-signal preservation and robustness metrics beyond reconstruction.
   - Current CLI:
     - `python3 scripts/train.py --model ae`
+    - `python3 scripts/train.py --model vae`
     - Add `--data-dir <path>` to read processed data from somewhere other than `data/processed`.
-    - Add `--output-dir <path>` to write model outputs somewhere other than `outputs/ae`.
-    - Add `--latent-dim <n>`, `--hidden-dim <n>`, `--max-iter <n>`, `--batch-size <n>`, or `--learning-rate <value>` to tune the baseline autoencoder.
+    - Add `--output-dir <path>` to write model outputs somewhere other than `outputs/<model>`.
+    - Add `--latent-dim <n>`, `--hidden-dim <n>`, `--max-iter <n>`, `--batch-size <n>`, or `--learning-rate <value>` to tune the baseline autoencoder or VAE.
+    - Add `--beta <value>` to tune the VAE KL penalty. Default: `1.0`.
+    - Add `--device cpu`, `--device mps`, or `--device cuda` to choose the VAE PyTorch device. Default: `auto`.
   - Current behavior for `--model ae`:
     - Trains a simple dense scikit-learn autoencoder on `data/processed/bulk_log_cpm.npy`.
     - Uses GTEx bulk log-CPM vectors as both input and target for reconstruction.
     - Saves a checkpoint and train/validation reconstruction metrics.
+  - Current behavior for `--model vae`:
+    - Trains a vanilla dense PyTorch variational autoencoder on `data/processed/bulk_log_cpm.npy`.
+    - Uses GTEx bulk log-CPM vectors as both input and target with an MSE reconstruction loss plus KL regularization.
+    - Saves a checkpoint, train/validation reconstruction metrics, and split indices.
   - Current outputs:
     - `outputs/ae/ae_model.pkl`: saved autoencoder checkpoint.
     - `outputs/ae/ae_train_metrics.json`: train/validation MSE and MAE.
     - `outputs/ae/ae_train_indices.txt` and `outputs/ae/ae_val_indices.txt`: split indices.
+    - `outputs/vae/vae_model.pt`: saved VAE checkpoint.
+    - `outputs/vae/vae_train_metrics.json`: train/validation MSE and MAE.
+    - `outputs/vae/vae_train_indices.txt` and `outputs/vae/vae_val_indices.txt`: split indices.
 
 - `scripts/evaluate.py`
   - TODO: Evaluate reconstruction quality on unmasked and artificially masked inputs.
   - TODO: Report gene-wise correlation, rank concordance, clustering or classification quality, and downstream donor/tissue prediction metrics.
   - Current CLI:
     - `python3 scripts/evaluate.py --model ae`
-    - Add `--checkpoint <path>` to evaluate a checkpoint other than `outputs/ae/ae_model.pkl`.
+    - `python3 scripts/evaluate.py --model vae`
+    - Add `--checkpoint <path>` to evaluate a checkpoint other than `outputs/<model>/<model>_model.pkl` or `outputs/<model>/<model>_model.pt`.
     - Add `--data-dir <path>` to read processed data from somewhere other than `data/processed`.
-    - Add `--output-dir <path>` to write evaluation outputs somewhere other than `outputs/ae`.
-  - Current behavior for `--model ae`:
-    - Loads the trained autoencoder.
+    - Add `--output-dir <path>` to write evaluation outputs somewhere other than `outputs/<model>`.
+    - Add `--device cpu`, `--device mps`, or `--device cuda` to choose the VAE PyTorch device. Default: `auto`.
+  - Current behavior for `--model ae` or `--model vae`:
+    - Loads the trained model.
     - Loads HCA donor pseudobulk raw counts from `data/processed/hca_pseudobulk_counts_by_donor.npy`.
-    - Normalizes HCA pseudobulk with donor total counts from all genes, applies `log1p`, reconstructs with the AE, and reports reconstruction error.
+    - Normalizes HCA pseudobulk with donor total counts from all genes, applies `log1p`, reconstructs with the requested model, and reports reconstruction error.
   - Current outputs:
     - `outputs/ae/ae_hca_pseudobulk_eval_metrics.json`: aggregate HCA pseudobulk MSE and MAE.
     - `outputs/ae/ae_hca_pseudobulk_eval_by_donor.tsv`: donor-level MSE and MAE.
     - `outputs/ae/ae_hca_pseudobulk_reconstruction.npy`: reconstructed HCA donor pseudobulk matrix.
+    - `outputs/vae/vae_hca_pseudobulk_eval_metrics.json`: aggregate HCA pseudobulk MSE and MAE.
+    - `outputs/vae/vae_hca_pseudobulk_eval_by_donor.tsv`: donor-level MSE and MAE.
+    - `outputs/vae/vae_hca_pseudobulk_reconstruction.npy`: reconstructed HCA donor pseudobulk matrix.
 
 ## Data Inspection
 
@@ -163,15 +178,13 @@ scripts/
 
 ## Baseline Results
 
-The current baseline is a simple dense autoencoder trained on GTEx whole-blood bulk log-CPM data and evaluated on HCA donor pseudobulk log-CPM data.
+The current baselines are a simple dense autoencoder and a vanilla dense VAE trained on GTEx whole-blood bulk log-CPM data and evaluated on HCA donor pseudobulk log-CPM data.
 
-Latest run:
+Latest runs:
 
-```text
-GTEx bulk validation MSE: 0.100
-GTEx bulk validation MAE: 0.234
-HCA donor pseudobulk MSE: 1.236
-HCA donor pseudobulk MAE: 0.898
-```
+| Model | GTEx bulk validation MSE | GTEx bulk validation MAE | HCA donor pseudobulk MSE | HCA donor pseudobulk MAE |
+| --- | ---: | ---: | ---: | ---: |
+| AE | 0.100 | 0.234 | 1.236 | 0.898 |
+| VAE | 0.130 | 0.253 | 1.057 | 0.798 |
 
-The HCA pseudobulk error is higher than the held-out GTEx validation error, which is expected because the model is trained on GTEx bulk samples and evaluated on single-cell-derived pseudobulk. This gap is a useful baseline signal for bulk-to-pseudobulk domain shift.
+The HCA pseudobulk error is higher than the held-out GTEx validation error for both models, which is expected because the models are trained on GTEx bulk samples and evaluated on single-cell-derived pseudobulk. In this run, the vanilla AE reconstructs held-out GTEx bulk slightly better, while the VAE transfers slightly better to HCA pseudobulk, likely because the KL-regularized latent space is less tightly fit to the GTEx training distribution.
