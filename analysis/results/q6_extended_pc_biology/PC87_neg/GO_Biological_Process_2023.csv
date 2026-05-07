@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Regulation Of Signal Transduction By P53 Class Mediator (GO:1901796),0.00010372551199439694,12.062271062271062,110.656409401326,HEXIM1;PAK1IP1;KMT5A;RPF2;SOX4,0.12343335927333236,0,0,87,neg,GO_Biological_Process_2023
+2,Negative Regulation Of Ruffle Assembly (GO:1900028),0.0014535707837741265,49.98989898989899,326.6206097208578,ARHGAP24;PFN2,0.398317910820715,0,0,87,neg,GO_Biological_Process_2023
+3,Vascular Associated Smooth Muscle Cell Development (GO:0097084),0.0014535707837741265,49.98989898989899,326.6206097208578,RAMP2;ENG,0.398317910820715,0,0,87,neg,GO_Biological_Process_2023

@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Retina Homeostasis (GO:0001895),0.0006068640222899578,11.524781341107872,85.36642728574833,PIGR;ZG16B;KRT1;LYZ,0.31664600305579527,0,0,194,neg,GO_Biological_Process_2023
+2,Positive Regulation Of Pyruvate Dehydrogenase Activity (GO:1904184),0.0009754681839454337,66.65656565656566,462.10284137848555,PDPR;PPM1J,0.31664600305579527,0,0,194,neg,GO_Biological_Process_2023
+3,Regulation Of Pyruvate Dehydrogenase Activity (GO:1904182),0.0014535707837741265,49.98989898989899,326.6206097208578,PDPR;PPM1J,0.31664600305579527,0,0,194,neg,GO_Biological_Process_2023

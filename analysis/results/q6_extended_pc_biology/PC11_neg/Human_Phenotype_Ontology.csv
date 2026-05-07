@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Vacuolated lymphocytes (HP:0001922),5.3162099096467675e-05,60.28934010152284,593.3776232841345,GLB1;NEU1;AGA,0.024614051881664534,0,0,11,neg,Human_Phenotype_Ontology
+2,Beaking of vertebral bodies (HP:0004568),0.00026165809515097364,30.13705583756345,248.5846578261998,GLB1;AGA;GUSB,0.060573849027450395,0,0,11,neg,Human_Phenotype_Ontology
+3,Dysostosis multiplex (HP:0000943),0.0005011239651713426,23.178836392034363,176.1280286078286,NEU1;AGA;GUSB,0.07734013195811054,0,0,11,neg,Human_Phenotype_Ontology

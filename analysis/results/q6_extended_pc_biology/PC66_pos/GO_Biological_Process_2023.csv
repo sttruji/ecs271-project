@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Negative Regulation Of Peptidyl-Threonine Phosphorylation (GO:0010801),8.98018633910456e-06,40.38775510204081,469.32550127312595,SPRED1;SPRY2;CALM3;SIRT2,0.013434358763300423,0,0,66,pos,GO_Biological_Process_2023
+2,Regulation Of Peptidyl-Threonine Phosphorylation (GO:0010799),2.7868095991564833e-05,16.351530190239867,171.49530707153963,SPRED1;TGFB1;SPRY2;CALM3;SIRT2,0.020845335801690495,0,0,66,pos,GO_Biological_Process_2023
+3,Regulation Of Fatty Acid Biosynthetic Process (GO:0042304),0.00012208503690954434,18.346938775510203,165.32046257631316,NR1H2;NR1H3;SIRT2;WDTC1,0.04349339003842851,0,0,66,pos,GO_Biological_Process_2023

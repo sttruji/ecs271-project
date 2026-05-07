@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Regulation Of Cortisol Biosynthetic Process (GO:2000064),0.0014535707837741265,49.98989898989899,326.6206097208578,DGKQ;DKK3,0.4596990188004488,0,0,249,neg,GO_Biological_Process_2023
+2,Adherens Junction Maintenance (GO:0034334),0.0014535707837741265,49.98989898989899,326.6206097208578,TJP1;MTSS1,0.4596990188004488,0,0,249,neg,GO_Biological_Process_2023
+3,Positive Regulation Of Tissue Remodeling (GO:0034105),0.0034202318391573132,28.561327561327563,162.17255858986445,IL15;TMBIM1,0.4596990188004488,0,0,249,neg,GO_Biological_Process_2023

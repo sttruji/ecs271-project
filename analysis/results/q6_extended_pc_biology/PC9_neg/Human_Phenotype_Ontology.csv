@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Abnormal neuron morphology (HP:0012757),0.002414105915085408,12.548223350253807,75.62094298941223,DCTN1;PNPLA6;UBQLN2,0.3536665165600123,0,0,9,neg,Human_Phenotype_Ontology
+2,Abnormality of the motor neurons (HP:0002450),0.002414105915085408,12.548223350253807,75.62094298941223,DCTN1;PNPLA6;UBQLN2,0.3536665165600123,0,0,9,neg,Human_Phenotype_Ontology
+3,Abnormality of T cells (HP:0002843),0.005517288559721188,9.121827411167512,47.43230522818489,SMARCAL1;IL2RG;JAK3,0.4514971721368905,0,0,9,neg,Human_Phenotype_Ontology

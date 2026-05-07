@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Negative Regulation Of Leukocyte Chemotaxis (GO:0002689),0.00015320271943439296,37.6751269035533,330.92884130781977,SLAMF8;PADI2;NBL1,0.18399646604070594,0,0,229,neg,GO_Biological_Process_2023
+2,Negative Regulation Of Monocyte Chemotaxis (GO:0090027),0.0009754681839454337,66.65656565656566,462.10284137848555,SLAMF8;NBL1,0.2679998940592037,0,0,229,neg,GO_Biological_Process_2023
+3,Leukocyte Chemotaxis Involved In Inflammatory Response (GO:0002232),0.0009754681839454337,66.65656565656566,462.10284137848555,MDK;SLAMF8,0.2679998940592037,0,0,229,neg,GO_Biological_Process_2023

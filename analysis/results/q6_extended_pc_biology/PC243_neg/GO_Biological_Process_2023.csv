@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,NAD Biosynthetic Process (GO:0009435),0.0006040394207294829,21.522117476432197,159.51916044937724,NAPRT;QPRT;PARP16,0.5380615560492793,0,0,243,neg,GO_Biological_Process_2023
+2,"Regulation Of Wnt Signaling Pathway, Planar Cell Polarity Pathway (GO:2000095)",0.0026777674677022855,33.323232323232325,197.36590289038227,PLEKHA4;DACT1,0.5380615560492793,0,0,243,neg,GO_Biological_Process_2023
+3,Regulation Of Protein Tyrosine Kinase Activity (GO:0061097),0.00690907387399907,8.360406091370558,41.59234877252794,DOK7;PDGFB;LILRB4,0.5380615560492793,0,0,243,neg,GO_Biological_Process_2023

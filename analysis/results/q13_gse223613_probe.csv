@@ -1,0 +1,53 @@
+latent,target,metric,value,n,n_classes
+PCA-50,hour (cyclic),r2_cyclic,0.42376078578878973,80,
+PCA-50,hour (cyclic),mae_hours,2.17042660441574,80,
+PCA-50,hour (8-class),bal_acc,0.175,80,8.0
+PCA-50,hour (8-class),macro_auc,0.6026785714285714,80,8.0
+PCA-50,participant,bal_acc,1.0,80,10.0
+PCA-50,participant,macro_auc,1.0,80,10.0
+PCA-50,sex,bal_acc,1.0,80,2.0
+PCA-50,sex,macro_auc,1.0,80,2.0
+PCA-50,age (yrs),R2,0.9651913046836853,80,
+Rand-64,hour (cyclic),r2_cyclic,-0.7078635081200979,80,
+Rand-64,hour (cyclic),mae_hours,4.570959492254099,80,
+Rand-64,hour (8-class),bal_acc,0.1,80,8.0
+Rand-64,hour (8-class),macro_auc,0.49017857142857135,80,8.0
+Rand-64,participant,bal_acc,1.0,80,10.0
+Rand-64,participant,macro_auc,1.0,80,10.0
+Rand-64,sex,bal_acc,1.0,80,2.0
+Rand-64,sex,macro_auc,1.0,80,2.0
+Rand-64,age (yrs),R2,0.8587182402610779,80,
+CM-VAE,hour (cyclic),r2_cyclic,0.20053975979105662,80,
+CM-VAE,hour (cyclic),mae_hours,3.4318843902385208,80,
+CM-VAE,hour (8-class),bal_acc,0.075,80,8.0
+CM-VAE,hour (8-class),macro_auc,0.51875,80,8.0
+CM-VAE,participant,bal_acc,0.9400000000000001,80,10.0
+CM-VAE,participant,macro_auc,0.9955357142857142,80,10.0
+CM-VAE,sex,bal_acc,0.975,80,2.0
+CM-VAE,sex,macro_auc,1.0,80,2.0
+CM-VAE,age (yrs),R2,0.8698767185211181,80,
+Sane-VAE,hour (cyclic),r2_cyclic,0.2369442307150534,80,
+Sane-VAE,hour (cyclic),mae_hours,2.7862461124687146,80,
+Sane-VAE,hour (8-class),bal_acc,0.125,80,8.0
+Sane-VAE,hour (8-class),macro_auc,0.5848214285714286,80,8.0
+Sane-VAE,participant,bal_acc,0.9800000000000001,80,10.0
+Sane-VAE,participant,macro_auc,0.9974999999999999,80,10.0
+Sane-VAE,sex,bal_acc,0.9625,80,2.0
+Sane-VAE,sex,macro_auc,0.990625,80,2.0
+Sane-VAE,age (yrs),R2,0.812768018245697,80,
+PCA-50,hour (LODO cyclic),mae_hours,4.406230517983482,80,
+PCA-50,age (LODO),R2,0.34445439027535485,80,
+PCA-50,age (LODO),mae_yrs,2.0432789087295533,80,
+PCA-50,sex (LODO),auc,1.0,80,2.0
+Rand-64,hour (LODO cyclic),mae_hours,5.268980473943185,80,
+Rand-64,age (LODO),R2,0.0778008221808194,80,
+Rand-64,age (LODO),mae_yrs,2.6568543910980225,80,
+Rand-64,sex (LODO),auc,0.698125,80,2.0
+CM-VAE,hour (LODO cyclic),mae_hours,4.386637277935413,80,
+CM-VAE,age (LODO),R2,0.42425996456837556,80,
+CM-VAE,age (LODO),mae_yrs,2.2481399059295653,80,
+CM-VAE,sex (LODO),auc,0.653125,80,2.0
+Sane-VAE,hour (LODO cyclic),mae_hours,4.823082917069088,80,
+Sane-VAE,age (LODO),R2,-0.3349407786141432,80,
+Sane-VAE,age (LODO),mae_yrs,2.928341341018677,80,
+Sane-VAE,sex (LODO),auc,0.73125,80,2.0

@@ -1,0 +1,173 @@
+{
+  "latent_dims": [
+    4,
+    8,
+    16,
+    32,
+    64,
+    128,
+    256
+  ],
+  "config": {
+    "epochs": 200,
+    "beta": 0.001,
+    "lr": 0.001,
+    "batch": 64
+  },
+  "rows": [
+    {
+      "latent_dim": 4,
+      "kind": "PCA",
+      "recon_r2": 0.6575370132923126,
+      "age_r2": 0.14409933937842087,
+      "sex_auc": 0.5765797922994566,
+      "active_dims": 4,
+      "active_frac": 1.0,
+      "final_train_mse": NaN,
+      "final_test_mse": NaN
+    },
+    {
+      "latent_dim": 4,
+      "kind": "Sane-VAE",
+      "recon_r2": 0.6888685524463654,
+      "age_r2": 0.13741463141542654,
+      "sex_auc": 0.5740082059863088,
+      "active_dims": 4,
+      "active_frac": 1.0,
+      "final_train_mse": 0.28308460116386414,
+      "final_test_mse": 0.3192596435546875
+    },
+    {
+      "latent_dim": 8,
+      "kind": "PCA",
+      "recon_r2": 0.7337040603160858,
+      "age_r2": 0.16802796301789538,
+      "sex_auc": 0.6218258979142657,
+      "active_dims": 8,
+      "active_frac": 1.0,
+      "final_train_mse": NaN,
+      "final_test_mse": NaN
+    },
+    {
+      "latent_dim": 8,
+      "kind": "Sane-VAE",
+      "recon_r2": 0.739359587430954,
+      "age_r2": 0.18765072865642593,
+      "sex_auc": 0.5732274919158249,
+      "active_dims": 8,
+      "active_frac": 1.0,
+      "final_train_mse": 0.1830256998538971,
+      "final_test_mse": 0.2671583592891693
+    },
+    {
+      "latent_dim": 16,
+      "kind": "PCA",
+      "recon_r2": 0.7934884577989578,
+      "age_r2": 0.2016895457865588,
+      "sex_auc": 0.6719897698260171,
+      "active_dims": 16,
+      "active_frac": 1.0,
+      "final_train_mse": NaN,
+      "final_test_mse": NaN
+    },
+    {
+      "latent_dim": 16,
+      "kind": "Sane-VAE",
+      "recon_r2": 0.7885687500238419,
+      "age_r2": 0.2047526378920494,
+      "sex_auc": 0.6796748526798726,
+      "active_dims": 15,
+      "active_frac": 0.9375,
+      "final_train_mse": 0.154403755068779,
+      "final_test_mse": 0.2167084813117981
+    },
+    {
+      "latent_dim": 32,
+      "kind": "PCA",
+      "recon_r2": 0.8387022167444229,
+      "age_r2": 0.21903745048440762,
+      "sex_auc": 0.744605468339673,
+      "active_dims": 32,
+      "active_frac": 1.0,
+      "final_train_mse": NaN,
+      "final_test_mse": NaN
+    },
+    {
+      "latent_dim": 32,
+      "kind": "Sane-VAE",
+      "recon_r2": 0.7937440276145935,
+      "age_r2": 0.19081695633955223,
+      "sex_auc": 0.6660993873928789,
+      "active_dims": 17,
+      "active_frac": 0.53125,
+      "final_train_mse": 0.15498182773590088,
+      "final_test_mse": 0.21161580085754395
+    },
+    {
+      "latent_dim": 64,
+      "kind": "PCA",
+      "recon_r2": 0.8670405298471451,
+      "age_r2": 0.21023279685076757,
+      "sex_auc": 1.0,
+      "active_dims": 64,
+      "active_frac": 1.0,
+      "final_train_mse": NaN,
+      "final_test_mse": NaN
+    },
+    {
+      "latent_dim": 64,
+      "kind": "Sane-VAE",
+      "recon_r2": 0.7939878851175308,
+      "age_r2": 0.16921973039190588,
+      "sex_auc": 0.6769838531025133,
+      "active_dims": 16,
+      "active_frac": 0.25,
+      "final_train_mse": 0.1593560054898262,
+      "final_test_mse": 0.21116147935390472
+    },
+    {
+      "latent_dim": 128,
+      "kind": "PCA",
+      "recon_r2": 0.8812219202518463,
+      "age_r2": 0.0725512752338939,
+      "sex_auc": 1.0,
+      "active_dims": 128,
+      "active_frac": 1.0,
+      "final_train_mse": NaN,
+      "final_test_mse": NaN
+    },
+    {
+      "latent_dim": 128,
+      "kind": "Sane-VAE",
+      "recon_r2": 0.7862102389335632,
+      "age_r2": 0.07693625699014925,
+      "sex_auc": 0.6391138883587386,
+      "active_dims": 44,
+      "active_frac": 0.34375,
+      "final_train_mse": 0.17102642953395844,
+      "final_test_mse": 0.2191590964794159
+    },
+    {
+      "latent_dim": 256,
+      "kind": "PCA",
+      "recon_r2": 0.8897414207458496,
+      "age_r2": 0.1960617089056609,
+      "sex_auc": 1.0,
+      "active_dims": 256,
+      "active_frac": 1.0,
+      "final_train_mse": NaN,
+      "final_test_mse": NaN
+    },
+    {
+      "latent_dim": 256,
+      "kind": "Sane-VAE",
+      "recon_r2": 0.7897598147392273,
+      "age_r2": -0.08495809847271145,
+      "sex_auc": 0.632498395987231,
+      "active_dims": 131,
+      "active_frac": 0.51171875,
+      "final_train_mse": 0.1831708088517189,
+      "final_test_mse": 0.21603716909885406
+    }
+  ]
+}

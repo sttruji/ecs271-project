@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,"Protein Import Into Peroxisome Matrix, Receptor Recycling (GO:0016562)",0.0014535707837741265,49.98989898989899,326.6206097208578,PEX6;PEX5,0.45754591173533654,0,0,163,neg,GO_Biological_Process_2023
+2,Peptidyl-Proline Hydroxylation To 4-hydroxy-L-proline (GO:0018401),0.0020216133697869413,39.98989898989899,248.09171029141777,EGLN3;P4HA1,0.45754591173533654,0,0,163,neg,GO_Biological_Process_2023
+3,Serine Family Amino Acid Catabolic Process (GO:0009071),0.0034202318391573132,28.561327561327563,162.17255858986445,SHMT1;SDSL,0.45754591173533654,0,0,163,neg,GO_Biological_Process_2023

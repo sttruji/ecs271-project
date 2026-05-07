@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Nucleotide-Binding Oligomerization Domain Containing 2 Signaling Pathway (GO:0070431),1.9269523068842994e-05,100.49238578680203,1091.0444080855816,LACC1;OTULIN;NOD2,0.022660959128959362,0,0,185,neg,GO_Biological_Process_2023
+2,Nucleotide-Binding Oligomerization Domain Containing Signaling Pathway (GO:0070423),0.00015320271943439296,37.6751269035533,330.92884130781977,LACC1;OTULIN;NOD2,0.09008319902742307,0,0,185,neg,GO_Biological_Process_2023
+3,Positive Regulation Of Alpha-Beta T Cell Proliferation (GO:0046641),0.0006040394207294829,21.522117476432197,159.51916044937724,EBI3;IL18;LGALS9,0.14339382303997875,0,0,185,neg,GO_Biological_Process_2023

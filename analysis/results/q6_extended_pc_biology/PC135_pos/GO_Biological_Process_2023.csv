@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Regulation Of Ventricular Cardiac Muscle Cell Action Potential (GO:0098911),0.00015320271943439296,37.6751269035533,330.92884130781977,DSP;JUP;TRPM4,0.1003477812295274,0,0,135,pos,GO_Biological_Process_2023
+2,Epithelial Cell-Cell Adhesion (GO:0090136),0.00015320271943439296,37.6751269035533,330.92884130781977,DSP;JUP;KIFC3,0.1003477812295274,0,0,135,pos,GO_Biological_Process_2023
+3,Xenobiotic Catabolic Process (GO:0042178),0.0008481701801219675,18.82994923857868,133.17348392535672,GSTM3;GSTM2;GSTM1,0.1850579576628323,0,0,135,pos,GO_Biological_Process_2023

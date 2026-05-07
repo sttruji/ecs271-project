@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Protein Localization To Ciliary Transition Zone (GO:1904491),0.0020216133697869413,39.98989898989899,248.09171029141777,TCTN2;TMEM107,0.49948436353203585,0,0,203,pos,GO_Biological_Process_2023
+2,Glycosphingolipid Catabolic Process (GO:0046479),0.0034202318391573132,28.561327561327563,162.17255858986445,NEU1;GLA,0.49948436353203585,0,0,203,pos,GO_Biological_Process_2023
+3,L-serine Metabolic Process (GO:0006563),0.004247232134539841,24.98989898989899,136.4820277236255,SDSL;PSPH,0.49948436353203585,0,0,203,pos,GO_Biological_Process_2023

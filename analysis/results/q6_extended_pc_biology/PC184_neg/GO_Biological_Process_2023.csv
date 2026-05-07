@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,DNA Replication-Dependent Chromatin Assembly (GO:0006335),0.0009754681839454337,66.65656565656566,462.10284137848555,CHAF1B;NASP,0.332410998374967,0,0,184,neg,GO_Biological_Process_2023
+2,Regulation Of Immunoglobulin Mediated Immune Response (GO:0002889),0.0009754681839454337,66.65656565656566,462.10284137848555,TNFSF4;NECTIN2,0.332410998374967,0,0,184,neg,GO_Biological_Process_2023
+3,Parallel Actin Filament Bundle Assembly (GO:0030046),0.0014535707837741265,49.98989898989899,326.6206097208578,FSCN1;ESPN,0.332410998374967,0,0,184,neg,GO_Biological_Process_2023

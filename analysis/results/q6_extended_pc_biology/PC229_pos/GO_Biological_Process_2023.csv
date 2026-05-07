@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Regulation Of Epidermis Development (GO:0045682),0.0026777674677022855,33.323232323232325,197.36590289038227,KRT2;KRT10,0.4445298855909842,0,0,229,pos,GO_Biological_Process_2023
+2,Positive Regulation Of Fatty Acid Beta-Oxidation (GO:0032000),0.0026777674677022855,33.323232323232325,197.36590289038227,IRS1;PPARA,0.4445298855909842,0,0,229,pos,GO_Biological_Process_2023
+3,Positive Regulation Of Epidermis Development (GO:0045684),0.0034202318391573132,28.561327561327563,162.17255858986445,KRT2;KRT10,0.4445298855909842,0,0,229,pos,GO_Biological_Process_2023

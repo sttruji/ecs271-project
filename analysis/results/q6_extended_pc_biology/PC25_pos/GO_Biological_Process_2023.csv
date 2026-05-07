@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Regulation Of Oxidoreductase Activity (GO:0051341),0.00026165809515097364,30.13705583756345,248.5846578261998,HP;SLAMF8;ABL2,0.2603388772870072,0,0,25,pos,GO_Biological_Process_2023
+2,Regulation Of Establishment Of T Cell Polarity (GO:1903903),0.0009754681839454337,66.65656565656566,462.10284137848555,GSN;ABL2,0.2603388772870072,0,0,25,pos,GO_Biological_Process_2023
+3,Negative Regulation Of Viral Life Cycle (GO:1903901),0.0009905301969888136,17.721409375933113,122.58377707877821,FCN1;BST2;GSN,0.2603388772870072,0,0,25,pos,GO_Biological_Process_2023

@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Negative Regulation Of Macrophage Derived Foam Cell Differentiation (GO:0010745),0.00020276702349047898,33.48730964467005,284.75776049641166,NFKBIA;CETP;ITGB3,0.13144525927909206,0,0,27,neg,GO_Biological_Process_2023
+2,Regulation Of Macrophage Derived Foam Cell Differentiation (GO:0010743),0.00021690636844734666,15.521193092621663,130.93747995826848,NFKBIA;CETP;ITGB3;PF4,0.13144525927909206,0,0,27,neg,GO_Biological_Process_2023
+3,Negative Regulation Of Type I Interferon-Mediated Signaling Pathway (GO:0060339),0.00041017649693527065,25.111675126903553,195.84402098106767,OAS3;ISG15;USP18,0.16571130476184934,0,0,27,neg,GO_Biological_Process_2023

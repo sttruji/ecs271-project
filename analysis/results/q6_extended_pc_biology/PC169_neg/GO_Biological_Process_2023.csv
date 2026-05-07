@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Bundle Of His cell-Purkinje Myocyte Adhesion Involved In Cell Communication (GO:0086073),9.70634307108318e-06,150.746192893401,1740.0227480112783,DSP;JUP;PKP2,0.006718640376669924,0,0,169,neg,GO_Biological_Process_2023
+2,Cardiac Muscle Cell-Cardiac Muscle Cell Adhesion (GO:0086042),1.9269523068842994e-05,100.49238578680203,1091.0444080855816,DSP;JUP;PKP2,0.006718640376669924,0,0,169,neg,GO_Biological_Process_2023
+3,Desmosome Organization (GO:0002934),1.9269523068842994e-05,100.49238578680203,1091.0444080855816,DSP;JUP;PKP2,0.006718640376669924,0,0,169,neg,GO_Biological_Process_2023

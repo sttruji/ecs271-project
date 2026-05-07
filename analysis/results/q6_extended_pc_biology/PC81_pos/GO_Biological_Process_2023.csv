@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Negative Regulation Of Vascular Endothelial Growth Factor Signaling Pathway (GO:1900747),7.91555905106562e-05,50.23857868020305,474.45791686900793,DAB2IP;SORD;PIK3CB,0.0404609097044826,0,0,81,pos,GO_Biological_Process_2023
+2,Glycerophospholipid Catabolic Process (GO:0046475),0.00014220084233688404,17.54835847382431,155.44809947118515,LIPC;ABHD16A;PNPLA6;PRDX6,0.0404609097044826,0,0,81,pos,GO_Biological_Process_2023
+3,Epithelial Cell-Cell Adhesion (GO:0090136),0.00015320271943439296,37.6751269035533,330.92884130781977,DSP;JUP;KIFC3,0.0404609097044826,0,0,81,pos,GO_Biological_Process_2023

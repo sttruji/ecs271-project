@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Peptide Cross-Linking (GO:0018149),0.00014220084233688404,17.54835847382431,155.44809947118515,DSP;KRT2;FN1;KRT10,0.1561365248858987,0,0,129,pos,GO_Biological_Process_2023
+2,Negative Regulation Of Smooth Muscle Cell Apoptotic Process (GO:0034392),0.0014535707837741265,49.98989898989899,326.6206097208578,LYPD3;LRP6,0.26600345343066517,0,0,129,pos,GO_Biological_Process_2023
+3,Regulation Of Striated Muscle Cell Differentiation (GO:0051153),0.0014535707837741265,49.98989898989899,326.6206097208578,SIK1;HDAC9,0.26600345343066517,0,0,129,pos,GO_Biological_Process_2023

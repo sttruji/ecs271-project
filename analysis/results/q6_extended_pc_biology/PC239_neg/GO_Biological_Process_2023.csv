@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Negative Regulation Of Lamellipodium Organization (GO:1902744),0.0009754681839454337,66.65656565656566,462.10284137848555,KANK1;NRG1,0.27884332868733663,0,0,239,neg,GO_Biological_Process_2023
+2,Bundle Of His cell-Purkinje Myocyte Adhesion Involved In Cell Communication (GO:0086073),0.0009754681839454337,66.65656565656566,462.10284137848555,DSP;JUP,0.27884332868733663,0,0,239,neg,GO_Biological_Process_2023
+3,Humoral Immune Response Mediated By Circulating Immunoglobulin (GO:0002455),0.0009754681839454337,66.65656565656566,462.10284137848555,C1QB;ZP3,0.27884332868733663,0,0,239,neg,GO_Biological_Process_2023

@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Striated Muscle Cell Differentiation (GO:0051146),0.0009905301969888136,17.721409375933113,122.58377707877821,POPDC2;SDC1;NRG1,0.4167457642087546,0,0,133,pos,GO_Biological_Process_2023
+2,Positive Regulation Of Lipopolysaccharide-Mediated Signaling Pathway (GO:0031666),0.0014535707837741265,49.98989898989899,326.6206097208578,CD180;SASH1,0.4167457642087546,0,0,133,pos,GO_Biological_Process_2023
+3,"Negative Regulation Of CD8-positive, Alpha-Beta T Cell Activation (GO:2001186)",0.0020216133697869413,39.98989898989899,248.09171029141777,SOCS1;LILRB1,0.4167457642087546,0,0,133,pos,GO_Biological_Process_2023

@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Telomere Maintenance (GO:0000723),0.0005949605404203094,8.032967032967033,59.66097044986614,ZBTB48;HUS1;RPA2;SLX1A;ZNF365,0.3734346181973292,0,0,52,pos,GO_Biological_Process_2023
+2,Positive Regulation Of Triglyceride Metabolic Process (GO:0090208),0.0007195272026923491,20.086294416243653,145.36282995258424,NR1H2;ABHD5;DAGLB,0.3734346181973292,0,0,52,pos,GO_Biological_Process_2023
+3,Positive Regulation Of Triglyceride Catabolic Process (GO:0010898),0.0014535707837741265,49.98989898989899,326.6206097208578,ABHD5;DAGLB,0.4583798462568472,0,0,52,pos,GO_Biological_Process_2023

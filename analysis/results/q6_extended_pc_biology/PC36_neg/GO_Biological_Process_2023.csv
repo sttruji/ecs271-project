@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Regulation Of Dendritic Spine Maintenance (GO:1902950),5.3162099096467675e-05,60.28934010152284,593.3776232841345,HOMER1;VPS35;FCGR2B,0.06639946177148813,0,0,36,neg,GO_Biological_Process_2023
+2,Regulation Of Plasma Membrane Bounded Cell Projection Organization (GO:0120035),0.00016460907121433117,16.816326530612244,146.50278000651662,NTNG2;HOMER1;VPS35;FCGR2B,0.08851907932198452,0,0,36,neg,GO_Biological_Process_2023
+3,Regulation Of IRE1-mediated Unfolded Protein Response (GO:1903894),0.00026165809515097364,30.13705583756345,248.5846578261998,PTPN1;BCL2L11;DNAJB9,0.08851907932198452,0,0,36,neg,GO_Biological_Process_2023

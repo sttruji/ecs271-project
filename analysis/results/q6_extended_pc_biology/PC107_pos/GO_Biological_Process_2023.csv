@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Negative Regulation Of Lens Fiber Cell Differentiation (GO:1902747),0.0009754681839454337,66.65656565656566,462.10284137848555,SPRY2;SPRY1,0.2595508891748246,0,0,107,pos,GO_Biological_Process_2023
+2,Regulation Of Interleukin-1-Mediated Signaling Pathway (GO:2000659),0.0009754681839454337,66.65656565656566,462.10284137848555,IL1RN;VRK2,0.2595508891748246,0,0,107,pos,GO_Biological_Process_2023
+3,Regulation Of Cell-Substrate Junction Assembly (GO:0090109),0.0011471485105092553,16.736040609137056,113.31096080850561,DUSP3;EFNA5;GPM6B,0.2595508891748246,0,0,107,pos,GO_Biological_Process_2023

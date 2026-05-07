@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Negative Regulation Of Vascular Endothelial Growth Factor Signaling Pathway (GO:1900747),7.91555905106562e-05,50.23857868020305,474.45791686900793,DAB2IP;SPRY2;NRG1,0.0754291896275648,0,0,94,pos,GO_Biological_Process_2023
+2,Negative Regulation Of Cellular Response To Vascular Endothelial Growth Factor Stimulus (GO:1902548),0.00015320271943439296,37.6751269035533,330.92884130781977,DAB2IP;SPRY2;NRG1,0.0754291896275648,0,0,94,pos,GO_Biological_Process_2023
+3,Phospholipid Homeostasis (GO:0055091),0.00020276702349047898,33.48730964467005,284.75776049641166,CETP;APOA1;ABCG1,0.0754291896275648,0,0,94,pos,GO_Biological_Process_2023

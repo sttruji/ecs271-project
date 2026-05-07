@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Purine Deoxyribonucleotide Catabolic Process (GO:0009155),0.0009754681839454337,66.65656565656566,462.10284137848555,NUDT18;NUDT15,0.45084862240762047,0,0,243,pos,GO_Biological_Process_2023
+2,Positive Regulation Of Calcium Ion-Dependent Exocytosis (GO:0045956),0.0026777674677022855,33.323232323232325,197.36590289038227,SCAMP5;ZP3,0.45084862240762047,0,0,243,pos,GO_Biological_Process_2023
+3,Regulation Of Ceramide Biosynthetic Process (GO:2000303),0.0034202318391573132,28.561327561327563,162.17255858986445,SPHK1;SIRT3,0.45084862240762047,0,0,243,pos,GO_Biological_Process_2023

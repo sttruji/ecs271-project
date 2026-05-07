@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Regulation Of Cdc42 Protein Signal Transduction (GO:0032489),0.0020216133697869413,39.98989898989899,248.09171029141777,RALBP1;APOA1,0.46498180550592383,0,0,154,neg,GO_Biological_Process_2023
+2,Cell-Substrate Junction Assembly (GO:0007044),0.0026840467141937513,12.045685279187817,71.31563234569973,DST;LAMC1;PTPRK,0.46498180550592383,0,0,154,neg,GO_Biological_Process_2023
+3,Regulation Of Gene Expression By Genomic Imprinting (GO:0006349),0.004247232134539841,24.98989898989899,136.4820277236255,ZFP57;DNMT3A,0.46498180550592383,0,0,154,neg,GO_Biological_Process_2023

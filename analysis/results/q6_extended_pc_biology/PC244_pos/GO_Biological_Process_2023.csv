@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Regulation Of Transforming Growth Factor Beta Production (GO:0071634),0.0005011239651713426,23.178836392034363,176.1280286078286,SERPINF2;FN1;XCL1,0.426846829521254,0,0,244,pos,GO_Biological_Process_2023
+2,Regulation Of Toll-Like Receptor 7 Signaling Pathway (GO:0034155),0.0014535707837741265,49.98989898989899,326.6206097208578,RSAD2;LILRA4,0.426846829521254,0,0,244,pos,GO_Biological_Process_2023
+3,Regulation Of Cholesterol Metabolic Process (GO:0090181),0.0015052246919242,15.060913705583756,97.87806321199126,SEC14L2;ACADVL;APOA1,0.426846829521254,0,0,244,pos,GO_Biological_Process_2023

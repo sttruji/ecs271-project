@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Regulation Of Phosphatidylinositol 3-Kinase Activity (GO:0043551),0.00035577326889246036,13.448979591836734,106.80126422611052,PIK3IP1;WDR81;DAB2IP;ATG14,0.3154966113071448,0,0,96,pos,GO_Biological_Process_2023
+2,Heparan Sulfate Proteoglycan Catabolic Process (GO:0030200),0.0009754681839454337,66.65656565656566,462.10284137848555,HPSE;SGSH,0.3154966113071448,0,0,96,pos,GO_Biological_Process_2023
+3,Regulation Of Macrophage Chemotaxis (GO:0010758),0.0009905301969888136,17.721409375933113,122.58377707877821,C5;SLAMF8;CMKLR1,0.3154966113071448,0,0,96,pos,GO_Biological_Process_2023

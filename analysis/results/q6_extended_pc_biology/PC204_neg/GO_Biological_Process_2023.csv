@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Positive Regulation Of Humoral Immune Response (GO:0002922),0.0014535707837741265,49.98989898989899,326.6206097208578,FCGR2B;ZP3,0.43642589209921007,0,0,204,neg,GO_Biological_Process_2023
+2,Negative Regulation Of Acute Inflammatory Response (GO:0002674),0.0014535707837741265,49.98989898989899,326.6206097208578,NLRP3;FCGR2B,0.43642589209921007,0,0,204,neg,GO_Biological_Process_2023
+3,Negative Regulation Of Leukocyte Degranulation (GO:0043301),0.0026777674677022855,33.323232323232325,197.36590289038227,FCGR2B;HLA-F,0.43642589209921007,0,0,204,neg,GO_Biological_Process_2023

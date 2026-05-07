@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Regulation Of T Cell Tolerance Induction (GO:0002664),1.9269523068842994e-05,100.49238578680203,1091.0444080855816,IL2RA;LILRB2;FOXP3,0.02181310011393027,0,0,145,neg,GO_Biological_Process_2023
+2,Negative Regulation Of Macrophage Derived Foam Cell Differentiation (GO:0010745),0.00020276702349047898,33.48730964467005,284.75776049641166,CETP;NR1H3;ABCG1,0.1147661352956111,0,0,145,neg,GO_Biological_Process_2023
+3,DNA Methylation Involved In Embryo Development (GO:0043045),0.0009754681839454337,66.65656565656566,462.10284137848555,ZFP57;PICK1,0.2208459968452462,0,0,145,neg,GO_Biological_Process_2023

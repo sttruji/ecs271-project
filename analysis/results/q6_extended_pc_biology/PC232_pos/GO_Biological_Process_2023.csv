@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Inhibition Of Cysteine-Type Endopeptidase Activity (GO:0097340),0.0020216133697869413,39.98989898989899,248.09171029141777,CAST;NOL3,0.4375505481937808,0,0,232,pos,GO_Biological_Process_2023
+2,Primary Alcohol Catabolic Process (GO:0034310),0.0034202318391573132,28.561327561327563,162.17255858986445,AKR1C3;SULT1A2,0.4375505481937808,0,0,232,pos,GO_Biological_Process_2023
+3,Cardiac Muscle Cell Membrane Repolarization (GO:0099622),0.004247232134539841,24.98989898989899,136.4820277236255,KCNIP2;ATP1B1,0.4375505481937808,0,0,232,pos,GO_Biological_Process_2023

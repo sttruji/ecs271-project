@@ -1,0 +1,423 @@
+{
+  "n_samples": 80,
+  "n_donors": 10,
+  "n_timepoints": 8,
+  "rows": [
+    {
+      "latent": "PCA-50",
+      "target": "hour (cyclic)",
+      "metric": "r2_cyclic",
+      "value": 0.42376078578878973,
+      "n": 80,
+      "n_classes": NaN
+    },
+    {
+      "latent": "PCA-50",
+      "target": "hour (cyclic)",
+      "metric": "mae_hours",
+      "value": 2.17042660441574,
+      "n": 80,
+      "n_classes": NaN
+    },
+    {
+      "latent": "PCA-50",
+      "target": "hour (8-class)",
+      "metric": "bal_acc",
+      "value": 0.175,
+      "n": 80,
+      "n_classes": 8
+    },
+    {
+      "latent": "PCA-50",
+      "target": "hour (8-class)",
+      "metric": "macro_auc",
+      "value": 0.6026785714285714,
+      "n": 80,
+      "n_classes": 8
+    },
+    {
+      "latent": "PCA-50",
+      "target": "participant",
+      "metric": "bal_acc",
+      "value": 1.0,
+      "n": 80,
+      "n_classes": 10
+    },
+    {
+      "latent": "PCA-50",
+      "target": "participant",
+      "metric": "macro_auc",
+      "value": 1.0,
+      "n": 80,
+      "n_classes": 10
+    },
+    {
+      "latent": "PCA-50",
+      "target": "sex",
+      "metric": "bal_acc",
+      "value": 1.0,
+      "n": 80,
+      "n_classes": 2
+    },
+    {
+      "latent": "PCA-50",
+      "target": "sex",
+      "metric": "macro_auc",
+      "value": 1.0,
+      "n": 80,
+      "n_classes": 2
+    },
+    {
+      "latent": "PCA-50",
+      "target": "age (yrs)",
+      "metric": "R2",
+      "value": 0.9651913046836853,
+      "n": 80,
+      "n_classes": NaN
+    },
+    {
+      "latent": "Rand-64",
+      "target": "hour (cyclic)",
+      "metric": "r2_cyclic",
+      "value": -0.7078635081200979,
+      "n": 80,
+      "n_classes": NaN
+    },
+    {
+      "latent": "Rand-64",
+      "target": "hour (cyclic)",
+      "metric": "mae_hours",
+      "value": 4.570959492254099,
+      "n": 80,
+      "n_classes": NaN
+    },
+    {
+      "latent": "Rand-64",
+      "target": "hour (8-class)",
+      "metric": "bal_acc",
+      "value": 0.1,
+      "n": 80,
+      "n_classes": 8
+    },
+    {
+      "latent": "Rand-64",
+      "target": "hour (8-class)",
+      "metric": "macro_auc",
+      "value": 0.49017857142857135,
+      "n": 80,
+      "n_classes": 8
+    },
+    {
+      "latent": "Rand-64",
+      "target": "participant",
+      "metric": "bal_acc",
+      "value": 1.0,
+      "n": 80,
+      "n_classes": 10
+    },
+    {
+      "latent": "Rand-64",
+      "target": "participant",
+      "metric": "macro_auc",
+      "value": 1.0,
+      "n": 80,
+      "n_classes": 10
+    },
+    {
+      "latent": "Rand-64",
+      "target": "sex",
+      "metric": "bal_acc",
+      "value": 1.0,
+      "n": 80,
+      "n_classes": 2
+    },
+    {
+      "latent": "Rand-64",
+      "target": "sex",
+      "metric": "macro_auc",
+      "value": 1.0,
+      "n": 80,
+      "n_classes": 2
+    },
+    {
+      "latent": "Rand-64",
+      "target": "age (yrs)",
+      "metric": "R2",
+      "value": 0.8587182402610779,
+      "n": 80,
+      "n_classes": NaN
+    },
+    {
+      "latent": "CM-VAE",
+      "target": "hour (cyclic)",
+      "metric": "r2_cyclic",
+      "value": 0.20053975979105662,
+      "n": 80,
+      "n_classes": NaN
+    },
+    {
+      "latent": "CM-VAE",
+      "target": "hour (cyclic)",
+      "metric": "mae_hours",
+      "value": 3.4318843902385208,
+      "n": 80,
+      "n_classes": NaN
+    },
+    {
+      "latent": "CM-VAE",
+      "target": "hour (8-class)",
+      "metric": "bal_acc",
+      "value": 0.075,
+      "n": 80,
+      "n_classes": 8
+    },
+    {
+      "latent": "CM-VAE",
+      "target": "hour (8-class)",
+      "metric": "macro_auc",
+      "value": 0.51875,
+      "n": 80,
+      "n_classes": 8
+    },
+    {
+      "latent": "CM-VAE",
+      "target": "participant",
+      "metric": "bal_acc",
+      "value": 0.9400000000000001,
+      "n": 80,
+      "n_classes": 10
+    },
+    {
+      "latent": "CM-VAE",
+      "target": "participant",
+      "metric": "macro_auc",
+      "value": 0.9955357142857142,
+      "n": 80,
+      "n_classes": 10
+    },
+    {
+      "latent": "CM-VAE",
+      "target": "sex",
+      "metric": "bal_acc",
+      "value": 0.975,
+      "n": 80,
+      "n_classes": 2
+    },
+    {
+      "latent": "CM-VAE",
+      "target": "sex",
+      "metric": "macro_auc",
+      "value": 1.0,
+      "n": 80,
+      "n_classes": 2
+    },
+    {
+      "latent": "CM-VAE",
+      "target": "age (yrs)",
+      "metric": "R2",
+      "value": 0.8698767185211181,
+      "n": 80,
+      "n_classes": NaN
+    },
+    {
+      "latent": "Sane-VAE",
+      "target": "hour (cyclic)",
+      "metric": "r2_cyclic",
+      "value": 0.2369442307150534,
+      "n": 80,
+      "n_classes": NaN
+    },
+    {
+      "latent": "Sane-VAE",
+      "target": "hour (cyclic)",
+      "metric": "mae_hours",
+      "value": 2.7862461124687146,
+      "n": 80,
+      "n_classes": NaN
+    },
+    {
+      "latent": "Sane-VAE",
+      "target": "hour (8-class)",
+      "metric": "bal_acc",
+      "value": 0.125,
+      "n": 80,
+      "n_classes": 8
+    },
+    {
+      "latent": "Sane-VAE",
+      "target": "hour (8-class)",
+      "metric": "macro_auc",
+      "value": 0.5848214285714286,
+      "n": 80,
+      "n_classes": 8
+    },
+    {
+      "latent": "Sane-VAE",
+      "target": "participant",
+      "metric": "bal_acc",
+      "value": 0.9800000000000001,
+      "n": 80,
+      "n_classes": 10
+    },
+    {
+      "latent": "Sane-VAE",
+      "target": "participant",
+      "metric": "macro_auc",
+      "value": 0.9974999999999999,
+      "n": 80,
+      "n_classes": 10
+    },
+    {
+      "latent": "Sane-VAE",
+      "target": "sex",
+      "metric": "bal_acc",
+      "value": 0.9625,
+      "n": 80,
+      "n_classes": 2
+    },
+    {
+      "latent": "Sane-VAE",
+      "target": "sex",
+      "metric": "macro_auc",
+      "value": 0.990625,
+      "n": 80,
+      "n_classes": 2
+    },
+    {
+      "latent": "Sane-VAE",
+      "target": "age (yrs)",
+      "metric": "R2",
+      "value": 0.812768018245697,
+      "n": 80,
+      "n_classes": NaN
+    },
+    {
+      "latent": "PCA-50",
+      "target": "hour (LODO cyclic)",
+      "metric": "mae_hours",
+      "value": 4.406230517983482,
+      "n": 80,
+      "n_classes": NaN
+    },
+    {
+      "latent": "PCA-50",
+      "target": "age (LODO)",
+      "metric": "R2",
+      "value": 0.34445439027535485,
+      "n": 80,
+      "n_classes": NaN
+    },
+    {
+      "latent": "PCA-50",
+      "target": "age (LODO)",
+      "metric": "mae_yrs",
+      "value": 2.0432789087295533,
+      "n": 80,
+      "n_classes": NaN
+    },
+    {
+      "latent": "PCA-50",
+      "target": "sex (LODO)",
+      "metric": "auc",
+      "value": 1.0,
+      "n": 80,
+      "n_classes": 2
+    },
+    {
+      "latent": "Rand-64",
+      "target": "hour (LODO cyclic)",
+      "metric": "mae_hours",
+      "value": 5.268980473943185,
+      "n": 80,
+      "n_classes": NaN
+    },
+    {
+      "latent": "Rand-64",
+      "target": "age (LODO)",
+      "metric": "R2",
+      "value": 0.0778008221808194,
+      "n": 80,
+      "n_classes": NaN
+    },
+    {
+      "latent": "Rand-64",
+      "target": "age (LODO)",
+      "metric": "mae_yrs",
+      "value": 2.6568543910980225,
+      "n": 80,
+      "n_classes": NaN
+    },
+    {
+      "latent": "Rand-64",
+      "target": "sex (LODO)",
+      "metric": "auc",
+      "value": 0.698125,
+      "n": 80,
+      "n_classes": 2
+    },
+    {
+      "latent": "CM-VAE",
+      "target": "hour (LODO cyclic)",
+      "metric": "mae_hours",
+      "value": 4.386637277935413,
+      "n": 80,
+      "n_classes": NaN
+    },
+    {
+      "latent": "CM-VAE",
+      "target": "age (LODO)",
+      "metric": "R2",
+      "value": 0.42425996456837556,
+      "n": 80,
+      "n_classes": NaN
+    },
+    {
+      "latent": "CM-VAE",
+      "target": "age (LODO)",
+      "metric": "mae_yrs",
+      "value": 2.2481399059295653,
+      "n": 80,
+      "n_classes": NaN
+    },
+    {
+      "latent": "CM-VAE",
+      "target": "sex (LODO)",
+      "metric": "auc",
+      "value": 0.653125,
+      "n": 80,
+      "n_classes": 2
+    },
+    {
+      "latent": "Sane-VAE",
+      "target": "hour (LODO cyclic)",
+      "metric": "mae_hours",
+      "value": 4.823082917069088,
+      "n": 80,
+      "n_classes": NaN
+    },
+    {
+      "latent": "Sane-VAE",
+      "target": "age (LODO)",
+      "metric": "R2",
+      "value": -0.3349407786141432,
+      "n": 80,
+      "n_classes": NaN
+    },
+    {
+      "latent": "Sane-VAE",
+      "target": "age (LODO)",
+      "metric": "mae_yrs",
+      "value": 2.928341341018677,
+      "n": 80,
+      "n_classes": NaN
+    },
+    {
+      "latent": "Sane-VAE",
+      "target": "sex (LODO)",
+      "metric": "auc",
+      "value": 0.73125,
+      "n": 80,
+      "n_classes": 2
+    }
+  ]
+}

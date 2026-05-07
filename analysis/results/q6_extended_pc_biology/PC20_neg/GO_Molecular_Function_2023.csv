@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,"Oxidoreductase Activity, Acting On Single Donors With Incorporation Of Molecular Oxygen, Incorporation Of Two Atoms Of Oxygen (GO:0016702)",0.0011471485105092553,16.736040609137056,113.31096080850561,HGD;PTGS2;PTGS1,0.20797327332487753,0,0,20,neg,GO_Molecular_Function_2023
+2,Carboxy-Lyase Activity (GO:0016831),0.002414105915085408,12.548223350253807,75.62094298941223,FAHD1;UROD;PPCDC,0.20797327332487753,0,0,20,neg,GO_Molecular_Function_2023
+3,Long-Chain Fatty Acid Binding (GO:0036041),0.0026777674677022855,33.323232323232325,197.36590289038227,PRR7;OXER1,0.20797327332487753,0,0,20,neg,GO_Molecular_Function_2023

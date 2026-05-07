@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Systemic lupus erythematosus (HP:0002725),0.00015320271943439296,37.6751269035533,330.92884130781977,C1QB;C1QA;SERPING1,0.05162931644939043,0,0,17,neg,Human_Phenotype_Ontology
+2,Birth length less than 3rd percentile (HP:0003561),0.0026777674677022855,33.323232323232325,197.36590289038227,ORC6;CDC6,0.20762972541546493,0,0,17,neg,Human_Phenotype_Ontology
+3,Chronic otitis media (HP:0000389),0.0026777674677022855,33.323232323232325,197.36590289038227,TAP2;TAP1,0.20762972541546493,0,0,17,neg,Human_Phenotype_Ontology

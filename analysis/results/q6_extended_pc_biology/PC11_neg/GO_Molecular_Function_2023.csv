@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,"Phosphotransferase Activity, Alcohol Group As Acceptor (GO:0016773)",0.00012192284108863171,8.59401771453463,77.4503375178538,DGKG;FGGY;TKFC;GLYCTK;DGKK;GALK2,0.03072455595433519,0,0,11,neg,GO_Molecular_Function_2023
+2,1-Phosphatidylinositol-4-Phosphate 5-Kinase Activity (GO:0016308),0.0014535707837741265,49.98989898989899,326.6206097208578,PIP5K1B;PIP4K2C,0.18314991875553993,0,0,11,neg,GO_Molecular_Function_2023
+3,Diacylglycerol Kinase Activity (GO:0004143),0.004247232134539841,24.98989898989899,136.4820277236255,DGKG;DGKK,0.25985163730733524,0,0,11,neg,GO_Molecular_Function_2023

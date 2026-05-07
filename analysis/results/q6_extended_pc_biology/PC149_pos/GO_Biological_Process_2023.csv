@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Chondroitin Sulfate Proteoglycan Metabolic Process (GO:0050654),7.91555905106562e-05,50.23857868020305,474.45791686900793,B3GAT2;DSEL;XYLT1,0.08137194704495457,0,0,149,pos,GO_Biological_Process_2023
+2,Chondroitin Sulfate Proteoglycan Biosynthetic Process (GO:0050650),0.0008481701801219675,18.82994923857868,133.17348392535672,B3GAT2;XYLT1;CHST13,0.3594243444711262,0,0,149,pos,GO_Biological_Process_2023
+3,Actomyosin Structure Organization (GO:0031032),0.001048903729001341,7.0256410256410255,48.195965780270626,EPB41L5;CSRP1;MYH11;MYL9;MYOM2,0.3594243444711262,0,0,149,pos,GO_Biological_Process_2023

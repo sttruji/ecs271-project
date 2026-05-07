@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Humoral Immune Response Mediated By Circulating Immunoglobulin (GO:0002455),0.0009754681839454337,66.65656565656566,462.10284137848555,C1QB;ZP3,0.3924938484725906,0,0,209,neg,GO_Biological_Process_2023
+2,Iron Coordination Entity Transport (GO:1901678),0.0009754681839454337,66.65656565656566,462.10284137848555,LCN2;NRG1,0.3924938484725906,0,0,209,neg,GO_Biological_Process_2023
+3,Positive Regulation Of Natural Killer Cell Mediated Cytotoxicity (GO:0045954),0.0011471485105092553,16.736040609137056,113.31096080850561,CADM1;HLA-F;NECTIN2,0.3924938484725906,0,0,209,neg,GO_Biological_Process_2023

@@ -1,0 +1,96 @@
+{
+  "holdout_r2": 0.22124969959259033,
+  "n_active_dims": 8,
+  "mean_top3_l1_share": 0.17410496675939746,
+  "median_top3_l1_share": 0.1723960565232454,
+  "probes": [
+    {
+      "latent": "Struct-VAE",
+      "target": "AGE_mid",
+      "metric": "R2",
+      "value": 0.11421722766875886,
+      "std": 0.03915316447941871,
+      "n": 803,
+      "n_classes": NaN
+    },
+    {
+      "latent": "Struct-VAE",
+      "target": "DTHHRDY",
+      "metric": "R2",
+      "value": 0.46687276896906765,
+      "std": 0.10471013607008627,
+      "n": 788,
+      "n_classes": NaN
+    },
+    {
+      "latent": "Struct-VAE",
+      "target": "SMRIN",
+      "metric": "R2",
+      "value": 0.3224313687931838,
+      "std": 0.05953853992620536,
+      "n": 803,
+      "n_classes": NaN
+    },
+    {
+      "latent": "Struct-VAE",
+      "target": "SMTSISCH",
+      "metric": "R2",
+      "value": 0.6155528964443343,
+      "std": 0.09395697787349616,
+      "n": 798,
+      "n_classes": NaN
+    },
+    {
+      "latent": "Struct-VAE",
+      "target": "SMRDLGTH",
+      "metric": "R2",
+      "value": -0.16625543809439408,
+      "std": 0.31134471583575357,
+      "n": 803,
+      "n_classes": NaN
+    },
+    {
+      "latent": "Struct-VAE",
+      "target": "SEX",
+      "metric": "bal_acc",
+      "value": 0.5497995662137951,
+      "std": NaN,
+      "n": 803,
+      "n_classes": 2
+    },
+    {
+      "latent": "Struct-VAE",
+      "target": "SEX",
+      "metric": "macro_auc",
+      "value": 0.6052721655824478,
+      "std": NaN,
+      "n": 803,
+      "n_classes": 2
+    },
+    {
+      "latent": "Struct-VAE",
+      "target": "SMCENTER",
+      "metric": "bal_acc",
+      "value": 0.4439518573270421,
+      "std": NaN,
+      "n": 803,
+      "n_classes": 3
+    },
+    {
+      "latent": "Struct-VAE",
+      "target": "SMCENTER",
+      "metric": "macro_auc",
+      "value": 0.8031435690200738,
+      "std": NaN,
+      "n": 803,
+      "n_classes": 3
+    }
+  ],
+  "config": {
+    "latent_dim": 50,
+    "n_clusters": 51,
+    "beta": 0.001,
+    "l1_lambda": 0.001,
+    "epochs": 200
+  }
+}

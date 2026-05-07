@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Lipoprotein Biosynthetic Process (GO:0042158),0.000330570754905644,27.395939086294415,219.56995457412373,ATG10;WIPI1;WDR45,0.3290900298873234,0,0,193,neg,GO_Biological_Process_2023
+2,Positive Regulation Of Regulatory T Cell Differentiation (GO:0045591),0.0006040394207294829,21.522117476432197,159.51916044937724,SOCS1;LILRB2;SOX12,0.3290900298873234,0,0,193,neg,GO_Biological_Process_2023
+3,Regulation Of Fibroblast Growth Factor Receptor Signaling Pathway (GO:0040036),0.0008481701801219675,18.82994923857868,133.17348392535672,NOG;SPRY1;THBS1,0.3290900298873234,0,0,193,neg,GO_Biological_Process_2023

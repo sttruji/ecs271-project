@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Serine Family Amino Acid Biosynthetic Process (GO:0009070),0.00011224655254723089,43.059463379260336,391.61775629527256,PSAT1;CTH;GGT1,0.09250328296709291,0,0,158,neg,GO_Biological_Process_2023
+2,Positive Regulation Of Leukocyte Mediated Cytotoxicity (GO:0001912),0.00015378766910572388,11.011148272017838,96.67719560223861,KLRC2;HLA-A;CD1C;CD1A;NECTIN2,0.09250328296709291,0,0,158,neg,GO_Biological_Process_2023
+3,Positive Regulation Of T Cell Mediated Immunity (GO:0002711),0.0008826236600453894,10.340659340659341,72.72184139201934,HLA-A;CD1C;ZP3;CD1A,0.21858070661003426,0,0,158,neg,GO_Biological_Process_2023

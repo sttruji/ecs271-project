@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Gliogenesis (GO:0042063),0.0017076659731305678,14.343002175489485,91.40261395182883,NFIB;CD9;AZU1,0.4800164518757183,0,0,147,pos,GO_Biological_Process_2023
+2,Regulation Of Dendritic Cell Antigen Processing And Presentation (GO:0002604),0.0026777674677022855,33.323232323232325,197.36590289038227,NOD2;FCGR2B,0.4800164518757183,0,0,147,pos,GO_Biological_Process_2023
+3,Negative Regulation Of Humoral Immune Response Mediated By Circulating Immunoglobulin (GO:0002924),0.0034202318391573132,28.561327561327563,162.17255858986445,CR2;FCGR2B,0.4800164518757183,0,0,147,pos,GO_Biological_Process_2023

@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Gastrointestinal stroma tumor (HP:0100723),0.00041017649693527065,25.111675126903553,195.84402098106767,CR2;CD19;MS4A1,0.09741554887517831,0,0,29,neg,Human_Phenotype_Ontology
+2,Muscle abnormality related to mitochondrial dysfunction (HP:0003800),0.0008481701801219675,18.82994923857868,133.17348392535672,POLG2;ISCU;COX6B1,0.09741554887517831,0,0,29,neg,Human_Phenotype_Ontology
+3,Elevated hepatic transaminases (HP:0002910),0.0009219137117524761,5.746158334954289,40.16023920634069,DPM3;CR2;POLG2;ABCB4;CD19;MS4A1,0.09741554887517831,0,0,29,neg,Human_Phenotype_Ontology

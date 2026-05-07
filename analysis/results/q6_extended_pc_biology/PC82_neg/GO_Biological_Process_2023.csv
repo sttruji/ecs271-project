@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,ISG15-protein Conjugation (GO:0032020),0.0009754681839454337,66.65656565656566,462.10284137848555,UBE2E2;UBE2L6,0.3497899036517455,0,0,82,neg,GO_Biological_Process_2023
+2,Regulation Of Vascular Endothelial Growth Factor Receptor Signaling Pathway (GO:0030947),0.0013185462203513692,15.854394870424793,105.13406751270358,DAB2IP;ITGA5;EPN2,0.3497899036517455,0,0,82,neg,GO_Biological_Process_2023
+3,Negative Regulation Of Membrane Protein Ectodomain Proteolysis (GO:0051045),0.0014535707837741265,49.98989898989899,326.6206097208578,TIMP3;TIMP1,0.3497899036517455,0,0,82,neg,GO_Biological_Process_2023

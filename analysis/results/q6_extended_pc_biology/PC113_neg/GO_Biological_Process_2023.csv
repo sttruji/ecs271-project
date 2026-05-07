@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Cellular Response To Glucose Starvation (GO:0042149),0.0008067730463282587,10.613319011815252,75.59302673955138,TBL2;SESN3;SESN1;CPEB4,0.2007384410983853,0,0,113,neg,GO_Biological_Process_2023
+2,Bundle Of His cell-Purkinje Myocyte Adhesion Involved In Cell Communication (GO:0086073),0.0009754681839454337,66.65656565656566,462.10284137848555,DSP;JUP,0.2007384410983853,0,0,113,neg,GO_Biological_Process_2023
+3,Cardiac Muscle Cell-Cardiac Muscle Cell Adhesion (GO:0086042),0.0014535707837741265,49.98989898989899,326.6206097208578,DSP;JUP,0.2007384410983853,0,0,113,neg,GO_Biological_Process_2023

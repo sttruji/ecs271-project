@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Roles Of Ceramides In Development Of Insulin Resistance WP5181,0.0015052246919242,15.060913705583756,97.87806321199126,INSR;EIF2AK2;IRS2,0.32663375814755136,0,0,25,pos,WikiPathway_2023_Human
+2,Sulfation Biotransformation Reaction WP692,0.010888425001890752,14.275613275613276,64.52655688502057,G6PD;SULT1A2,0.5245108720404973,0,0,25,pos,WikiPathway_2023_Human
+3,Leptin Insulin Signaling Overlap WP3935,0.012259680874864825,13.323232323232324,58.64139939765107,INSR;IRS2,0.5245108720404973,0,0,25,pos,WikiPathway_2023_Human

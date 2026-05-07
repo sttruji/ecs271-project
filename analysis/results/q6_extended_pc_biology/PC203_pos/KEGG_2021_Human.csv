@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,"Glycine, serine and threonine metabolism",0.0074150224240263525,8.134037590890383,39.89133172446582,SARDH;SDSL;PSPH,0.9508562784945032,0,0,203,pos,KEGG_2021_Human
+2,Arrhythmogenic right ventricular cardiomyopathy,0.04203162961868534,4.059404582247222,12.865604326296655,TCF7L2;CACNB4;CTNNA1,0.9508562784945032,0,0,203,pos,KEGG_2021_Human
+3,Nicotinate and nicotinamide metabolism,0.04771715203605925,6.05050505050505,18.408446001894514,NMNAT3;SIRT3,0.9508562784945032,0,0,203,pos,KEGG_2021_Human

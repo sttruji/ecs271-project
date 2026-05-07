@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Iron Coordination Entity Transport (GO:1901678),0.0009754681839454337,66.65656565656566,462.10284137848555,SLC22A17;FLVCR1,0.40472699663134565,0,0,251,pos,GO_Biological_Process_2023
+2,Striated Muscle Cell Differentiation (GO:0051146),0.0009905301969888136,17.721409375933113,122.58377707877821,MYEF2;SDC1;SIK1,0.40472699663134565,0,0,251,pos,GO_Biological_Process_2023
+3,Positive Regulation Of Release Of Cytochrome C From Mitochondria (GO:0090200),0.0019263332020576173,13.690355329949238,85.59397680666795,HRK;MLLT11;MFF,0.40472699663134565,0,0,251,pos,GO_Biological_Process_2023

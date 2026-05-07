@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Positive Regulation Of Proteasomal Ubiquitin-Dependent Protein Catabolic Process (GO:0032436),0.0014688493611099294,6.483234714003944,42.291928972941484,TRIB3;BBS7;AXIN2;SH3RF1;NFE2L2,0.4076477094232697,0,0,189,neg,GO_Biological_Process_2023
+2,Nucleotide-Excision Repair (GO:0006289),0.002374631427088841,7.750392464678179,46.83494770645078,GTF2H2C;RPA2;ERCC8;GTF2H2,0.4076477094232697,0,0,189,neg,GO_Biological_Process_2023
+3,Regulation Of Calcium Ion-Dependent Exocytosis (GO:0017158),0.0026840467141937513,12.045685279187817,71.31563234569973,RPH3A;SYT2;SYT17,0.4076477094232697,0,0,189,neg,GO_Biological_Process_2023

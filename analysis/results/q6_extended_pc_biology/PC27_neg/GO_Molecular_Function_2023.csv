@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,"Oxidoreductase Activity, Acting On Single Donors With Incorporation Of Molecular Oxygen, Incorporation Of Two Atoms Of Oxygen (GO:0016702)",0.0011471485105092553,16.736040609137056,113.31096080850561,HGD;ALOX12;PTGS1,0.23631259316490658,0,0,27,neg,GO_Molecular_Function_2023
+2,CXCR Chemokine Receptor Binding (GO:0045236),0.010888425001890752,14.275613275613276,64.52655688502057,CXCL10;PF4,0.42145965770158356,0,0,27,neg,GO_Molecular_Function_2023
+3,Monoatomic Anion Transmembrane Transporter Activity (GO:0008509),0.023768932446959146,9.080808080808081,33.956554984338226,CLCN7;CLCN6,0.42145965770158356,0,0,27,neg,GO_Molecular_Function_2023

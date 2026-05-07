@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Positive Regulation Of Vascular Associated Smooth Muscle Cell Proliferation (GO:1904707),0.0009905301969888136,17.721409375933113,122.58377707877821,P2RY6;PDGFB;MFN2,0.40193439008022774,0,0,219,pos,GO_Biological_Process_2023
+2,Positive Regulation Of Hormone Metabolic Process (GO:0032352),0.0014535707837741265,49.98989898989899,326.6206097208578,EGR1;PAX8,0.40193439008022774,0,0,219,pos,GO_Biological_Process_2023
+3,Metanephric Nephron Tubule Development (GO:0072234),0.0014535707837741265,49.98989898989899,326.6206097208578,PAX8;PKD2,0.40193439008022774,0,0,219,pos,GO_Biological_Process_2023

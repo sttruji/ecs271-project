@@ -1,0 +1,18 @@
+{
+  "ae3": {
+    "mse": 0.19319145381450653,
+    "r2_overall": 0.813220847785908,
+    "per_sample_r_mean": 0.8743355670712339,
+    "per_sample_r_med": 0.8835551643821489,
+    "per_sample_r_min": 0.7107825894412126,
+    "active_dims": 64
+  },
+  "vae_beta_1e3": {
+    "mse": 0.21550647914409637,
+    "r2_overall": 0.789748738332828,
+    "per_sample_r_mean": 0.8538226215853029,
+    "per_sample_r_med": 0.8628053407528361,
+    "per_sample_r_min": 0.6101075321301133,
+    "active_dims": 21
+  }
+}

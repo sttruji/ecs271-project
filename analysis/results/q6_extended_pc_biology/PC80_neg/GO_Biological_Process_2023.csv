@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Positive Regulation Of Ruffle Assembly (GO:1900029),0.00020276702349047898,33.48730964467005,284.75776049641166,EPS8L1;EPS8L2;NDEL1,0.20661959693679807,0,0,80,neg,GO_Biological_Process_2023
+2,Positive Regulation Of Natural Killer Cell Mediated Cytotoxicity Directed Against Tumor Cell Target (GO:0002860),0.0009754681839454337,66.65656565656566,462.10284137848555,PVR;NECTIN2,0.30913782464972134,0,0,80,neg,GO_Biological_Process_2023
+3,Positive Regulation Of Natural Killer Cell Mediated Immune Response To Tumor Cell (GO:0002857),0.0009754681839454337,66.65656565656566,462.10284137848555,PVR;NECTIN2,0.30913782464972134,0,0,80,neg,GO_Biological_Process_2023

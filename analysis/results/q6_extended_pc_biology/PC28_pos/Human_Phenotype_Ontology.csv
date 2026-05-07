@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Vacuolated lymphocytes (HP:0001922),0.0026777674677022855,33.323232323232325,197.36590289038227,GLB1;NEU1,0.26412742664118216,0,0,28,pos,Human_Phenotype_Ontology
+2,Humeroradial synostosis (HP:0003041),0.0034202318391573132,28.561327561327563,162.17255858986445,NOG;WNT7A,0.26412742664118216,0,0,28,pos,Human_Phenotype_Ontology
+3,Synostosis involving the elbow (HP:0003938),0.0034202318391573132,28.561327561327563,162.17255858986445,NOG;WNT7A,0.26412742664118216,0,0,28,pos,Human_Phenotype_Ontology

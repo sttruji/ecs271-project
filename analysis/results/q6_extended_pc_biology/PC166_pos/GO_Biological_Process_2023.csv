@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Xenobiotic Catabolic Process (GO:0042178),3.343535939158139e-05,26.918367346938776,277.4179092680899,GSTM4;GSTM3;GSTM2;GSTM1,0.038417227940927015,0,0,166,pos,GO_Biological_Process_2023
+2,Positive Regulation Of Cell-Substrate Junction Organization (GO:0150117),7.4029424621569e-05,21.247046186895812,202.0816743097091,DUSP3;NRG1;FERMT2;MAP4K4,0.042529904445091395,0,0,166,pos,GO_Biological_Process_2023
+3,Positive Regulation Of Muscle Cell Differentiation (GO:0051149),0.00041017649693527065,25.111675126903553,195.84402098106767,MAPK11;LAMB2;NRG1,0.11515828719637454,0,0,166,pos,GO_Biological_Process_2023

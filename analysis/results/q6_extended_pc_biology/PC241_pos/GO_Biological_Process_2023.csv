@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Positive Regulation Of Natural Killer Cell Mediated Cytotoxicity Directed Against Tumor Cell Target (GO:0002860),0.0009754681839454337,66.65656565656566,462.10284137848555,PVR;NECTIN2,0.3826357875410372,0,0,241,pos,GO_Biological_Process_2023
+2,Positive Regulation Of Natural Killer Cell Mediated Immune Response To Tumor Cell (GO:0002857),0.0009754681839454337,66.65656565656566,462.10284137848555,PVR;NECTIN2,0.3826357875410372,0,0,241,pos,GO_Biological_Process_2023
+3,Regulation Of Natural Killer Cell Mediated Cytotoxicity Directed Against Tumor Cell Target (GO:0002858),0.0020216133697869413,39.98989898989899,248.09171029141777,PVR;NECTIN2,0.3826357875410372,0,0,241,pos,GO_Biological_Process_2023

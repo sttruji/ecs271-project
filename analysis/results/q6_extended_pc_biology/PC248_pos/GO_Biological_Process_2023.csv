@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Regulation Of Trans-Synaptic Signaling (GO:0099177),0.0004448946011773135,12.607142857142858,97.29780799156961,CACNA1A;GRIK4;EIF4EBP2;NOL3,0.47114338264677497,0,0,248,pos,GO_Biological_Process_2023
+2,Radial Glial Cell Differentiation (GO:0060019),0.0009754681839454337,66.65656565656566,462.10284137848555,HES1;GPR157,0.48765176429863344,0,0,248,pos,GO_Biological_Process_2023
+3,Regulation Of Protein Modification By Small Protein Conjugation Or Removal (GO:1903320),0.0029718848603480213,11.581803982819212,67.38940857682955,EGR1;DCUN1D1;WASHC1,0.48765176429863344,0,0,248,pos,GO_Biological_Process_2023

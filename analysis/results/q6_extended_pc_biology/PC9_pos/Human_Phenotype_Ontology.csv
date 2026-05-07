@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Amyloidosis (HP:0011034),0.0051570205394645754,22.21212121212121,117.00004466783103,GSN;LYZ,0.44757400696621474,0,0,9,pos,Human_Phenotype_Ontology
+2,Abnormality of pyrimidine metabolism (HP:0004353),0.0051570205394645754,22.21212121212121,117.00004466783103,FANCD2;ASL,0.44757400696621474,0,0,9,pos,Human_Phenotype_Ontology
+3,Periodontitis (HP:0000704),0.008366027088182239,16.656565656565657,79.67795051677446,OCRL;ELANE,0.44757400696621474,0,0,9,pos,Human_Phenotype_Ontology

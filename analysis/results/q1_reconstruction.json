@@ -1,0 +1,73 @@
+{
+  "n_donors_total": 803,
+  "n_train": 642,
+  "n_test": 161,
+  "n_genes": 11374,
+  "missing_genes_imputed": 0,
+  "vae": {
+    "mse": 4.408584117889404,
+    "mae": 1.6260952949523926,
+    "r2_overall": -3.2688757516472826,
+    "per_sample_r_mean": -0.009521546662054669,
+    "per_sample_r_med": -0.014224437006754359,
+    "per_gene_r_mean": 0.13464142826784942,
+    "per_gene_r_med": 0.13719255585134693,
+    "per_sample_r_min": -0.41019431060395306,
+    "per_gene_r_min": -0.5481059704089822
+  },
+  "mean_baseline": {
+    "mse": 1.0249654054641724,
+    "mae": 0.8107802867889404,
+    "r2_overall": 0.0,
+    "per_sample_r_mean": 0.0,
+    "per_sample_r_med": 0.0,
+    "per_gene_r_mean": 0.0,
+    "per_gene_r_med": 0.0,
+    "per_sample_r_min": 0.0,
+    "per_gene_r_min": 0.0
+  },
+  "pca_16": {
+    "mse": 0.21166911721229553,
+    "mae": 0.3354117274284363,
+    "r2_overall": 0.7934880748885578,
+    "per_sample_r_mean": 0.852454990873311,
+    "per_sample_r_med": 0.8585805158119965,
+    "per_gene_r_mean": 0.8882474880317853,
+    "per_gene_r_med": 0.9154503284205151,
+    "per_sample_r_min": 0.6660155339978344,
+    "per_gene_r_min": 0.06795226610683261
+  },
+  "pca_50": {
+    "mse": 0.14464952051639557,
+    "mae": 0.2736704349517822,
+    "r2_overall": 0.8588727817529507,
+    "per_sample_r_mean": 0.900797243448918,
+    "per_sample_r_med": 0.9048887589896198,
+    "per_gene_r_mean": 0.9254656950366268,
+    "per_gene_r_med": 0.9468602788694608,
+    "per_sample_r_min": 0.7643093730911326,
+    "per_gene_r_min": 0.08940246303372769
+  },
+  "pca_200": {
+    "mse": 0.11600000411272049,
+    "mae": 0.24213983118534088,
+    "r2_overall": 0.8868243315934998,
+    "per_sample_r_mean": 0.9212992011127503,
+    "per_sample_r_med": 0.9244309719243475,
+    "per_gene_r_mean": 0.9409326559107892,
+    "per_gene_r_med": 0.9593380124967468,
+    "per_sample_r_min": 0.8102259119834058,
+    "per_gene_r_min": 0.3762069136360348
+  },
+  "pca_500": {
+    "mse": 0.10479053854942322,
+    "mae": 0.23239369690418243,
+    "r2_overall": 0.8977610096314831,
+    "per_sample_r_mean": 0.9292051012892211,
+    "per_sample_r_med": 0.932028784650934,
+    "per_gene_r_mean": 0.9472668102969474,
+    "per_gene_r_med": 0.9617325627266262,
+    "per_sample_r_min": 0.8247263195829109,
+    "per_gene_r_min": 0.5994330100323189
+  }
+}

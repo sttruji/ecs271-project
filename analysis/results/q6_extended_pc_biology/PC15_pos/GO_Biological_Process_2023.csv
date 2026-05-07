@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Cell-Substrate Junction Assembly (GO:0007044),7.75242440134287e-06,22.0479375696767,259.44921421372527,DST;TRIP6;LAMC1;FERMT2;PLEC,0.006852678208184725,0,0,15,pos,GO_Biological_Process_2023
+2,Regulation Of Basement Membrane Organization (GO:0110011),9.70634307108318e-06,150.746192893401,1740.0227480112783,LAMB2;LAMB1;LAMC1,0.006852678208184725,0,0,15,pos,GO_Biological_Process_2023
+3,Regulation Of Extracellular Matrix Organization (GO:1903053),7.4029424621569e-05,21.247046186895812,202.0816743097091,LRP1;LAMB2;LAMB1;LAMC1,0.034843182521885147,0,0,15,pos,GO_Biological_Process_2023

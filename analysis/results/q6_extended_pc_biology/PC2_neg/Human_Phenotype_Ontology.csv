@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Abnormality of the heme biosynthetic pathway (HP:0010472),1.0473448502048175e-08,55.63917525773196,1022.3377135407721,HMBS;HBB;HBA2;HBD;HBA1;GATA1,5.247197699526136e-06,0,0,2,neg,Human_Phenotype_Ontology
+2,Abnormality of iron homeostasis (HP:0011031),1.6991156196356266e-06,31.705128205128204,421.21539478257284,TFR2;FTH1;PRF1;HBB;FTL,0.00042562846271872445,0,0,2,neg,Human_Phenotype_Ontology
+3,Abnormality of transition element cation homeostasis (HP:0011030),3.4635138267612733e-06,26.695006747638327,335.64237766536246,TFR2;FTH1;PRF1;HBB;FTL,0.0005784068090691326,0,0,2,neg,Human_Phenotype_Ontology

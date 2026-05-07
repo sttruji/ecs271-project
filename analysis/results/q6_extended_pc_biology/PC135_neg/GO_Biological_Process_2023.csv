@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Receptor-Mediated Endocytosis Of Virus By Host Cell (GO:0019065),0.00011224655254723089,43.059463379260336,391.61775629527256,CTSL;CAV1;TPCN2,0.1580431459865011,0,0,135,neg,GO_Biological_Process_2023
+2,Regulation Of Transforming Growth Factor Beta Production (GO:0071634),0.0005011239651713426,23.178836392034363,176.1280286078286,SERPINF2;FN1;LGALS9,0.1896159713096492,0,0,135,neg,GO_Biological_Process_2023
+3,Positive Regulation Of Cholesterol Efflux (GO:0010875),0.0013185462203513692,15.854394870424793,105.13406751270358,CAV1;APOA1;APOE,0.1896159713096492,0,0,135,neg,GO_Biological_Process_2023

@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Cellular Response To Alcohol (GO:0097306),0.00018485918100710728,10.551282051282051,90.69793638374381,JUP;CTNNA1;AKR1C3;CES1;LRP6,0.19151411152336315,0,0,218,neg,GO_Biological_Process_2023
+2,Bundle Of His cell-Purkinje Myocyte Adhesion Involved In Cell Communication (GO:0086073),0.0009754681839454337,66.65656565656566,462.10284137848555,DSP;JUP,0.2509832219983325,0,0,218,neg,GO_Biological_Process_2023
+3,Interleukin-27-Mediated Signaling Pathway (GO:0070106),0.0009754681839454337,66.65656565656566,462.10284137848555,MX1;OASL,0.2509832219983325,0,0,218,neg,GO_Biological_Process_2023

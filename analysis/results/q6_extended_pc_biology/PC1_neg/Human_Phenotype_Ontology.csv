@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Obstructive lung disease (HP:0006536),0.0013185462203513692,15.854394870424793,105.13406751270358,SERPINA1;NCF2;NCF4,0.1424572292817616,0,0,1,neg,Human_Phenotype_Ontology
+2,Chronic obstructive pulmonary disease (HP:0006510),0.0013185462203513692,15.854394870424793,105.13406751270358,SERPINA1;NCF2;NCF4,0.1424572292817616,0,0,1,neg,Human_Phenotype_Ontology
+3,Hepatosplenomegaly (HP:0001433),0.0019263332020576173,13.690355329949238,85.59397680666795,CSF3R;STXBP2;TALDO1,0.1424572292817616,0,0,1,neg,Human_Phenotype_Ontology

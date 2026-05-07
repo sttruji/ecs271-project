@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Negative Regulation Of Amyloid Precursor Protein Biosynthetic Process (GO:0042985),0.0009754681839454337,66.65656565656566,462.10284137848555,BACE2;AGO2,0.4397910196283923,0,0,237,neg,GO_Biological_Process_2023
+2,Diacylglycerol Biosynthetic Process (GO:0006651),0.0020216133697869413,39.98989898989899,248.09171029141777,GPAM;PLCE1,0.4397910196283923,0,0,237,neg,GO_Biological_Process_2023
+3,Iron-Sulfur Cluster Assembly (GO:0016226),0.002414105915085408,12.548223350253807,75.62094298941223,BOLA1;FDX2;FXN,0.4397910196283923,0,0,237,neg,GO_Biological_Process_2023

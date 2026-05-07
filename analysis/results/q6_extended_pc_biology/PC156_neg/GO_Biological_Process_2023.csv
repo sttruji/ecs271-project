@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Negative Regulation Of Myeloid Cell Apoptotic Process (GO:0033033),0.0009754681839454337,66.65656565656566,462.10284137848555,SELENOS;NOD2,0.33359449487616205,0,0,156,neg,GO_Biological_Process_2023
+2,Regulation Of Macrophage Apoptotic Process (GO:2000109),0.0009754681839454337,66.65656565656566,462.10284137848555,SELENOS;NOD2,0.33359449487616205,0,0,156,neg,GO_Biological_Process_2023
+3,Regulation Of Blood Vessel Remodeling (GO:0060312),0.0009754681839454337,66.65656565656566,462.10284137848555,CST3;NRG1,0.33359449487616205,0,0,156,neg,GO_Biological_Process_2023

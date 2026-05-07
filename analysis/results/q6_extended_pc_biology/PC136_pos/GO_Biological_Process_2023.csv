@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,NADH Metabolic Process (GO:0006734),0.0020216133697869413,39.98989898989899,248.09171029141777,ME1;NUDT17,0.4043956049536402,0,0,136,pos,GO_Biological_Process_2023
+2,Positive Regulation Of Calcium Ion-Dependent Exocytosis (GO:0045956),0.0026777674677022855,33.323232323232325,197.36590289038227,SCAMP5;ZP3,0.4043956049536402,0,0,136,pos,GO_Biological_Process_2023
+3,Regulation Of Dendritic Cell Differentiation (GO:2001198),0.004247232134539841,24.98989898989899,136.4820277236255,TMEM176B;HLA-B,0.4043956049536402,0,0,136,pos,GO_Biological_Process_2023

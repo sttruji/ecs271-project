@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,"Oxidoreductase Activity, Acting On Single Donors With Incorporation Of Molecular Oxygen, Incorporation Of Two Atoms Of Oxygen (GO:0016702)",5.082545165940558e-05,23.74909963985594,234.8100391955592,HAAO;ETHE1;ALOX12;PTGS1,0.013926173754677128,0,0,14,neg,GO_Molecular_Function_2023
+2,Fucose Binding (GO:0042806),0.0020216133697869413,39.98989898989899,248.09171029141777,SELP;ASGR2,0.23274832097278328,0,0,14,neg,GO_Molecular_Function_2023
+3,Carboxylic Ester Hydrolase Activity (GO:0052689),0.003932263879133558,5.102564102564102,28.260755222784233,ALDH2;ESD;PNPLA4;DAGLB;MGLL,0.23274832097278328,0,0,14,neg,GO_Molecular_Function_2023

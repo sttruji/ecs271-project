@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Back pain (HP:0003418),0.0034202318391573132,28.561327561327563,162.17255858986445,HTRA1;TBX6,0.41956579661221377,0,0,13,pos,Human_Phenotype_Ontology
+2,Supernumerary ribs (HP:0005815),0.007218101036314867,18.171717171717173,89.6077061786221,ZBTB16;PTCH2,0.41956579661221377,0,0,13,pos,Human_Phenotype_Ontology
+3,Supernumerary bones of the axial skeleton (HP:0009144),0.008366027088182239,16.656565656565657,79.67795051677446,ZBTB16;PTCH2,0.41956579661221377,0,0,13,pos,Human_Phenotype_Ontology

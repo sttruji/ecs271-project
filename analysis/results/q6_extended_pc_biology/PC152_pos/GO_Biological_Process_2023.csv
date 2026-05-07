@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Negative Regulation Of Leukocyte Degranulation (GO:0043301),5.3162099096467675e-05,60.28934010152284,593.3776232841345,CEACAM1;FCGR2B;HLA-F,0.029425221849894857,0,0,152,pos,GO_Biological_Process_2023
+2,Regulation Of Neutrophil Migration (GO:1902622),5.3162099096467675e-05,60.28934010152284,593.3776232841345,MPP1;SLAMF8;JAM3,0.029425221849894857,0,0,152,pos,GO_Biological_Process_2023
+3,Multicellular Organismal-Level Iron Ion Homeostasis (GO:0060586),0.00020276702349047898,33.48730964467005,284.75776049641166,CYBRD1;HMOX1;NEO1,0.07482103166798675,0,0,152,pos,GO_Biological_Process_2023

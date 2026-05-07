@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Regulation Of T Cell Cytokine Production (GO:0002724),0.0007195272026923491,20.086294416243653,145.36282995258424,TNFSF4;HLA-F;TNFRSF1B,0.42343331863439015,0,0,148,pos,GO_Biological_Process_2023
+2,Regulation Of Natural Killer Cell Cytokine Production (GO:0002727),0.0014535707837741265,49.98989898989899,326.6206097208578,HLA-F;HLA-E,0.42343331863439015,0,0,148,pos,GO_Biological_Process_2023
+3,Positive Regulation Of Natural Killer Cell Cytokine Production (GO:0002729),0.0014535707837741265,49.98989898989899,326.6206097208578,HLA-F;HLA-E,0.42343331863439015,0,0,148,pos,GO_Biological_Process_2023

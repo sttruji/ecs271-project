@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Second-Messenger-Mediated Signaling (GO:0019932),0.005877786338127073,5.921968787515006,30.41863718634327,CNKSR2;POMC;GUCY1A1;RILPL1,0.5203011503982454,0,0,213,neg,GO_Biological_Process_2023
+2,Chondroitin Sulfate Biosynthetic Process (GO:0030206),0.007218101036314867,18.171717171717173,89.6077061786221,CSGALNACT1;CHST13,0.5203011503982454,0,0,213,neg,GO_Biological_Process_2023
+3,Negative Regulation Of Peptidyl-Threonine Phosphorylation (GO:0010801),0.008366027088182239,16.656565656565657,79.67795051677446,SPRED1;DGKQ,0.5203011503982454,0,0,213,neg,GO_Biological_Process_2023

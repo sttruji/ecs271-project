@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Positive Regulation Of Endothelial Cell Development (GO:1901552),0.0009754681839454337,66.65656565656566,462.10284137848555,CLDN5;PROC,0.309314074158966,0,0,91,neg,GO_Biological_Process_2023
+2,Positive Regulation Of Establishment Of Endothelial Barrier (GO:1903142),0.0009754681839454337,66.65656565656566,462.10284137848555,CLDN5;PROC,0.309314074158966,0,0,91,neg,GO_Biological_Process_2023
+3,Positive Regulation Of Sterol Transport (GO:0032373),0.0009754681839454337,66.65656565656566,462.10284137848555,ABCB4;NR1H3,0.309314074158966,0,0,91,neg,GO_Biological_Process_2023

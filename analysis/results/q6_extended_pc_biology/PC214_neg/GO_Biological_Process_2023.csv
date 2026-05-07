@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Negative Regulation Of Leukocyte Activation (GO:0002695),0.0006040394207294829,21.522117476432197,159.51916044937724,FN1;NR1H3;FCGR2B,0.2682537505849943,0,0,214,neg,GO_Biological_Process_2023
+2,Positive Regulation Of Response To Endoplasmic Reticulum Stress (GO:1905898),0.0007195272026923491,20.086294416243653,145.36282995258424,USP13;FCGR2B;BOK,0.2682537505849943,0,0,214,neg,GO_Biological_Process_2023
+3,Negative Regulation Of Lamellipodium Organization (GO:1902744),0.0009754681839454337,66.65656565656566,462.10284137848555,NRG1;ARPIN,0.2682537505849943,0,0,214,neg,GO_Biological_Process_2023

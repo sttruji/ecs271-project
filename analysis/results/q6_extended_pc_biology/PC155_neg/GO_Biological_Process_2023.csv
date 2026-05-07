@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,DNA Methylation Involved In Embryo Development (GO:0043045),0.0009754681839454337,66.65656565656566,462.10284137848555,ZFP57;PICK1,0.44537776359358056,0,0,155,neg,GO_Biological_Process_2023
+2,Positive Regulation Of Aspartic-Type Endopeptidase Activity Involved In Amyloid Precursor Protein Catabolic Process (GO:1902961),0.0014535707837741265,49.98989898989899,326.6206097208578,EFNA1;EFNA3,0.44537776359358056,0,0,155,neg,GO_Biological_Process_2023
+3,Positive Regulation Of Aspartic-Type Peptidase Activity (GO:1905247),0.0020216133697869413,39.98989898989899,248.09171029141777,EFNA1;EFNA3,0.44537776359358056,0,0,155,neg,GO_Biological_Process_2023

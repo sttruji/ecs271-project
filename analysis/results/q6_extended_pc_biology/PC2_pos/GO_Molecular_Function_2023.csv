@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Dynactin Binding (GO:0034452),0.00015320271943439296,37.6751269035533,330.92884130781977,GSK3B;BICD2;SNX6,0.03401100371443524,0,0,2,pos,GO_Molecular_Function_2023
+2,Cysteine-Type Endopeptidase Inhibitor Activity Involved In Apoptotic Process (GO:0043027),0.0008481701801219675,18.82994923857868,133.17348392535672,PRDX3;RPS6KA3;XIAP,0.0721846456119621,0,0,2,pos,GO_Molecular_Function_2023
+3,"Aspartic Endopeptidase Activity, Intramembrane Cleaving (GO:0042500)",0.0009754681839454337,66.65656565656566,462.10284137848555,SPPL2A;PSEN1,0.0721846456119621,0,0,2,pos,GO_Molecular_Function_2023

@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Negative Regulation Of Lymphocyte Proliferation (GO:0050672),4.153860365388976e-05,14.906485671191554,150.38985478925275,TNFRSF13B;GLMN;SFTPD;LILRB2;FCGR2B,0.05600258028628926,0,0,91,pos,GO_Biological_Process_2023
+2,Apical Protein Localization (GO:0045176),7.91555905106562e-05,50.23857868020305,474.45791686900793,MAL;CELSR1;JAM3,0.05600258028628926,0,0,91,pos,GO_Biological_Process_2023
+3,Immune Response-Regulating Cell Surface Receptor Signaling Pathway (GO:0002768),0.00026165809515097364,30.13705583756345,248.5846578261998,FGR;PIGR;LILRB2,0.12341540154620924,0,0,91,pos,GO_Biological_Process_2023

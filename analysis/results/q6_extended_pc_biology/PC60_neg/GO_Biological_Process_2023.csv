@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Positive Regulation Of Execution Phase Of Apoptosis (GO:1900119),0.0020216133697869413,39.98989898989899,248.09171029141777,ZC3H12A;DYNLL1,0.43521842059492954,0,0,60,neg,GO_Biological_Process_2023
+2,Inhibition Of Cysteine-Type Endopeptidase Activity (GO:0097340),0.0020216133697869413,39.98989898989899,248.09171029141777,CAST;CARD16,0.43521842059492954,0,0,60,neg,GO_Biological_Process_2023
+3,Regulation Of Vesicle Fusion (GO:0031338),0.0026777674677022855,33.323232323232325,197.36590289038227,ANXA1;STXBP1,0.43521842059492954,0,0,60,neg,GO_Biological_Process_2023

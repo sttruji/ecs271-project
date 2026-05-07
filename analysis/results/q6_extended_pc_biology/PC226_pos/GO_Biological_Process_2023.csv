@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Positive Regulation Of Amyloid Precursor Protein Catabolic Process (GO:1902993),0.0011471485105092553,16.736040609137056,113.31096080850561,EFNA1;EFNA3;ABCG1,0.4534454470231361,0,0,226,pos,GO_Biological_Process_2023
+2,Positive Regulation Of Aspartic-Type Endopeptidase Activity Involved In Amyloid Precursor Protein Catabolic Process (GO:1902961),0.0014535707837741265,49.98989898989899,326.6206097208578,EFNA1;EFNA3,0.4534454470231361,0,0,226,pos,GO_Biological_Process_2023
+3,Aromatic Amino Acid Transport (GO:0015801),0.0020216133697869413,39.98989898989899,248.09171029141777,SLC25A29;SLC7A8,0.4534454470231361,0,0,226,pos,GO_Biological_Process_2023

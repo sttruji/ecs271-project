@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Regulation Of Cell Adhesion Molecule Production (GO:0060353),1.9269523068842994e-05,100.49238578680203,1091.0444080855816,CAV1;IL1B;NOTCH4,0.018609528038583574,0,0,59,pos,GO_Biological_Process_2023
+2,Regulation Of Epithelial Cell Differentiation (GO:0030856),2.6604042942935772e-05,28.842565597667637,303.8404891137544,KLF7;CAV1;MAFG;APOLD1,0.018609528038583574,0,0,59,pos,GO_Biological_Process_2023
+3,Regulation Of Epidermis Development (GO:0045682),5.3162099096467675e-05,60.28934010152284,593.3776232841345,KLF7;KRT2;MAFG,0.024791258878652758,0,0,59,pos,GO_Biological_Process_2023

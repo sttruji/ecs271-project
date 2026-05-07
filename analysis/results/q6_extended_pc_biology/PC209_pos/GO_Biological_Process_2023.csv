@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Negative Regulation Of Epithelial Cell Migration (GO:0010633),0.000316376872754873,13.913441238564392,112.12252948199962,SVBP;DAB2IP;THBS1;PFN2,0.355040337360369,0,0,209,pos,GO_Biological_Process_2023
+2,Positive Regulation Of Protein Serine/Threonine Kinase Activity (GO:0071902),0.0011567063268796917,5.48592922819727,37.096833699330126,TCL1B;TENM1;CCND1;DAB2IP;CIB1;THBS1,0.355040337360369,0,0,209,pos,GO_Biological_Process_2023
+3,Negative Regulation Of Myeloid Cell Differentiation (GO:0045638),0.0013185462203513692,15.854394870424793,105.13406751270358,MAFB;PTK2B;CIB1,0.355040337360369,0,0,209,pos,GO_Biological_Process_2023

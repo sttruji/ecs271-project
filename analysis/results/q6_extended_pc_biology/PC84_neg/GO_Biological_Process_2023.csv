@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Negative Regulation Of Protein-Containing Complex Disassembly (GO:0043242),5.3162099096467675e-05,60.28934010152284,593.3776232841345,IRAK3;TMEM39A;TNF,0.07628761220343111,0,0,84,neg,GO_Biological_Process_2023
+2,Positive Regulation Of Mononuclear Cell Migration (GO:0071677),0.00024710303456243254,14.945578231292517,124.13356629968176,FPR2;CCR6;S100A14;TNF,0.16895616361809787,0,0,84,neg,GO_Biological_Process_2023
+3,Negative Regulation Of Cytokine Production Involved In Immune Response (GO:0002719),0.0005011239651713426,23.178836392034363,176.1280286078286,IRAK3;FOXP3;TNF,0.16895616361809787,0,0,84,neg,GO_Biological_Process_2023

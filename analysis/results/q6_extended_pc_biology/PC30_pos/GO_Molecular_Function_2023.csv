@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,NADP-retinol Dehydrogenase Activity (GO:0052650),0.0034202318391573132,28.561327561327563,162.17255858986445,AKR1C3;DHRS3,0.3894694341872384,0,0,30,pos,GO_Molecular_Function_2023
+2,"Hydrolase Activity, Acting On Carbon-Nitrogen (But Not Peptide) Bonds, In Cyclic Amides (GO:0016812)",0.0061478754316609515,19.98989898989899,101.78154350719133,DCLRE1B;DPYSL4,0.3894694341872384,0,0,30,pos,GO_Molecular_Function_2023
+3,Protein Heterodimerization Activity (GO:0046982),0.01230008578946816,3.2971761541909457,14.501472143446618,XBP1;ZHX3;ERBB2;TCF4;BCL2L2;BOK,0.3894694341872384,0,0,30,pos,GO_Molecular_Function_2023

@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Antigen Processing And Presentation Of Peptide Antigen Via MHC Class I (GO:0002474),0.0007195272026923491,20.086294416243653,145.36282995258424,ERAP2;HLA-A;B2M,0.29478415494939286,0,0,150,pos,GO_Biological_Process_2023
+2,Antigen Processing And Presentation Of Endogenous Peptide Antigen (GO:0002483),0.0011471485105092553,16.736040609137056,113.31096080850561,ERAP2;HLA-C;HLA-A,0.29478415494939286,0,0,150,pos,GO_Biological_Process_2023
+3,Cellular Response To Low-Density Lipoprotein Particle Stimulus (GO:0071404),0.0013185462203513692,15.854394870424793,105.13406751270358,CD9;ADTRP;CES1,0.29478415494939286,0,0,150,pos,GO_Biological_Process_2023

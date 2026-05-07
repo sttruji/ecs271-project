@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Abnormality of the foot musculature (HP:0001436),9.291744507873701e-06,21.128205128205128,244.79950290336265,DNAJB2;FHL1;PMP22;CRYAB;MYH7,0.004413578641240008,0,0,16,pos,Human_Phenotype_Ontology
+2,Type 1 muscle fiber predominance (HP:0003803),7.91555905106562e-05,50.23857868020305,474.45791686900793,TNNT1;COL6A1;MYH7,0.018799452746280847,0,0,16,pos,Human_Phenotype_Ontology
+3,Foot dorsiflexor weakness (HP:0009027),0.00014220084233688404,17.54835847382431,155.44809947118515,DNAJB2;FHL1;PMP22;CRYAB,0.02251513337000664,0,0,16,pos,Human_Phenotype_Ontology

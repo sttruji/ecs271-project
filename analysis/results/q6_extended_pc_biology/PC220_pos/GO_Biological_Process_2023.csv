@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Regulation Of Ventricular Cardiac Muscle Cell Action Potential (GO:0098911),0.00015320271943439296,37.6751269035533,330.92884130781977,DSP;DSC2;TRPM4,0.17036142401104498,0,0,220,pos,GO_Biological_Process_2023
+2,Bundle Of His cell-Purkinje Myocyte Adhesion Involved In Cell Communication (GO:0086073),0.0009754681839454337,66.65656565656566,462.10284137848555,DSP;DSC2,0.2753673947628902,0,0,220,pos,GO_Biological_Process_2023
+3,Positive Regulation Of Protein Localization To Cilium (GO:1903566),0.0009754681839454337,66.65656565656566,462.10284137848555,EFCAB7;GAS8,0.2753673947628902,0,0,220,pos,GO_Biological_Process_2023

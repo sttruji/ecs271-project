@@ -1,0 +1,13 @@
+dim,direction,library,top_term,top_adj_p
+60,pos,GO_Biological_Process_2023,"mRNA Splicing, Via Spliceosome (GO:0000398)",0.00017500052275769808
+60,pos,KEGG_2021_Human,Spliceosome,0.0003995271899462808
+60,neg,GO_Biological_Process_2023,Cytoplasmic Translation (GO:0002181),6.403739989721589e-83
+60,neg,KEGG_2021_Human,Ribosome,6.148400541524852e-73
+40,pos,GO_Biological_Process_2023,Defense Response To Symbiont (GO:0140546),0.01918397733059742
+40,pos,KEGG_2021_Human,NOD-like receptor signaling pathway,0.9075888225838303
+40,neg,GO_Biological_Process_2023,Regulation Of Cell Migration (GO:0030334),7.93481974330083e-07
+40,neg,KEGG_2021_Human,Antigen processing and presentation,1.5586932445347744e-10
+15,pos,GO_Biological_Process_2023,Macromolecule Biosynthetic Process (GO:0009059),2.747965583327315e-12
+15,pos,KEGG_2021_Human,Ribosome,9.977300928078769e-09
+15,neg,GO_Biological_Process_2023,Defense Response To Symbiont (GO:0140546),0.09677640876212096
+15,neg,KEGG_2021_Human,Salmonella infection,0.03677127238431161

@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Negative Regulation Of Lens Fiber Cell Differentiation (GO:1902747),9.70634307108318e-06,150.746192893401,1740.0227480112783,SPRED2;SPRY2;SPRY1,0.00906631060389063,0,0,186,pos,GO_Biological_Process_2023
+2,Regulation Of Lens Fiber Cell Differentiation (GO:1902746),1.9269523068842994e-05,100.49238578680203,1091.0444080855816,SPRED2;SPRY2;SPRY1,0.00906631060389063,0,0,186,pos,GO_Biological_Process_2023
+3,Negative Regulation Of Epithelial Cell Differentiation (GO:0030857),0.00041017649693527065,25.111675126903553,195.84402098106767,SPRED2;SPRY2;SPRY1,0.12865869453869658,0,0,186,pos,GO_Biological_Process_2023

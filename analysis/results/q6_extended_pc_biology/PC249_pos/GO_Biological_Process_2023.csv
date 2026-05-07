@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Negative Regulation Of Lymphocyte Proliferation (GO:0050672),0.0006068640222899578,11.524781341107872,85.36642728574833,IL4I1;SDC4;CTLA4;FCGR2B,0.1926687605662976,0,0,249,pos,GO_Biological_Process_2023
+2,Regulation Of Adaptive Immune Response (GO:0002819),0.0007195272026923491,20.086294416243653,145.36282995258424,IL4I1;TNFSF4;FCGR2B,0.1926687605662976,0,0,249,pos,GO_Biological_Process_2023
+3,Regulation Of Immunoglobulin Mediated Immune Response (GO:0002889),0.0009754681839454337,66.65656565656566,462.10284137848555,TNFSF4;NECTIN2,0.1926687605662976,0,0,249,pos,GO_Biological_Process_2023

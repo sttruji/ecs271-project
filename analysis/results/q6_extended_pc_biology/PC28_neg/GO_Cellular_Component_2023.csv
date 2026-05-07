@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Organelle Envelope Lumen (GO:0031970),0.004798605118984624,6.293367346938775,33.6029944353692,TUBB2A;AK2;CYCS;COA7,0.5607820348369705,0,0,28,neg,GO_Cellular_Component_2023
+2,Mitochondrial Intermembrane Space (GO:0005758),0.02420123683234315,5.095328228512432,18.96150754157799,AK2;CYCS;COA7,0.5607820348369705,0,0,28,neg,GO_Cellular_Component_2023
+3,Extrinsic Component Of Cytoplasmic Side Of Plasma Membrane (GO:0031234),0.04203162961868534,4.059404582247222,12.865604326296655,BLK;KRAS;RHOA,0.5607820348369705,0,0,28,neg,GO_Cellular_Component_2023

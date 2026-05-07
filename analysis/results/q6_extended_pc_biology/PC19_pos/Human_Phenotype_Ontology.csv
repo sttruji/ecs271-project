@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Abnormality of aromatic amino acid family metabolism (HP:0004338),0.00011224655254723089,43.059463379260336,391.61775629527256,QDPR;SPR;PCBD1,0.038500567523700194,0,0,19,pos,Human_Phenotype_Ontology
+2,Abnormal hemoglobin (HP:0011902),0.000330570754905644,27.395939086294415,219.56995457412373,CYB5A;HBB;HBA2,0.05669288446631794,0,0,19,pos,Human_Phenotype_Ontology
+3,Abnormality of the heme biosynthetic pathway (HP:0010472),0.0006040394207294829,21.522117476432197,159.51916044937724,HBB;HBA2;EPOR,0.06906184043673755,0,0,19,pos,Human_Phenotype_Ontology

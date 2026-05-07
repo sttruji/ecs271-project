@@ -1,0 +1,4 @@
+rank,term,p,z,combined_score,overlap_genes,adj_p,old_p,old_adj_p,pc,direction,library
+1,Hydrogen Peroxide Catabolic Process (GO:0042744),4.146798801190002e-05,25.23469387755102,254.6329194525256,PRDX5;HBB;HBA1;HBQ1,0.04822727005783972,0,0,39,pos,GO_Biological_Process_2023
+2,Cytosolic Pattern Recognition Receptor Signaling Pathway (GO:0002753),0.0015052246919242,15.060913705583756,97.87806321199126,MAVS;CLPB;CGAS,0.39164504965383773,0,0,39,pos,GO_Biological_Process_2023
+3,Oxygen Transport (GO:0015671),0.004247232134539841,24.98989898989899,136.4820277236255,HBB;HBA1,0.39164504965383773,0,0,39,pos,GO_Biological_Process_2023
