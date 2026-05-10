@@ -1,0 +1,78 @@
+{
+  "config": {
+    "tissue": "prostate",
+    "epochs": 300,
+    "lr": 0.001
+  },
+  "fold_results": [
+    {
+      "held_donor": "GTEX-12BJ1",
+      "n_pool": 45,
+      "n_same_donor_in_pool": 12,
+      "rank_first_same": 13,
+      "mean_rank_same_donor": 24.083333333333332,
+      "topK_purity": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "n_paired_train_pairs": 33,
+      "n_extra_bulk": 276
+    },
+    {
+      "held_donor": "GTEX-15CHR",
+      "n_pool": 45,
+      "n_same_donor_in_pool": 7,
+      "rank_first_same": 25,
+      "mean_rank_same_donor": 36.857142857142854,
+      "topK_purity": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "n_paired_train_pairs": 38,
+      "n_extra_bulk": 276
+    },
+    {
+      "held_donor": "GTEX-1HSMQ",
+      "n_pool": 45,
+      "n_same_donor_in_pool": 12,
+      "rank_first_same": 5,
+      "mean_rank_same_donor": 24.166666666666668,
+      "topK_purity": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.2,
+        "10": 0.2
+      },
+      "n_paired_train_pairs": 33,
+      "n_extra_bulk": 276
+    },
+    {
+      "held_donor": "GTEX-1I1GU",
+      "n_pool": 45,
+      "n_same_donor_in_pool": 14,
+      "rank_first_same": 3,
+      "mean_rank_same_donor": 23.928571428571427,
+      "topK_purity": {
+        "1": 0.0,
+        "3": 0.3333333333333333,
+        "5": 0.4,
+        "10": 0.3
+      },
+      "n_paired_train_pairs": 31,
+      "n_extra_bulk": 276
+    }
+  ],
+  "summary": {
+    "mean_top1": 0.0,
+    "mean_top3": 0.08333333333333333,
+    "mean_top5": 0.15000000000000002,
+    "mean_top10": 0.125,
+    "mean_rank_first_same": 11.5,
+    "expected_top1_random": 0.25,
+    "expected_rank1_random": 3.0597756410256407
+  }
+}
