@@ -1,0 +1,82 @@
+{
+  "init_checkpoint": "q20_run13_melanoma_in_train.pt",
+  "n_paired_donors": 7,
+  "n_reps_per_donor": 10,
+  "cells_per_rep": 100,
+  "epochs_ft": 80,
+  "lr_ft": 0.0001,
+  "lam_paired": 5.0,
+  "fold_results": [
+    {
+      "held_out": "YUALOE",
+      "rank_first_same_in_70_pool": 61,
+      "top1_purity": 0.0,
+      "top5_purity": 0.0,
+      "top10_purity": 0.0,
+      "mean_rank_same_donor": 65.5,
+      "flipSC_to_bulk_rank": 5
+    },
+    {
+      "held_out": "YUFURL",
+      "rank_first_same_in_70_pool": 21,
+      "top1_purity": 0.0,
+      "top5_purity": 0.0,
+      "top10_purity": 0.0,
+      "mean_rank_same_donor": 25.5,
+      "flipSC_to_bulk_rank": 3
+    },
+    {
+      "held_out": "YUHERN",
+      "rank_first_same_in_70_pool": 10,
+      "top1_purity": 0.0,
+      "top5_purity": 0.0,
+      "top10_purity": 0.1,
+      "mean_rank_same_donor": 15.1,
+      "flipSC_to_bulk_rank": 3
+    },
+    {
+      "held_out": "YUHONEY",
+      "rank_first_same_in_70_pool": 29,
+      "top1_purity": 0.0,
+      "top5_purity": 0.0,
+      "top10_purity": 0.0,
+      "mean_rank_same_donor": 37.1,
+      "flipSC_to_bulk_rank": 4
+    },
+    {
+      "held_out": "YUNANCY",
+      "rank_first_same_in_70_pool": 13,
+      "top1_purity": 0.0,
+      "top5_purity": 0.0,
+      "top10_purity": 0.0,
+      "mean_rank_same_donor": 31.5,
+      "flipSC_to_bulk_rank": 2
+    },
+    {
+      "held_out": "YUROD",
+      "rank_first_same_in_70_pool": 21,
+      "top1_purity": 0.0,
+      "top5_purity": 0.0,
+      "top10_purity": 0.0,
+      "mean_rank_same_donor": 26.9,
+      "flipSC_to_bulk_rank": 3
+    },
+    {
+      "held_out": "YUTORY",
+      "rank_first_same_in_70_pool": 20,
+      "top1_purity": 0.0,
+      "top5_purity": 0.0,
+      "top10_purity": 0.0,
+      "mean_rank_same_donor": 25.4,
+      "flipSC_to_bulk_rank": 5
+    }
+  ],
+  "summary": {
+    "mean_top1": 0.0,
+    "mean_top5": 0.0,
+    "mean_top10": 0.014285714285714287,
+    "mean_rank_first_same": 25.0,
+    "mean_rank_all_same": 32.42857142857143,
+    "mean_flipSC_to_bulk_rank": 3.5714285714285716
+  }
+}

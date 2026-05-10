@@ -10,6 +10,9 @@ analysis/results/*.pt
 analysis/results/*.npy
 analysis/results/*.npz
 analysis/results/pipeline_vae/
+analysis/results/q20_disentangled/*.pt
+analysis/results/q20_disentangled/*.log
+analysis/results/q20_disentangled/q20_run*.json
 
 # OS/editor cruft
 .DS_Store

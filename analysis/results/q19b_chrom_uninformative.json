@@ -1,0 +1,12 @@
+{
+  "n_expressed_mapped": 11361,
+  "n_genome_annotated": 78691,
+  "chi2": 661.0450209442456,
+  "df": 23,
+  "p_value": 7.013888796787758e-125,
+  "cramers_v": 0.24135475291725564,
+  "obs_over_exp_median": 0.9281434823483435,
+  "obs_over_exp_iqr": 0.27270694890583613,
+  "obs_over_exp_max_abs_deviation": 0.9175426794254362,
+  "interpretation": "Even when chi-square rejects H0 (n is large), the per-chrom observed/expected ratio lives close to 1.0 \u2014 the chromosome view recapitulates genomic gene density, not blood biology."
+}
