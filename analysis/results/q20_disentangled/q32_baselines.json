@@ -1,0 +1,178 @@
+{
+  "breast": {
+    "n_paired_donors": 3,
+    "n_pool": 19,
+    "n_same_in_pool_avg": 6.333333333333333,
+    "raw_cosine": {
+      "mean_rank_first_same": 2.0,
+      "mean_top1": 0.6666666666666666,
+      "mean_top3": 0.3333333333333333,
+      "mean_top5": 0.4000000000000001,
+      "mean_top10": 0.3333333333333333
+    },
+    "pca50": {
+      "mean_rank_first_same": 2.6666666666666665,
+      "mean_top1": 0.3333333333333333,
+      "mean_top3": 0.3333333333333333,
+      "mean_top5": 0.3333333333333333,
+      "mean_top10": 0.3333333333333333
+    },
+    "random_top1": 0.3333333333333333,
+    "random_rank1": 2.1
+  },
+  "esophagusmucosa": {
+    "n_paired_donors": 3,
+    "n_pool": 36,
+    "n_same_in_pool_avg": 12.0,
+    "raw_cosine": {
+      "mean_rank_first_same": 3.6666666666666665,
+      "mean_top1": 0.3333333333333333,
+      "mean_top3": 0.2222222222222222,
+      "mean_top5": 0.3333333333333333,
+      "mean_top10": 0.3
+    },
+    "pca50": {
+      "mean_rank_first_same": 2.3333333333333335,
+      "mean_top1": 0.0,
+      "mean_top3": 0.3333333333333333,
+      "mean_top5": 0.26666666666666666,
+      "mean_top10": 0.3
+    },
+    "random_top1": 0.3333333333333333,
+    "random_rank1": 1.961038961038961
+  },
+  "esophagusmuscularis": {
+    "n_paired_donors": 3,
+    "n_pool": 34,
+    "n_same_in_pool_avg": 11.333333333333334,
+    "raw_cosine": {
+      "mean_rank_first_same": 1.3333333333333333,
+      "mean_top1": 0.6666666666666666,
+      "mean_top3": 0.4444444444444444,
+      "mean_top5": 0.4000000000000001,
+      "mean_top10": 0.4666666666666666
+    },
+    "pca50": {
+      "mean_rank_first_same": 1.0,
+      "mean_top1": 1.0,
+      "mean_top3": 0.7777777777777777,
+      "mean_top5": 0.7999999999999999,
+      "mean_top10": 0.6
+    },
+    "random_top1": 0.3333333333333333,
+    "random_rank1": 1.9230769230769231
+  },
+  "heart": {
+    "n_paired_donors": 3,
+    "n_pool": 34,
+    "n_same_in_pool_avg": 11.333333333333334,
+    "raw_cosine": {
+      "mean_rank_first_same": 2.0,
+      "mean_top1": 0.3333333333333333,
+      "mean_top3": 0.3333333333333333,
+      "mean_top5": 0.3333333333333333,
+      "mean_top10": 0.3333333333333333
+    },
+    "pca50": {
+      "mean_rank_first_same": 1.3333333333333333,
+      "mean_top1": 0.6666666666666666,
+      "mean_top3": 0.5555555555555555,
+      "mean_top5": 0.5333333333333333,
+      "mean_top10": 0.3
+    },
+    "random_top1": 0.3333333333333333,
+    "random_rank1": 1.9802197802197803
+  },
+  "lung": {
+    "n_paired_donors": 3,
+    "n_pool": 40,
+    "n_same_in_pool_avg": 13.333333333333334,
+    "raw_cosine": {
+      "mean_rank_first_same": 2.3333333333333335,
+      "mean_top1": 0.6666666666666666,
+      "mean_top3": 0.3333333333333333,
+      "mean_top5": 0.39999999999999997,
+      "mean_top10": 0.3333333333333333
+    },
+    "pca50": {
+      "mean_rank_first_same": 3.3333333333333335,
+      "mean_top1": 0.6666666666666666,
+      "mean_top3": 0.3333333333333333,
+      "mean_top5": 0.4000000000000001,
+      "mean_top10": 0.3
+    },
+    "random_top1": 0.3333333333333333,
+    "random_rank1": 1.9435897435897436
+  },
+  "prostate": {
+    "n_paired_donors": 4,
+    "n_pool": 45,
+    "n_same_in_pool_avg": 11.25,
+    "raw_cosine": {
+      "mean_rank_first_same": 6.25,
+      "mean_top1": 0.5,
+      "mean_top3": 0.3333333333333333,
+      "mean_top5": 0.25,
+      "mean_top10": 0.275
+    },
+    "pca50": {
+      "mean_rank_first_same": 6.25,
+      "mean_top1": 0.25,
+      "mean_top3": 0.3333333333333333,
+      "mean_top5": 0.4,
+      "mean_top10": 0.32499999999999996
+    },
+    "random_top1": 0.25,
+    "random_rank1": 3.0597756410256407
+  },
+  "skeletalmuscle": {
+    "n_paired_donors": 3,
+    "n_pool": 30,
+    "n_same_in_pool_avg": 10.0,
+    "raw_cosine": {
+      "mean_rank_first_same": 1.6666666666666667,
+      "mean_top1": 0.3333333333333333,
+      "mean_top3": 0.3333333333333333,
+      "mean_top5": 0.4000000000000001,
+      "mean_top10": 0.3666666666666667
+    },
+    "pca50": {
+      "mean_rank_first_same": 1.6666666666666667,
+      "mean_top1": 0.6666666666666666,
+      "mean_top3": 0.5555555555555555,
+      "mean_top5": 0.4666666666666666,
+      "mean_top10": 0.3666666666666667
+    },
+    "random_top1": 0.3333333333333333,
+    "random_rank1": 1.962962962962963
+  },
+  "skin": {
+    "n_paired_donors": 2,
+    "n_pool": 23,
+    "n_same_in_pool_avg": 9.0,
+    "raw_cosine": {
+      "mean_rank_first_same": 9.5,
+      "mean_top1": 0.5,
+      "mean_top3": 0.5,
+      "mean_top5": 0.5,
+      "mean_top10": 0.45
+    },
+    "pca50": {
+      "mean_rank_first_same": 1.5,
+      "mean_top1": 0.5,
+      "mean_top3": 0.6666666666666666,
+      "mean_top5": 0.6000000000000001,
+      "mean_top10": 0.35
+    },
+    "random_top1": 0.3913043478260869,
+    "random_rank1": 3.9019607843137254
+  },
+  "_overall": {
+    "raw_top1": 0.5,
+    "pca_top1": 0.5104166666666666,
+    "random_top1": 0.33016304347826086,
+    "raw_rank_first_same": 3.59375,
+    "pca_rank_first_same": 2.5104166666666665,
+    "random_rank_first_same": 2.354078099528467
+  }
+}
