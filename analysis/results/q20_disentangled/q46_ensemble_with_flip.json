@@ -1,0 +1,184 @@
+{
+  "best_with_flip_mandatory": {
+    "methods": [
+      "spearman",
+      "ftest_int_pca50",
+      "cca_5",
+      "vae_flip"
+    ],
+    "n_methods": 4,
+    "top1": 0.6666666666666666,
+    "top3": 0.5555555555555555,
+    "rank1": 3.25
+  },
+  "best_with_both_flip_and_latent": {
+    "methods": [
+      "pca50",
+      "ftest_int_pca50",
+      "cca_5",
+      "vae_flip",
+      "vae_latent"
+    ],
+    "n_methods": 5,
+    "top1": 0.6666666666666666,
+    "top3": 0.5694444444444444,
+    "rank1": 3.4166666666666665
+  },
+  "all_with_flip": [
+    {
+      "methods": [
+        "spearman",
+        "ftest_int_pca50",
+        "cca_5",
+        "vae_flip"
+      ],
+      "n_methods": 4,
+      "top1": 0.6666666666666666,
+      "top3": 0.5555555555555555,
+      "rank1": 3.25
+    },
+    {
+      "methods": [
+        "pca50",
+        "ftest_int_pca50",
+        "cca_5",
+        "vae_flip",
+        "vae_latent"
+      ],
+      "n_methods": 5,
+      "top1": 0.6666666666666666,
+      "top3": 0.5694444444444444,
+      "rank1": 3.4166666666666665
+    },
+    {
+      "methods": [
+        "raw_cosine",
+        "pca50",
+        "spearman",
+        "ftest_int_pca50",
+        "cca_5",
+        "vae_flip",
+        "vae_latent"
+      ],
+      "n_methods": 7,
+      "top1": 0.6666666666666666,
+      "top3": 0.5277777777777778,
+      "rank1": 3.375
+    },
+    {
+      "methods": [
+        "raw_cosine",
+        "ftest_int_pca50",
+        "cca_5",
+        "vae_flip"
+      ],
+      "n_methods": 4,
+      "top1": 0.625,
+      "top3": 0.5416666666666666,
+      "rank1": 3.3333333333333335
+    },
+    {
+      "methods": [
+        "raw_cosine",
+        "spearman",
+        "ftest_int_pca50",
+        "cca_5",
+        "vae_flip"
+      ],
+      "n_methods": 5,
+      "top1": 0.625,
+      "top3": 0.5694444444444444,
+      "rank1": 3.125
+    },
+    {
+      "methods": [
+        "raw_cosine",
+        "ftest_int_pca50",
+        "cca_5",
+        "vae_flip",
+        "vae_latent"
+      ],
+      "n_methods": 5,
+      "top1": 0.625,
+      "top3": 0.5694444444444443,
+      "rank1": 3.4583333333333335
+    },
+    {
+      "methods": [
+        "spearman",
+        "ftest_int_pca50",
+        "cca_5",
+        "vae_flip",
+        "vae_latent"
+      ],
+      "n_methods": 5,
+      "top1": 0.625,
+      "top3": 0.5555555555555555,
+      "rank1": 3.5
+    },
+    {
+      "methods": [
+        "raw_cosine",
+        "pca50",
+        "spearman",
+        "ftest_int_pca50",
+        "cca_5",
+        "vae_flip"
+      ],
+      "n_methods": 6,
+      "top1": 0.625,
+      "top3": 0.5555555555555555,
+      "rank1": 2.8333333333333335
+    },
+    {
+      "methods": [
+        "raw_cosine",
+        "pca50",
+        "ftest_int_pca50",
+        "cca_5",
+        "vae_flip",
+        "vae_latent"
+      ],
+      "n_methods": 6,
+      "top1": 0.625,
+      "top3": 0.5555555555555555,
+      "rank1": 3.4166666666666665
+    },
+    {
+      "methods": [
+        "raw_cosine",
+        "spearman",
+        "ftest_int_pca50",
+        "cca_5",
+        "vae_flip",
+        "vae_latent"
+      ],
+      "n_methods": 6,
+      "top1": 0.625,
+      "top3": 0.5277777777777777,
+      "rank1": 3.4166666666666665
+    },
+    {
+      "methods": [
+        "raw_cosine",
+        "cca_5",
+        "vae_flip"
+      ],
+      "n_methods": 3,
+      "top1": 0.5833333333333334,
+      "top3": 0.40277777777777773,
+      "rank1": 3.5416666666666665
+    },
+    {
+      "methods": [
+        "spearman",
+        "ftest_int_pca50",
+        "vae_flip"
+      ],
+      "n_methods": 3,
+      "top1": 0.5833333333333334,
+      "top3": 0.5277777777777778,
+      "rank1": 3.4166666666666665
+    }
+  ]
+}
