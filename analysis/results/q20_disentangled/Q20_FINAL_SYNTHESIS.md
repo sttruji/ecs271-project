@@ -1,14 +1,13 @@
-# Q20 — Final synthesis across 22 architectural variants
+# Q20 — Final synthesis across 26 experiments
 
-**Date:** 2026-05-10. **Conclusion:** at the available dataset scale, no learned encoder beats simple cosine similarity for donor-faithful cross-modality nearest-neighbor matching.
+**Date:** 2026-05-10. **Updated 2026-05-10 with Q35-Q39 results — the ensemble of small linear methods (PCA + CCA-5 + F-test) DOES beat naive baselines.** Best Test 2 top-1: **0.615 (ensemble)** vs random 0.32 vs raw cosine 0.50 vs best VAE 0.33.
 
 ## The headline numbers (Eraslan paired Test 2: 16 donors × 8 tissues, 24 LOO folds)
 
-| Method | Top-1 | Top-3 | Rank of first same-donor | Wins (top-1=1.0) |
+| Method | Top-1 | Top-3 | Rank-first | Wins (top-1=1.0) |
 |---|---:|---:|---:|---:|
-| **Raw cosine — no model at all** | **0.500** | — | 3.59 | 12/24 |
-| **PCA-50 — no model at all** | **0.510** | — | 2.51 | 12/24 |
 | Random baseline | 0.324 | 0.324 | 2.32 | 8/24 |
+| **Deep-VAE family (Runs 14-22)** | | | | |
 | Run 14 (baseline VAE flip) | 0.292 | 0.250 | 4.62 | 7/24 |
 | Run 15 (+ z_bio matching) | 0.333 | 0.264 | 4.29 | 8/24 |
 | Run 16 (+ InfoNCE on decoded) | 0.125 | 0.167 | 5.46 | 3/24 |
@@ -17,8 +16,16 @@
 | Run 19 (+ 4413 GTEx donors)¹ | killed | — | — | — |
 | Run 20 (single-tissue prostate) | 0.000 | 0.083 | 11.50 | 0/4 |
 | Run 21 (pretrain + fine-tune) | 0.000 | 0.250 | 8.25 | 0/4 |
-| **Q33 (skip flip, latent NN)** | **0.208** | 0.306 | 5.58 | 5/24 |
+| Q33 (skip flip, latent NN) | 0.208 | 0.306 | 5.58 | 5/24 |
 | Run 22 (contrastive embedding) | 0.292 | 0.250 | 7.42 | 8/24 |
+| **No-training baselines (Q32, Q35)** | | | | |
+| Raw cosine — no model | 0.500 | 0.354 | 3.59 | 12/24 |
+| PCA-50 — no model | 0.510 | 0.486 | 2.51 | 12/24 |
+| Spearman | 0.458 | 0.396 | 3.72 | — |
+| F-test intersect + PCA-50 | 0.510 | 0.538 | 3.42 | — |
+| **Small supervised methods (Q36, Q39)** | | | | |
+| **CCA-5** | **0.604** | 0.486 | 4.09 | — |
+| **Ensemble of 5 methods (Q39)** | **0.615** | **0.566** | **3.03** | — |
 
 ¹ Run 19 was killed mid-training when we pivoted to single-tissue.
 
@@ -64,12 +71,14 @@ Two paths the architecture would need to make learning beneficial:
 
 ## Practical recommendation for the proposal write-up
 
-The cleanest paper would be:
-1. **Lead with the negative result**: "Naive cosine baselines beat 8 learned-model variants at donor-faithful cross-modality NN at the available data scale (Eraslan, 16 donors)."
-2. **Show the architecture works at cluster-level disentanglement** (the Run 10 result on HCA blood: 100% modality cluster flip, 0.78 round-trip Pearson, 0.95 z_bio cycle).
-3. **Identify the data threshold**: "Cross-modality donor identity learning would require ≥ N donors per tissue; current public datasets are below this threshold."
+Updated story after Q35-Q39:
+1. **Lead with the architectural finding**: deep-VAE flip-and-decode methods (8 variants tested) underperform simple linear baselines for donor-faithful cross-modality NN at small data scale.
+2. **Show the small-supervised win**: a 5-component CCA explicitly aligns paired modalities (top-1 = 0.604), and an average-rank ensemble of 5 simple methods (PCA + CCA-5 + F-test gene selection + cosine + Spearman) reaches **top-1 = 0.615** — nearly 2× the best deep VAE.
+3. **Per-tissue: ensemble hits 100% top-1 on 2 tissues** (esophagus muscularis, skeletal muscle), 75% on prostate, 67% on lung/heart.
+4. **The disentangled VAE still has a use**: cluster-level modality integration (Run 10: 100% modality flip, 0.95 z_bio cycle, 0.78 round-trip). It just isn't the right tool for per-donor faithful translation at this scale.
+5. **The right architecture for this regime is small + linear + ensembled**, not deep + nonlinear.
 
-This is a methodologically honest story. The proposal asked a hard question; we answered "the data isn't there yet to learn this; here's what is and isn't possible at current scale."
+The proposal's research question is now answered cleanly: the metadata-flip framework is achievable, but with an ensemble of small linear methods (CCA being the key new ingredient), not the SAMS-VAE family.
 
 ## Files
 
