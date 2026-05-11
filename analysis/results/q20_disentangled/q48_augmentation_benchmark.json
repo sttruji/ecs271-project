@@ -1,0 +1,31 @@
+{
+  "summary": {
+    "A_real_bulk_only": {
+      "top1": 1.0,
+      "top3": 1.0,
+      "n_train_extra": 0
+    },
+    "B_real_bulk_plus_raw_sn": {
+      "top1": 0.8478260869565217,
+      "top3": 1.0,
+      "n_train_extra": 261
+    },
+    "C_real_bulk_plus_flipped_sn": {
+      "top1": 0.8586956521739131,
+      "top3": 0.9891304347826086,
+      "n_train_extra": 261
+    }
+  },
+  "n_bulk": 92,
+  "n_sn": 261,
+  "tissues": [
+    "breast",
+    "esophagusmucosa",
+    "esophagusmuscularis",
+    "heart",
+    "lung",
+    "prostate",
+    "skeletalmuscle",
+    "skin"
+  ]
+}
