@@ -1,0 +1,81 @@
+{
+  "baseline": {
+    "name": "Logistic Regression on GTEx bulk, applied DIRECTLY to sn pseudobulks",
+    "sn_acc": 0.31417624521072796,
+    "sn_bal_acc": 0.33809961150745577,
+    "sn_top3": 0.5440613026819924
+  },
+  "vae_flip": {
+    "name": "Same classifier, applied to VAE-flipped (sn -> bulk) pseudobulks",
+    "sn_acc": 0.2950191570881226,
+    "sn_bal_acc": 0.28774509803921566,
+    "sn_top3": 0.632183908045977
+  },
+  "sanity": {
+    "eraslan_bulk_acc": 1.0,
+    "eraslan_bulk_bal_acc": 1.0,
+    "classifier_train_acc": 1.0
+  },
+  "per_tissue": {
+    "breast": {
+      "n_sn": 19,
+      "direct": 0.5263157894736842,
+      "flipped": 0.0,
+      "delta": -0.5263157894736842
+    },
+    "esophagusmucosa": {
+      "n_sn": 36,
+      "direct": 0.2222222222222222,
+      "flipped": 1.0,
+      "delta": 0.7777777777777778
+    },
+    "esophagusmuscularis": {
+      "n_sn": 34,
+      "direct": 0.029411764705882353,
+      "flipped": 0.0,
+      "delta": -0.029411764705882353
+    },
+    "heart": {
+      "n_sn": 34,
+      "direct": 0.29411764705882354,
+      "flipped": 0.23529411764705882,
+      "delta": -0.05882352941176472
+    },
+    "lung": {
+      "n_sn": 40,
+      "direct": 0.125,
+      "flipped": 0.0,
+      "delta": -0.125
+    },
+    "prostate": {
+      "n_sn": 45,
+      "direct": 0.4888888888888889,
+      "flipped": 0.06666666666666667,
+      "delta": -0.4222222222222222
+    },
+    "skeletalmuscle": {
+      "n_sn": 30,
+      "direct": 0.36666666666666664,
+      "flipped": 1.0,
+      "delta": 0.6333333333333333
+    },
+    "skin": {
+      "n_sn": 23,
+      "direct": 0.6521739130434783,
+      "flipped": 0.0,
+      "delta": -0.6521739130434783
+    }
+  },
+  "tissues": [
+    "breast",
+    "esophagusmucosa",
+    "esophagusmuscularis",
+    "heart",
+    "lung",
+    "prostate",
+    "skeletalmuscle",
+    "skin"
+  ],
+  "n_train_bulk": 4413,
+  "n_sn": 261
+}

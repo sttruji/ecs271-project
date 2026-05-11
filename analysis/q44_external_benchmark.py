@@ -118,7 +118,7 @@ def main():
     train_bulk_mask = ~bulk_is_eraslan  # use the 4413 extra GTEx donors
     print(f"\n=== Training tissue classifier on {train_bulk_mask.sum()} GTEx bulk samples ===")
     y_train = np.array([tissue_to_idx[t] for t in bulk_tissue[train_bulk_mask]])
-    clf = LogisticRegression(max_iter=2000, multi_class="multinomial", C=1.0, n_jobs=-1)
+    clf = LogisticRegression(max_iter=2000, C=1.0, n_jobs=-1)
     clf.fit(bulk_x[train_bulk_mask], y_train)
     train_acc = clf.score(bulk_x[train_bulk_mask], y_train)
     print(f"  classifier train acc: {train_acc:.3f}")
