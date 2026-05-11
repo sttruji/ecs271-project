@@ -1,0 +1,465 @@
+{
+  "summary": {
+    "breast": {
+      "n_paired": 3,
+      "n_pool": 19,
+      "raw_cosine": {
+        "mean_rank_first_same": 2.0,
+        "mean_top1": 0.6666666666666666,
+        "mean_top3": 0.3333333333333333,
+        "mean_top5": 0.4000000000000001,
+        "mean_top10": 0.3333333333333333
+      },
+      "pca50": {
+        "mean_rank_first_same": 2.6666666666666665,
+        "mean_top1": 0.3333333333333333,
+        "mean_top3": 0.3333333333333333,
+        "mean_top5": 0.3333333333333333,
+        "mean_top10": 0.3333333333333333
+      },
+      "spearman": {
+        "mean_rank_first_same": 2.0,
+        "mean_top1": 0.6666666666666666,
+        "mean_top3": 0.3333333333333333,
+        "mean_top5": 0.4000000000000001,
+        "mean_top10": 0.3333333333333333
+      },
+      "ftest_int_pca50": {
+        "mean_rank_first_same": 2.0,
+        "mean_top1": 0.3333333333333333,
+        "mean_top3": 0.3333333333333333,
+        "mean_top5": 0.3333333333333333,
+        "mean_top10": 0.3666666666666667
+      },
+      "cca_5": {
+        "mean_rank_first_same": 3.3333333333333335,
+        "mean_top1": 0.6666666666666666,
+        "mean_top3": 0.3333333333333333,
+        "mean_top5": 0.3333333333333333,
+        "mean_top10": 0.3666666666666667
+      },
+      "ENS_avg_rank_5": {
+        "mean_rank_first_same": 2.3333333333333335,
+        "mean_top1": 0.0,
+        "mean_top3": 0.3333333333333333,
+        "mean_top5": 0.39999999999999997,
+        "mean_top10": 0.3
+      },
+      "ENS_avg_rank_top3": {
+        "mean_rank_first_same": 3.0,
+        "mean_top1": 0.0,
+        "mean_top3": 0.2222222222222222,
+        "mean_top5": 0.3333333333333333,
+        "mean_top10": 0.39999999999999997
+      }
+    },
+    "esophagusmucosa": {
+      "n_paired": 3,
+      "n_pool": 36,
+      "raw_cosine": {
+        "mean_rank_first_same": 3.6666666666666665,
+        "mean_top1": 0.3333333333333333,
+        "mean_top3": 0.2222222222222222,
+        "mean_top5": 0.3333333333333333,
+        "mean_top10": 0.3
+      },
+      "pca50": {
+        "mean_rank_first_same": 2.3333333333333335,
+        "mean_top1": 0.0,
+        "mean_top3": 0.3333333333333333,
+        "mean_top5": 0.26666666666666666,
+        "mean_top10": 0.3
+      },
+      "spearman": {
+        "mean_rank_first_same": 3.0,
+        "mean_top1": 0.3333333333333333,
+        "mean_top3": 0.3333333333333333,
+        "mean_top5": 0.3333333333333333,
+        "mean_top10": 0.3
+      },
+      "ftest_int_pca50": {
+        "mean_rank_first_same": 2.3333333333333335,
+        "mean_top1": 0.3333333333333333,
+        "mean_top3": 0.4444444444444444,
+        "mean_top5": 0.39999999999999997,
+        "mean_top10": 0.39999999999999997
+      },
+      "cca_5": {
+        "mean_rank_first_same": 1.0,
+        "mean_top1": 1.0,
+        "mean_top3": 0.7777777777777777,
+        "mean_top5": 0.7333333333333334,
+        "mean_top10": 0.5333333333333333
+      },
+      "ENS_avg_rank_5": {
+        "mean_rank_first_same": 2.0,
+        "mean_top1": 0.3333333333333333,
+        "mean_top3": 0.4444444444444444,
+        "mean_top5": 0.4000000000000001,
+        "mean_top10": 0.4000000000000001
+      },
+      "ENS_avg_rank_top3": {
+        "mean_rank_first_same": 2.0,
+        "mean_top1": 0.3333333333333333,
+        "mean_top3": 0.5555555555555555,
+        "mean_top5": 0.6000000000000001,
+        "mean_top10": 0.4666666666666666
+      }
+    },
+    "esophagusmuscularis": {
+      "n_paired": 3,
+      "n_pool": 34,
+      "raw_cosine": {
+        "mean_rank_first_same": 1.3333333333333333,
+        "mean_top1": 0.6666666666666666,
+        "mean_top3": 0.4444444444444444,
+        "mean_top5": 0.4000000000000001,
+        "mean_top10": 0.4666666666666666
+      },
+      "pca50": {
+        "mean_rank_first_same": 1.0,
+        "mean_top1": 1.0,
+        "mean_top3": 0.7777777777777777,
+        "mean_top5": 0.7999999999999999,
+        "mean_top10": 0.6
+      },
+      "spearman": {
+        "mean_rank_first_same": 1.3333333333333333,
+        "mean_top1": 0.6666666666666666,
+        "mean_top3": 0.5555555555555555,
+        "mean_top5": 0.4000000000000001,
+        "mean_top10": 0.43333333333333335
+      },
+      "ftest_int_pca50": {
+        "mean_rank_first_same": 1.0,
+        "mean_top1": 1.0,
+        "mean_top3": 0.8888888888888888,
+        "mean_top5": 0.8666666666666667,
+        "mean_top10": 0.7666666666666666
+      },
+      "cca_5": {
+        "mean_rank_first_same": 7.333333333333333,
+        "mean_top1": 0.3333333333333333,
+        "mean_top3": 0.3333333333333333,
+        "mean_top5": 0.19999999999999998,
+        "mean_top10": 0.13333333333333333
+      },
+      "ENS_avg_rank_5": {
+        "mean_rank_first_same": 1.0,
+        "mean_top1": 1.0,
+        "mean_top3": 0.7777777777777777,
+        "mean_top5": 0.6666666666666666,
+        "mean_top10": 0.5666666666666667
+      },
+      "ENS_avg_rank_top3": {
+        "mean_rank_first_same": 1.0,
+        "mean_top1": 1.0,
+        "mean_top3": 0.7777777777777777,
+        "mean_top5": 0.8000000000000002,
+        "mean_top10": 0.6666666666666666
+      }
+    },
+    "heart": {
+      "n_paired": 3,
+      "n_pool": 34,
+      "raw_cosine": {
+        "mean_rank_first_same": 2.0,
+        "mean_top1": 0.3333333333333333,
+        "mean_top3": 0.3333333333333333,
+        "mean_top5": 0.3333333333333333,
+        "mean_top10": 0.3333333333333333
+      },
+      "pca50": {
+        "mean_rank_first_same": 1.3333333333333333,
+        "mean_top1": 0.6666666666666666,
+        "mean_top3": 0.5555555555555555,
+        "mean_top5": 0.5333333333333333,
+        "mean_top10": 0.3
+      },
+      "spearman": {
+        "mean_rank_first_same": 1.6666666666666667,
+        "mean_top1": 0.3333333333333333,
+        "mean_top3": 0.3333333333333333,
+        "mean_top5": 0.3333333333333333,
+        "mean_top10": 0.3666666666666667
+      },
+      "ftest_int_pca50": {
+        "mean_rank_first_same": 1.6666666666666667,
+        "mean_top1": 0.3333333333333333,
+        "mean_top3": 0.6666666666666666,
+        "mean_top5": 0.6,
+        "mean_top10": 0.6333333333333333
+      },
+      "cca_5": {
+        "mean_rank_first_same": 1.0,
+        "mean_top1": 1.0,
+        "mean_top3": 0.5555555555555555,
+        "mean_top5": 0.5333333333333333,
+        "mean_top10": 0.5
+      },
+      "ENS_avg_rank_5": {
+        "mean_rank_first_same": 1.3333333333333333,
+        "mean_top1": 0.6666666666666666,
+        "mean_top3": 0.6666666666666666,
+        "mean_top5": 0.5333333333333333,
+        "mean_top10": 0.5
+      },
+      "ENS_avg_rank_top3": {
+        "mean_rank_first_same": 1.6666666666666667,
+        "mean_top1": 0.6666666666666666,
+        "mean_top3": 0.6666666666666666,
+        "mean_top5": 0.6666666666666666,
+        "mean_top10": 0.5666666666666667
+      }
+    },
+    "lung": {
+      "n_paired": 3,
+      "n_pool": 40,
+      "raw_cosine": {
+        "mean_rank_first_same": 2.3333333333333335,
+        "mean_top1": 0.6666666666666666,
+        "mean_top3": 0.3333333333333333,
+        "mean_top5": 0.39999999999999997,
+        "mean_top10": 0.3333333333333333
+      },
+      "pca50": {
+        "mean_rank_first_same": 3.3333333333333335,
+        "mean_top1": 0.6666666666666666,
+        "mean_top3": 0.3333333333333333,
+        "mean_top5": 0.4000000000000001,
+        "mean_top10": 0.3
+      },
+      "spearman": {
+        "mean_rank_first_same": 4.0,
+        "mean_top1": 0.3333333333333333,
+        "mean_top3": 0.4444444444444444,
+        "mean_top5": 0.4000000000000001,
+        "mean_top10": 0.4000000000000001
+      },
+      "ftest_int_pca50": {
+        "mean_rank_first_same": 1.6666666666666667,
+        "mean_top1": 0.6666666666666666,
+        "mean_top3": 0.6666666666666666,
+        "mean_top5": 0.6666666666666666,
+        "mean_top10": 0.6
+      },
+      "cca_5": {
+        "mean_rank_first_same": 5.666666666666667,
+        "mean_top1": 0.6666666666666666,
+        "mean_top3": 0.6666666666666666,
+        "mean_top5": 0.6,
+        "mean_top10": 0.4666666666666666
+      },
+      "ENS_avg_rank_5": {
+        "mean_rank_first_same": 2.3333333333333335,
+        "mean_top1": 0.6666666666666666,
+        "mean_top3": 0.5555555555555555,
+        "mean_top5": 0.6,
+        "mean_top10": 0.5
+      },
+      "ENS_avg_rank_top3": {
+        "mean_rank_first_same": 2.3333333333333335,
+        "mean_top1": 0.6666666666666666,
+        "mean_top3": 0.6666666666666666,
+        "mean_top5": 0.6666666666666666,
+        "mean_top10": 0.6
+      }
+    },
+    "prostate": {
+      "n_paired": 4,
+      "n_pool": 45,
+      "raw_cosine": {
+        "mean_rank_first_same": 6.25,
+        "mean_top1": 0.5,
+        "mean_top3": 0.3333333333333333,
+        "mean_top5": 0.25,
+        "mean_top10": 0.275
+      },
+      "pca50": {
+        "mean_rank_first_same": 6.25,
+        "mean_top1": 0.25,
+        "mean_top3": 0.3333333333333333,
+        "mean_top5": 0.4,
+        "mean_top10": 0.32499999999999996
+      },
+      "spearman": {
+        "mean_rank_first_same": 6.25,
+        "mean_top1": 0.5,
+        "mean_top3": 0.3333333333333333,
+        "mean_top5": 0.25,
+        "mean_top10": 0.3
+      },
+      "ftest_int_pca50": {
+        "mean_rank_first_same": 5.5,
+        "mean_top1": 0.25,
+        "mean_top3": 0.25,
+        "mean_top5": 0.2,
+        "mean_top10": 0.225
+      },
+      "cca_5": {
+        "mean_rank_first_same": 5.75,
+        "mean_top1": 0.5,
+        "mean_top3": 0.5,
+        "mean_top5": 0.5,
+        "mean_top10": 0.575
+      },
+      "ENS_avg_rank_5": {
+        "mean_rank_first_same": 3.25,
+        "mean_top1": 0.75,
+        "mean_top3": 0.5833333333333333,
+        "mean_top5": 0.5,
+        "mean_top10": 0.475
+      },
+      "ENS_avg_rank_top3": {
+        "mean_rank_first_same": 2.75,
+        "mean_top1": 0.75,
+        "mean_top3": 0.5833333333333333,
+        "mean_top5": 0.5,
+        "mean_top10": 0.49999999999999994
+      }
+    },
+    "skeletalmuscle": {
+      "n_paired": 3,
+      "n_pool": 30,
+      "raw_cosine": {
+        "mean_rank_first_same": 1.6666666666666667,
+        "mean_top1": 0.3333333333333333,
+        "mean_top3": 0.3333333333333333,
+        "mean_top5": 0.4000000000000001,
+        "mean_top10": 0.3666666666666667
+      },
+      "pca50": {
+        "mean_rank_first_same": 1.6666666666666667,
+        "mean_top1": 0.6666666666666666,
+        "mean_top3": 0.5555555555555555,
+        "mean_top5": 0.4666666666666666,
+        "mean_top10": 0.3666666666666667
+      },
+      "spearman": {
+        "mean_rank_first_same": 2.0,
+        "mean_top1": 0.3333333333333333,
+        "mean_top3": 0.3333333333333333,
+        "mean_top5": 0.3333333333333333,
+        "mean_top10": 0.3666666666666667
+      },
+      "ftest_int_pca50": {
+        "mean_rank_first_same": 1.6666666666666667,
+        "mean_top1": 0.6666666666666666,
+        "mean_top3": 0.5555555555555555,
+        "mean_top5": 0.6,
+        "mean_top10": 0.6333333333333334
+      },
+      "cca_5": {
+        "mean_rank_first_same": 1.6666666666666667,
+        "mean_top1": 0.6666666666666666,
+        "mean_top3": 0.5555555555555555,
+        "mean_top5": 0.6666666666666666,
+        "mean_top10": 0.4666666666666666
+      },
+      "ENS_avg_rank_5": {
+        "mean_rank_first_same": 1.0,
+        "mean_top1": 1.0,
+        "mean_top3": 0.6666666666666666,
+        "mean_top5": 0.5333333333333333,
+        "mean_top10": 0.4333333333333333
+      },
+      "ENS_avg_rank_top3": {
+        "mean_rank_first_same": 2.0,
+        "mean_top1": 0.0,
+        "mean_top3": 0.4444444444444444,
+        "mean_top5": 0.6000000000000001,
+        "mean_top10": 0.5666666666666668
+      }
+    },
+    "skin": {
+      "n_paired": 2,
+      "n_pool": 23,
+      "raw_cosine": {
+        "mean_rank_first_same": 9.5,
+        "mean_top1": 0.5,
+        "mean_top3": 0.5,
+        "mean_top5": 0.5,
+        "mean_top10": 0.45
+      },
+      "pca50": {
+        "mean_rank_first_same": 1.5,
+        "mean_top1": 0.5,
+        "mean_top3": 0.6666666666666666,
+        "mean_top5": 0.6000000000000001,
+        "mean_top10": 0.35
+      },
+      "spearman": {
+        "mean_rank_first_same": 9.5,
+        "mean_top1": 0.5,
+        "mean_top3": 0.5,
+        "mean_top5": 0.5,
+        "mean_top10": 0.45
+      },
+      "ftest_int_pca50": {
+        "mean_rank_first_same": 11.5,
+        "mean_top1": 0.5,
+        "mean_top3": 0.5,
+        "mean_top5": 0.5,
+        "mean_top10": 0.5
+      },
+      "cca_5": {
+        "mean_rank_first_same": 7.0,
+        "mean_top1": 0.0,
+        "mean_top3": 0.16666666666666666,
+        "mean_top5": 0.3,
+        "mean_top10": 0.4
+      },
+      "ENS_avg_rank_5": {
+        "mean_rank_first_same": 11.0,
+        "mean_top1": 0.5,
+        "mean_top3": 0.5,
+        "mean_top5": 0.5,
+        "mean_top10": 0.45
+      },
+      "ENS_avg_rank_top3": {
+        "mean_rank_first_same": 6.0,
+        "mean_top1": 0.5,
+        "mean_top3": 0.5,
+        "mean_top5": 0.5,
+        "mean_top10": 0.45
+      }
+    }
+  },
+  "overall": {
+    "raw_cosine": {
+      "mean_top1": 0.5,
+      "mean_top3": 0.35416666666666663,
+      "mean_rank_first_same": 3.59375
+    },
+    "pca50": {
+      "mean_top1": 0.5104166666666666,
+      "mean_top3": 0.48611111111111105,
+      "mean_rank_first_same": 2.5104166666666665
+    },
+    "spearman": {
+      "mean_top1": 0.4583333333333333,
+      "mean_top3": 0.39583333333333326,
+      "mean_rank_first_same": 3.71875
+    },
+    "ftest_int_pca50": {
+      "mean_top1": 0.5104166666666666,
+      "mean_top3": 0.5381944444444444,
+      "mean_rank_first_same": 3.4166666666666665
+    },
+    "cca_5": {
+      "mean_top1": 0.6041666666666666,
+      "mean_top3": 0.48611111111111105,
+      "mean_rank_first_same": 4.09375
+    },
+    "ENS_avg_rank_5": {
+      "mean_top1": 0.6145833333333333,
+      "mean_top3": 0.5659722222222221,
+      "mean_rank_first_same": 3.0312500000000004
+    },
+    "ENS_avg_rank_top3": {
+      "mean_top1": 0.48958333333333326,
+      "mean_top3": 0.5520833333333333,
+      "mean_rank_first_same": 2.59375
+    }
+  }
+}
