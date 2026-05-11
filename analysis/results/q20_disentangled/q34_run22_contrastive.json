@@ -1,0 +1,333 @@
+{
+  "config": {
+    "epochs": 300,
+    "lr": 0.0005,
+    "tau": 0.1,
+    "z_dim": 50,
+    "lam_recon": 0.5,
+    "method": "ContrastiveAE: InfoNCE on paired (bulk, sn)"
+  },
+  "fold_results": [
+    {
+      "held_donor": "GTEX-145ME",
+      "held_tissue": "skeletalmuscle",
+      "n_pool": 30,
+      "n_same_donor_in_pool": 11,
+      "rank_first_same": 5,
+      "topK_purity": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.2,
+        "10": 0.1
+      }
+    },
+    {
+      "held_donor": "GTEX-15RIE",
+      "held_tissue": "skeletalmuscle",
+      "n_pool": 30,
+      "n_same_donor_in_pool": 8,
+      "rank_first_same": 1,
+      "topK_purity": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 0.8,
+        "10": 0.5
+      }
+    },
+    {
+      "held_donor": "GTEX-1HSMQ",
+      "held_tissue": "skeletalmuscle",
+      "n_pool": 30,
+      "n_same_donor_in_pool": 11,
+      "rank_first_same": 3,
+      "topK_purity": {
+        "1": 0.0,
+        "3": 0.3333333333333333,
+        "5": 0.4,
+        "10": 0.2
+      }
+    },
+    {
+      "held_donor": "GTEX-13N11",
+      "held_tissue": "lung",
+      "n_pool": 40,
+      "n_same_donor_in_pool": 14,
+      "rank_first_same": 1,
+      "topK_purity": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 0.8
+      }
+    },
+    {
+      "held_donor": "GTEX-15CHR",
+      "held_tissue": "lung",
+      "n_pool": 40,
+      "n_same_donor_in_pool": 12,
+      "rank_first_same": 1,
+      "topK_purity": {
+        "1": 1.0,
+        "3": 0.6666666666666666,
+        "5": 0.4,
+        "10": 0.3
+      }
+    },
+    {
+      "held_donor": "GTEX-1HSMQ",
+      "held_tissue": "lung",
+      "n_pool": 40,
+      "n_same_donor_in_pool": 14,
+      "rank_first_same": 13,
+      "topK_purity": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      }
+    },
+    {
+      "held_donor": "GTEX-1CAMS",
+      "held_tissue": "breast",
+      "n_pool": 19,
+      "n_same_donor_in_pool": 6,
+      "rank_first_same": 5,
+      "topK_purity": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.2,
+        "10": 0.5
+      }
+    },
+    {
+      "held_donor": "GTEX-1MCC2",
+      "held_tissue": "breast",
+      "n_pool": 19,
+      "n_same_donor_in_pool": 4,
+      "rank_first_same": 11,
+      "topK_purity": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      }
+    },
+    {
+      "held_donor": "GTEX-1R9PN",
+      "held_tissue": "breast",
+      "n_pool": 19,
+      "n_same_donor_in_pool": 9,
+      "rank_first_same": 11,
+      "topK_purity": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      }
+    },
+    {
+      "held_donor": "GTEX-145ME",
+      "held_tissue": "esophagusmucosa",
+      "n_pool": 36,
+      "n_same_donor_in_pool": 10,
+      "rank_first_same": 1,
+      "topK_purity": {
+        "1": 1.0,
+        "3": 0.6666666666666666,
+        "5": 0.8,
+        "10": 0.5
+      }
+    },
+    {
+      "held_donor": "GTEX-15SB6",
+      "held_tissue": "esophagusmucosa",
+      "n_pool": 36,
+      "n_same_donor_in_pool": 13,
+      "rank_first_same": 1,
+      "topK_purity": {
+        "1": 1.0,
+        "3": 0.6666666666666666,
+        "5": 0.4,
+        "10": 0.2
+      }
+    },
+    {
+      "held_donor": "GTEX-16BQI",
+      "held_tissue": "esophagusmucosa",
+      "n_pool": 36,
+      "n_same_donor_in_pool": 13,
+      "rank_first_same": 1,
+      "topK_purity": {
+        "1": 1.0,
+        "3": 0.3333333333333333,
+        "5": 0.6,
+        "10": 0.4
+      }
+    },
+    {
+      "held_donor": "GTEX-144GM",
+      "held_tissue": "esophagusmuscularis",
+      "n_pool": 34,
+      "n_same_donor_in_pool": 11,
+      "rank_first_same": 3,
+      "topK_purity": {
+        "1": 0.0,
+        "3": 0.3333333333333333,
+        "5": 0.4,
+        "10": 0.4
+      }
+    },
+    {
+      "held_donor": "GTEX-1HSMQ",
+      "held_tissue": "esophagusmuscularis",
+      "n_pool": 34,
+      "n_same_donor_in_pool": 12,
+      "rank_first_same": 1,
+      "topK_purity": {
+        "1": 1.0,
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.2
+      }
+    },
+    {
+      "held_donor": "GTEX-1ICG6",
+      "held_tissue": "esophagusmuscularis",
+      "n_pool": 34,
+      "n_same_donor_in_pool": 11,
+      "rank_first_same": 3,
+      "topK_purity": {
+        "1": 0.0,
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.1
+      }
+    },
+    {
+      "held_donor": "GTEX-13N11",
+      "held_tissue": "heart",
+      "n_pool": 34,
+      "n_same_donor_in_pool": 13,
+      "rank_first_same": 9,
+      "topK_purity": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.1
+      }
+    },
+    {
+      "held_donor": "GTEX-15RIE",
+      "held_tissue": "heart",
+      "n_pool": 34,
+      "n_same_donor_in_pool": 12,
+      "rank_first_same": 9,
+      "topK_purity": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.1
+      }
+    },
+    {
+      "held_donor": "GTEX-1ICG6",
+      "held_tissue": "heart",
+      "n_pool": 34,
+      "n_same_donor_in_pool": 9,
+      "rank_first_same": 12,
+      "topK_purity": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      }
+    },
+    {
+      "held_donor": "GTEX-12BJ1",
+      "held_tissue": "prostate",
+      "n_pool": 45,
+      "n_same_donor_in_pool": 12,
+      "rank_first_same": 33,
+      "topK_purity": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      }
+    },
+    {
+      "held_donor": "GTEX-15CHR",
+      "held_tissue": "prostate",
+      "n_pool": 45,
+      "n_same_donor_in_pool": 7,
+      "rank_first_same": 13,
+      "topK_purity": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      }
+    },
+    {
+      "held_donor": "GTEX-1HSMQ",
+      "held_tissue": "prostate",
+      "n_pool": 45,
+      "n_same_donor_in_pool": 12,
+      "rank_first_same": 8,
+      "topK_purity": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.3
+      }
+    },
+    {
+      "held_donor": "GTEX-1I1GU",
+      "held_tissue": "prostate",
+      "n_pool": 45,
+      "n_same_donor_in_pool": 14,
+      "rank_first_same": 8,
+      "topK_purity": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.1
+      }
+    },
+    {
+      "held_donor": "GTEX-1CAMR",
+      "held_tissue": "skin",
+      "n_pool": 23,
+      "n_same_donor_in_pool": 2,
+      "rank_first_same": 22,
+      "topK_purity": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      }
+    },
+    {
+      "held_donor": "GTEX-1HSMQ",
+      "held_tissue": "skin",
+      "n_pool": 23,
+      "n_same_donor_in_pool": 16,
+      "rank_first_same": 3,
+      "topK_purity": {
+        "1": 0.0,
+        "3": 0.3333333333333333,
+        "5": 0.6,
+        "10": 0.5
+      }
+    }
+  ],
+  "summary": {
+    "mean_top1": 0.2916666666666667,
+    "mean_top3": 0.25,
+    "mean_top5": 0.25833333333333336,
+    "mean_top10": 0.22083333333333333,
+    "mean_rank_first_same": 7.416666666666667,
+    "expected_top1_random": 0.3242753623188406,
+    "expected_rank1_random": 2.3189870518914635
+  }
+}
