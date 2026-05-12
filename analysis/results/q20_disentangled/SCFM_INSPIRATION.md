@@ -87,6 +87,32 @@ We could DIRECTLY plug into these toolkits without re-implementing:
 | `Open Problems` | via the bench framework | Modality matching / prediction | Yes — submit our model as a candidate |
 | `BulkFormer` | not yet packaged | Bulk pretraining model (Kang 2025) | Future: pretrain on bulk, use our flip to augment with sn |
 
+## Gap we identified — and a proposed contribution back to scFMs
+
+While trying to *plug in* a pretrained "technology" token from these models into our small VAE (Q52 research, 2026-05-11), we found that **none of the public scFM checkpoints actually expose a learned, transferable assay/technology token**, even though several papers describe the architecture as having "condition" or "batch" tokens.
+
+| Model | What the paper / arch implies | What the public checkpoint actually contains |
+|---|---|---|
+| scGPT | "Condition tokens for batch/perturbation/modality" | `BatchLabelEncoder` is added at fine-tune time and sized from the user's `adata.obs['batch_id']`. Pretrained vocab is gene symbols + `<pad>/<cls>/<mask>` only. |
+| STATE (Arc) | "Assay-aware dataset embedding" | `dataset_embedder` keyed to ~70 dataset-IDs from pretraining (Tahoe, Replogle subsets) — not to assay categories. |
+| scFoundation | "T/S read-depth tokens" | These are continuous scalars, not categorical assay rows. Confirms no assay token. |
+| CellPLM | "Learnable batch lookup table" | Per-sample/FOV-ID rows tied to their pretrain corpus, not per-technology. Thousands of dataset-specific rows. |
+| Geneformer | "Technology-agnostic by rank tokens" | Confirmed: no batch/assay embedding by design. |
+
+**Why this matters.** Users like us with a clean cross-technology setting (bulk_illumina ↔ 10x_chromium, or any two assays) cannot transfer a "this is what `10x_chromium` means" prior from a foundation model. We have to learn that 2-row lookup from scratch on tiny data (in our case, 353 pseudobulks from 16 donors).
+
+### Two concrete contributions an scFM could make
+
+1. **Add a generic assay vocabulary to the pretrained checkpoint.** Define a fixed set of technology categories (`10x_chromium_v2`, `10x_chromium_v3`, `smart_seq2`, `dropseq`, `bulk_illumina`, `bulk_pacbio`, …) and learn a `d`-dim embedding for each during pretraining by including a per-cell assay label in the pretraining stream. Ship those rows in the checkpoint. Users fine-tuning on a new dataset would then have a real technology prior, not a randomly initialized lookup.
+
+2. **Consume a small VAE's learned assay embedding at fine-tune time.** The bulk_illumina ↔ 10x_chromium offset our Run 27 VAE learns on 353 pseudobulks is exactly the type of 2-row prior an scFM would want to inject. An scFM fine-tune API could accept a user-supplied `init_batch_embedding: np.ndarray` (shape `n_batches × d`) so that our pseudobulk-aligned VAE's `tech_embed.weight` is used as initialization rather than `N(0, 0.02)`. Even a single epoch of fine-tuning would propagate that prior through the gene encoder.
+
+**Self-test of (2): does our pseudobulk embedding actually help a foundation model?**
+
+The natural empirical check is to (a) embed our 353 paired samples with a foundation model alone, (b) re-embed with our `tech_embed` rows injected as the batch-embedding initialization (or concatenated as side features), and compare on the donor-NN LOO and metadata-probe harness from Q47/Q50/Q51. If the augmented embedding wins, that's direct evidence that small task-specific VAEs and large pretrained scFMs are complementary, not redundant.
+
+**Smaller-model path for the self-test.** Full scGPT/scFoundation are 50–100M params and require gene-name alignment + a multi-hour fine-tune. The most accessible "their embedding + ours" comparison uses **scVI as the foundation-model stand-in** (1–2M params, same VAE family, native batch covariate, pip-installable, n=200-epoch fine-tune in ~2 min on CPU) — implemented in Q51. For a real-scFM ablation, **Geneformer (HuggingFace `ctheodoris/Geneformer`)** is the most install-friendly true-foundation option — Q52 (TODO) should run that path next.
+
 ## The bottom line for our project
 
 The scFM literature gave us **two architectural ingredients** that we adopted: scGPT-style condition tokens and scFoundation-style read-depth. Everything else (transformer scale, MLM, value binning) is wrong for our 16-donor data regime.
