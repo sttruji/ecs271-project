@@ -30,11 +30,12 @@ across the cohort, the noise floor, and 4 additional GTEx tissues.
 
 ---
 
+
 ## TL;DR
 
 1. **The trained cross-modality VAE has posterior-collapsed.** All 64 latent
    dims have variance < 10⁻³ on 803 GTEx donors (mean variance 1.7×10⁻⁵).
-   Held-out reconstruction R² = **−3.27** — *worse than predicting the mean*.
+   Held-out reconstruction R² = **−3.27** — *worse than predicting the mean*. 
 2. **A vanilla 3-layer MLP autoencoder reaches R² = 0.81** on the same 64-D
    bottleneck and 11,374-gene shared space — slightly under PCA-50 (R² = 0.86)
    but **>1000× better than the trained VAE**. Sane VAE (β = 10⁻³, no
@@ -80,6 +81,8 @@ scaler → 80/20 random train/test split (seed 0).
 | AE-3 (this work) | 0.193 | 0.813 | 0.874 | — |
 | VAE β=10⁻³ (this work) | 0.216 | 0.790 | 0.854 | — |
 
+[comment: define cross-modality VAE, 3 AE3, VAE beta]
+
 The trained VAE is dramatically worse than every other method, including
 trivially predicting zero. Its **per-sample Pearson r is essentially zero** —
 the decoder output is independent of the donor.
@@ -120,6 +123,8 @@ from 5.05 at epoch 1 to 0.43 at epoch 150.
 
 Figure: [analysis/figures/q2_latent_meaning.png](analysis/figures/q2_latent_meaning.png).
 
+[comment: why didnt you try setting a less strong KL?]
+
 ---
 
 ## Q3 · 3-layer MLP autoencoder — sanity-check the architecture
@@ -155,6 +160,9 @@ this donor count).
 
 Figure: [analysis/figures/q3_mlp_autoencoder.png](analysis/figures/q3_mlp_autoencoder.png).
 
+[keep in mind that the majority of the variance currently comes from ischemia time]
+[i want further tests to see whether this is truely merely a linear relationship]
+
 ---
 
 ## Q4 · How well do the PCs encode biology? (Validation)
@@ -183,6 +191,9 @@ Top hit per direction shown (full tables under
 Each top-5 PC has a clean biological identity, with adj-p ≪ 0.05 on at
 least one of GO_BP or KEGG.
 
+[i want to understand what this means, what causes ribosome biogenesis?]
+[and what does the adjusted p value stand for]
+
 ### 4.2 GTEx donor-metadata correlation
 
 Joined each donor to GTEx v10 annotations (downloaded under
@@ -201,6 +212,11 @@ one-way-ANOVA η² for categorical.
 | SMCENTER (sequencing center) | categorical (η²) | PC2 | 0.098 |
 | SEX | categorical (η²) | PC50 | 0.215 |
 
+[tell me about the average of the hardy death classification and the other metadata as well the std, ...]
+[do any of the variables correlate]
+
+
+
 **Interpretation.** PC2 is the *agonal-stress / handling* axis — three of
 the strongest correlations (DTHHRDY 0.66, SMTSISCH 0.65, SMRIN 0.46) all hit
 the same PC, and the pathway hit on the same axis is *Response to Unfolded
@@ -209,6 +225,9 @@ metadata + pathway enrichment) converge on the same biology. PC1 is
 dominated by myeloid cell composition (ribosome biogenesis ↔ phagocytosis +
 batch effect on η²). Sex is a *late* factor (PC50, η² = 0.22) — it isn't a
 top axis of variation in whole-blood transcriptomes.
+
+[no way sex just shows up in pc50]
+
 
 Heatmap: [analysis/figures/q4_metadata_heatmap.png](analysis/figures/q4_metadata_heatmap.png).
 
@@ -232,7 +251,7 @@ Enrichment on the top-3 most-active dims:
 - z15 +: Macromolecule Biosynthesis / Ribosome (adj-p = 9.98×10⁻⁹)
 
 The AE-3 nonlinear axes are non-orthogonal but biologically the same: the
-linear and nonlinear models agree on what whole-blood biology *is*.
+linear and nonlinear models agree on what whole-blood biology *is*. [please expand]
 
 ---
 
@@ -273,6 +292,7 @@ linear and nonlinear models agree on what whole-blood biology *is*.
     ├── REPORT.md                           — this file
     └── (clone scaffolding: scripts/, models/, train/, README.md)
 ```
+[you are missing a view datasets you have used]
 
 The bulk-project deconvolution scripts (`cross_modality_vae.py`,
 `drvi_bulk.py`, `batch_integration.py`) were updated to import canonical
@@ -287,6 +307,7 @@ keep working unchanged.
 5 libraries × PCs 31–251) — 8,430 enrichment hits saved.
 Master tables: [analysis/results/q6_extended_pc_biology/](analysis/results/q6_extended_pc_biology/),
 aggregated digest: [analysis/results/q6_aggregated/q6_pc_biology.md](analysis/results/q6_aggregated/q6_pc_biology.md).
+[how is this different from the prev analysis]
 
 The ten most-active PCs:
 
@@ -306,12 +327,15 @@ The ten most-active PCs:
 | 13 | 0.70 | EGR1 ChIP-Seq (erythroleukemia) | **MSigDB Interferon Alpha Response** | — |
 | 14 | 0.61 | **MSigDB Interferon Gamma Response** | Platelet Activation (Reactome) | — |
 
+[why so much chip-seq in here]
+
 Beyond ~PC30 the per-PC variance drops below 0.25 % each and pathway hits
 become individually less interpretable (each PC is a small axis), but the
 *aggregate* of PCs 30–251 still surfaces meaningful signals like
 SARS-CoV-2 B-cell activation (PC11), interferon responses (PC13–PC14),
 platelet activation (PC14−), etc. The full 251-PC digest is in the
 markdown file linked above.
+[which markdwon, where to find]
 
 Figures: [analysis/figures/q6_eigenvalues.png](analysis/figures/q6_eigenvalues.png)
 (scree + cum var, K_95 marked); [analysis/figures/q6_pc_biology_heatmap.png](analysis/figures/q6_pc_biology_heatmap.png)
@@ -345,6 +369,9 @@ first at PC32, exactly matching Horn and MP.
 Figures: [analysis/figures/q7_horn_parallel.png](analysis/figures/q7_horn_parallel.png),
 [analysis/figures/q8_bootstrap_stability.png](analysis/figures/q8_bootstrap_stability.png).
 
+[i think we should drop the 220 PCs then]
+
+
 ---
 
 ## Q9 · Cross-cohort replication on GSE279480 (255 Null samples)
@@ -374,6 +401,8 @@ with CMV reshaping memory T-cell repertoire — a known biological signal).
 
 Figure: [analysis/figures/q9_gse279480_cohort.png](analysis/figures/q9_gse279480_cohort.png).
 
+[why do people have such a variations of my-ly-composition?]
+
 ---
 
 ## Q10 · Per-sample biology — 5 lowest-ischemia donors
@@ -401,13 +430,15 @@ latent space).
 Per-donor enrichment tables: [analysis/results/q10_per_sample_biology/](analysis/results/q10_per_sample_biology/)
 plus [analysis/results/q10_per_sample_biology/_summary.csv](analysis/results/q10_per_sample_biology/_summary.csv).
 
+[q10 can be removed]
+
 ---
 
 ## Q11 · Cross-tissue PC validation — projecting blood PCs onto 4 other tissues
 
 Downloaded 4 additional GTEx v10 tissues (spleen 277, liver 262, lung
 604, muscle 818 samples) and projected each onto the **blood**
-PCA basis. **Key result: per-tissue mean PC score (blood centred at 0):**
+PCA basis. **Key result: per-tissue mean PC score (blood centred at 0):** [dont understand, explain what you did]
 
 | PC | Blood | Spleen | Liver | Lung | Muscle | Interpretation |
 |---:|---:|---:|---:|---:|---:|---|
@@ -513,6 +544,7 @@ The pipeline takes ~30 s for `--model vae` (just inference) and ~3 min for
 
 ---
 
+[got until here still need to check the rest of the doc] 
 ## What the goals doc said vs what we found
 
 From `bulk-project/HEALTHY_STATE_v1.md` §9.7 (the original VAE goal):
