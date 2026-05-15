@@ -1,0 +1,599 @@
+{
+  "fc_resolution": {
+    "overall": 0.9999120801828733,
+    "mae": 0.015418066411125695,
+    "by_bin": {
+      "<10": 1.0,
+      "10\u2013100": 1.0,
+      "100\u20131000": 1.0,
+      ">1000": 0.9897959183673469
+    }
+  },
+  "roundtrip": {
+    "r2_per_sample_mean": 0.9899112582206726,
+    "r2_per_sample_median": 0.9976783990859985,
+    "r2_per_sample_p5": 0.951800537109375,
+    "per_gene_r_mean": 0.9560827781136628,
+    "per_gene_r_median": 0.9644105576691535,
+    "per_gene_r_p5": 0.8988132615339085
+  },
+  "flip": [
+    {
+      "dim": "SMTSISCH",
+      "overall": 0.926762792333392,
+      "mae": 0.22965027532616084,
+      "by_bin": {
+        "<10": 0.9997936868165875,
+        "10\u2013100": 0.9557882489819662,
+        "100\u20131000": 0.585691823899371,
+        ">1000": 0.21428571428571427
+      },
+      "n_hi": 200,
+      "n_lo": 199
+    },
+    {
+      "dim": "DTHHRDY",
+      "overall": 0.0,
+      "mae": NaN,
+      "by_bin": {
+        "<10": NaN,
+        "10\u2013100": NaN,
+        "100\u20131000": NaN,
+        ">1000": 0.0
+      },
+      "n_hi": 125,
+      "n_lo": 0
+    },
+    {
+      "dim": "AGE_mid",
+      "overall": 0.9894496219447864,
+      "mae": 0.11238757144520231,
+      "by_bin": {
+        "<10": 1.0,
+        "10\u2013100": 0.99942900647126,
+        "100\u20131000": 0.9419607843137255,
+        ">1000": 0.5222222222222223
+      },
+      "n_hi": 26,
+      "n_lo": 136
+    }
+  ],
+  "disentanglement": {
+    "probes": {
+      "SMTSISCH": {
+        "cv_r2": 0.44555376234060445,
+        "cv_r2_std": 0.09213417345838344,
+        "n": 798
+      },
+      "AGE_mid": {
+        "cv_r2": 0.1364317124972754,
+        "cv_r2_std": 0.03910815667709854,
+        "n": 803
+      },
+      "DTHHRDY": {
+        "cv_balanced_acc": 0.40559412988110727,
+        "cv_balanced_acc_std": 0.018156063618871253,
+        "n": 788,
+        "n_classes": 5,
+        "chance": 0.2
+      }
+    },
+    "isch_per_dim_r2": [
+      0.042288103529706,
+      -0.004423254265724807,
+      -0.005242810628141958,
+      -0.005189290567544758,
+      -0.003837884656975765,
+      0.048267414876012674,
+      -0.0011487032826992482,
+      -0.005694198341552404,
+      -0.00027847857110108176,
+      0.015153379024459346,
+      -0.005719801405976721,
+      0.01571760845574075,
+      0.025449538348836075,
+      -0.0035504893545279083,
+      0.039137725836259386,
+      -0.007847933980898825,
+      0.006480100945448796,
+      0.0805255498216079,
+      0.017819777711539465,
+      0.0033041954429987586
+    ],
+    "age_per_dim_r2": [
+      -0.003177179144238629,
+      -0.005244725970288977,
+      -0.005716136497513435,
+      -0.004560664976624928,
+      -0.006155515176120141,
+      0.019701281144600367,
+      -0.009012734707178626,
+      0.0032448571550041105,
+      -0.0035925087480535244,
+      -0.005141227564141459,
+      -0.0034817001968559637,
+      -0.006547086595384633,
+      0.012218129144769208,
+      0.0005618356655480383,
+      -0.0030765476991030383,
+      0.0017835590799371247,
+      -0.0053845398927337305,
+      0.039311509713520466,
+      -0.00046013225261252175,
+      -0.005415820583232467
+    ],
+    "isch_mig_gap": 0.03225813494559522,
+    "age_mig_gap": 0.0196102285689201,
+    "var_per_dim": [
+      1.6958250999450684,
+      1.0676685571670532,
+      1.1169097423553467,
+      1.3439867496490479,
+      1.1012059450149536,
+      1.395934820175171,
+      0.1591305434703827,
+      0.9961528778076172,
+      0.17309197783470154,
+      1.2398450374603271,
+      0.647739827632904,
+      0.8227900266647339,
+      1.177673578262329,
+      1.1291056871414185,
+      1.4846925735473633,
+      0.17285063862800598,
+      0.777217447757721,
+      1.4422436952590942,
+      0.457713782787323,
+      0.9983368515968323
+    ],
+    "n_active_dims": 20
+  },
+  "bio_top_genes": {
+    "z1": {
+      "top_pos": [
+        "IL10RA",
+        "ZXDA",
+        "TAF4B",
+        "LINC00996",
+        "TNFAIP3"
+      ],
+      "top_neg": [
+        "S100A8",
+        "PRDX5",
+        "S100A9",
+        "S100A12",
+        "CSTA"
+      ],
+      "loading_max": 1.8228352069854736,
+      "loading_min": -1.4730453491210938
+    },
+    "z2": {
+      "top_pos": [
+        "RENBP",
+        "IFI30",
+        "FCN1",
+        "UBXN11",
+        "LINC01637"
+      ],
+      "top_neg": [
+        "UQCRB",
+        "LINC00239",
+        "HOMER2",
+        "CFAP97D2",
+        "EFNA5"
+      ],
+      "loading_max": 0.8145421743392944,
+      "loading_min": -0.6937116384506226
+    },
+    "z3": {
+      "top_pos": [
+        "A1BG",
+        "COX6C",
+        "ATP5MG",
+        "EEF1B2",
+        "RNF7"
+      ],
+      "top_neg": [
+        "ALOX12",
+        "ACTN1",
+        "PTGS1",
+        "NDE1",
+        "MYLK-AS1"
+      ],
+      "loading_max": 0.8418381214141846,
+      "loading_min": -0.8861005306243896
+    },
+    "z4": {
+      "top_pos": [
+        "ISCA1",
+        "CETN2",
+        "RPIA",
+        "RGCC",
+        "SESN3"
+      ],
+      "top_neg": [
+        "BCKDK",
+        "TOM1",
+        "ARID5A",
+        "POR",
+        "ZC3H3"
+      ],
+      "loading_max": 1.0764241218566895,
+      "loading_min": -1.2234419584274292
+    },
+    "z5": {
+      "top_pos": [
+        "ICA1",
+        "CCDC125",
+        "PADI4",
+        "GGH",
+        "CRACR2B"
+      ],
+      "top_neg": [
+        "KCTD11",
+        "ASCL2",
+        "B3GAT1",
+        "COL13A1",
+        "IFFO2"
+      ],
+      "loading_max": 0.9464025497436523,
+      "loading_min": -0.7079839706420898
+    },
+    "z6": {
+      "top_pos": [
+        "BCAM",
+        "SHARPIN",
+        "RNF123",
+        "FKBP8",
+        "GCAT"
+      ],
+      "top_neg": [
+        "IGBP1",
+        "MBD2",
+        "CEP63",
+        "ATG3",
+        "KCMF1"
+      ],
+      "loading_max": 1.3610124588012695,
+      "loading_min": -1.3560682535171509
+    },
+    "z7": {
+      "top_pos": [
+        "TMEM176A",
+        "TMEM176B",
+        "PPM1J",
+        "WNT2B",
+        "DGUOK-AS1"
+      ],
+      "top_neg": [
+        "TSKS",
+        "THNSL2",
+        "DSEL",
+        "LINC02446",
+        "ZG16B"
+      ],
+      "loading_max": 0.15955865383148193,
+      "loading_min": -0.11781454086303711
+    },
+    "z8": {
+      "top_pos": [
+        "ISCA1",
+        "DNASE1",
+        "SLC14A1",
+        "TMEM86B",
+        "DLGAP1-AS1"
+      ],
+      "top_neg": [
+        "SLC15A3",
+        "FBP1",
+        "C5AR1",
+        "UBE2R2",
+        "PIM3"
+      ],
+      "loading_max": 0.7135152816772461,
+      "loading_min": -0.7997035980224609
+    },
+    "z9": {
+      "top_pos": [
+        "MRPL23",
+        "SPX",
+        "CLEC4G",
+        "CBR1",
+        "CEBPA-DT"
+      ],
+      "top_neg": [
+        "SFTPC",
+        "KRT19",
+        "BCO2",
+        "NT5DC3",
+        "CDK11A"
+      ],
+      "loading_max": 0.13429373502731323,
+      "loading_min": -0.17752647399902344
+    },
+    "z10": {
+      "top_pos": [
+        "FCAR",
+        "CRACR2B",
+        "PADI4",
+        "NTNG2",
+        "CEACAM1"
+      ],
+      "top_neg": [
+        "DPYSL2",
+        "NAAA",
+        "KCNMB1",
+        "ZDHHC1",
+        "ULK2"
+      ],
+      "loading_max": 0.9128987789154053,
+      "loading_min": -1.0706901550292969
+    },
+    "z11": {
+      "top_pos": [
+        "CRACR2B",
+        "TLCD2",
+        "PKP4",
+        "SOCS3",
+        "SAP30"
+      ],
+      "top_neg": [
+        "ST8SIA1",
+        "NPDC1",
+        "S100B",
+        "APOL1",
+        "SHISA4"
+      ],
+      "loading_max": 0.4170447587966919,
+      "loading_min": -0.31958818435668945
+    },
+    "z12": {
+      "top_pos": [
+        "MS4A14",
+        "HSPA6",
+        "WASHC2C",
+        "RCN3",
+        "INTS3"
+      ],
+      "top_neg": [
+        "KCNC4",
+        "LOXL1-AS1",
+        "TMEM86A",
+        "CCR7",
+        "SUMO3"
+      ],
+      "loading_max": 0.6856948137283325,
+      "loading_min": -0.4772186279296875
+    },
+    "z13": {
+      "top_pos": [
+        "LDHA",
+        "CTSL",
+        "GRPEL1",
+        "CLEC5A",
+        "EPB41L3"
+      ],
+      "top_neg": [
+        "MADCAM1",
+        "ARHGAP25",
+        "FCHO1",
+        "NDE1",
+        "LINC02422"
+      ],
+      "loading_max": 0.9155154228210449,
+      "loading_min": -0.8803829550743103
+    },
+    "z14": {
+      "top_pos": [
+        "IFI27",
+        "IGHGP",
+        "DHCR24",
+        "SPATS2L",
+        "EBI3"
+      ],
+      "top_neg": [
+        "NALT1",
+        "FCHO1",
+        "ENKUR",
+        "VIPR1",
+        "MEGF6"
+      ],
+      "loading_max": 0.8131742477416992,
+      "loading_min": -0.7457822561264038
+    },
+    "z15": {
+      "top_pos": [
+        "PAF1",
+        "CTDNEP1",
+        "GPS2",
+        "EDF1",
+        "ISG15"
+      ],
+      "top_neg": [
+        "BTBD8",
+        "ARID4A",
+        "HEATR5A",
+        "ZNF518A",
+        "ZNF281"
+      ],
+      "loading_max": 1.2541472911834717,
+      "loading_min": -1.4699995517730713
+    },
+    "z16": {
+      "top_pos": [
+        "AMACR",
+        "EIF2AK2",
+        "TPST2",
+        "GTSF1",
+        "STK17A"
+      ],
+      "top_neg": [
+        "KCNG1",
+        "HOMER2",
+        "CDC42BPB",
+        "CBLN3",
+        "GATA2"
+      ],
+      "loading_max": 0.12151002883911133,
+      "loading_min": -0.15180110931396484
+    },
+    "z17": {
+      "top_pos": [
+        "GDE1",
+        "PHF21A",
+        "GBE1",
+        "UIMC1",
+        "PCSK6"
+      ],
+      "top_neg": [
+        "OVCH1-AS1",
+        "ENHO",
+        "ZNF683",
+        "C7ORF50",
+        "C12ORF42"
+      ],
+      "loading_max": 0.5035191774368286,
+      "loading_min": -0.431881844997406
+    },
+    "z18": {
+      "top_pos": [
+        "IFRD1",
+        "MXD1",
+        "YPEL5",
+        "CPD",
+        "GABARAPL1"
+      ],
+      "top_neg": [
+        "LYPLA2",
+        "CUEDC2",
+        "CHMP6",
+        "TSR3",
+        "FIBP"
+      ],
+      "loading_max": 1.3095855712890625,
+      "loading_min": -1.4039933681488037
+    },
+    "z19": {
+      "top_pos": [
+        "PRSS21",
+        "CCNH",
+        "SPACA6",
+        "MXRA7",
+        "CEACAM21"
+      ],
+      "top_neg": [
+        "OLFM2",
+        "ZNF287",
+        "ZNF696",
+        "LIPT2",
+        "TMEM177"
+      ],
+      "loading_max": 0.3142714500427246,
+      "loading_min": -0.32240450382232666
+    },
+    "z20": {
+      "top_pos": [
+        "SLC22A18",
+        "HSPA6",
+        "SAP25",
+        "INAFM1",
+        "ELOB"
+      ],
+      "top_neg": [
+        "LRP12",
+        "FAM111B",
+        "SPRED2",
+        "IRS1",
+        "LAPTM4B"
+      ],
+      "loading_max": 0.6655693054199219,
+      "loading_min": -0.7734626531600952
+    }
+  },
+  "enrichment": [
+    {
+      "dim": 1,
+      "direction": "pos",
+      "library": "GO_Biological_Process_2023",
+      "top_term": "Endoplasmic Reticulum Calcium Ion Homeostasis (GO:0032469)",
+      "adj_p": 0.37011075708359087
+    },
+    {
+      "dim": 1,
+      "direction": "pos",
+      "library": "KEGG_2021_Human",
+      "top_term": "Mucin type O-glycan biosynthesis",
+      "adj_p": 0.8549481020654677
+    },
+    {
+      "dim": 1,
+      "direction": "neg",
+      "library": "GO_Biological_Process_2023",
+      "top_term": "Cellular Respiration (GO:0045333)",
+      "adj_p": 0.00020446431094485045
+    },
+    {
+      "dim": 1,
+      "direction": "neg",
+      "library": "KEGG_2021_Human",
+      "top_term": "Oxidative phosphorylation",
+      "adj_p": 1.4456483848782295e-06
+    },
+    {
+      "dim": 15,
+      "direction": "pos",
+      "library": "GO_Biological_Process_2023",
+      "top_term": "Cytoplasmic Translation (GO:0002181)",
+      "adj_p": 1.6735461587985835e-24
+    },
+    {
+      "dim": 15,
+      "direction": "pos",
+      "library": "KEGG_2021_Human",
+      "top_term": "Ribosome",
+      "adj_p": 7.871455804445264e-17
+    },
+    {
+      "dim": 15,
+      "direction": "neg",
+      "library": "GO_Biological_Process_2023",
+      "top_term": "Protein Modification Process (GO:0036211)",
+      "adj_p": 0.004397187853579612
+    },
+    {
+      "dim": 15,
+      "direction": "neg",
+      "library": "KEGG_2021_Human",
+      "top_term": "Growth hormone synthesis, secretion and action",
+      "adj_p": 0.002595028766559067
+    },
+    {
+      "dim": 18,
+      "direction": "pos",
+      "library": "GO_Biological_Process_2023",
+      "top_term": "Response To Endoplasmic Reticulum Stress (GO:0034976)",
+      "adj_p": 0.0003636159310287977
+    },
+    {
+      "dim": 18,
+      "direction": "pos",
+      "library": "KEGG_2021_Human",
+      "top_term": "MAPK signaling pathway",
+      "adj_p": 0.0016962793564928775
+    },
+    {
+      "dim": 18,
+      "direction": "neg",
+      "library": "GO_Biological_Process_2023",
+      "top_term": "Protein-Containing Complex Disassembly (GO:0032984)",
+      "adj_p": 0.0033968675760869247
+    },
+    {
+      "dim": 18,
+      "direction": "neg",
+      "library": "KEGG_2021_Human",
+      "top_term": "Diabetic cardiomyopathy",
+      "adj_p": 0.10672296628591707
+    }
+  ]
+}
