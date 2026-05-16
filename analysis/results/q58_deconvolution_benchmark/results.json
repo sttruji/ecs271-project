@@ -1,0 +1,394 @@
+{
+  "per_cell_type_r2": [
+    {
+      "features": "A. z_bio (K=16, our VAE)",
+      "n_features": 16,
+      "cell_type": "neutrophil",
+      "r2_mean": 0.6343628644943238,
+      "r2_std": 0.03865869365506669
+    },
+    {
+      "features": "A. z_bio (K=16, our VAE)",
+      "n_features": 16,
+      "cell_type": "T_cell",
+      "r2_mean": 0.8048253893852234,
+      "r2_std": 0.025408505045771735
+    },
+    {
+      "features": "A. z_bio (K=16, our VAE)",
+      "n_features": 16,
+      "cell_type": "B_cell",
+      "r2_mean": 0.599350917339325,
+      "r2_std": 0.019303764633014253
+    },
+    {
+      "features": "A. z_bio (K=16, our VAE)",
+      "n_features": 16,
+      "cell_type": "NK_cell",
+      "r2_mean": 0.5486002683639526,
+      "r2_std": 0.04158598414111677
+    },
+    {
+      "features": "A. z_bio (K=16, our VAE)",
+      "n_features": 16,
+      "cell_type": "monocyte",
+      "r2_mean": 0.660307240486145,
+      "r2_std": 0.043502886522733444
+    },
+    {
+      "features": "A. z_bio (K=16, our VAE)",
+      "n_features": 16,
+      "cell_type": "erythroid",
+      "r2_mean": 0.6807563066482544,
+      "r2_std": 0.036244906234437047
+    },
+    {
+      "features": "A. z_bio (K=16, our VAE)",
+      "n_features": 16,
+      "cell_type": "platelet",
+      "r2_mean": 0.37531485557556155,
+      "r2_std": 0.024936354312773024
+    },
+    {
+      "features": "B. PCA-50",
+      "n_features": 50,
+      "cell_type": "neutrophil",
+      "r2_mean": 0.8259084939956665,
+      "r2_std": 0.013283916001043464
+    },
+    {
+      "features": "B. PCA-50",
+      "n_features": 50,
+      "cell_type": "T_cell",
+      "r2_mean": 0.9678148865699768,
+      "r2_std": 0.007161289478904294
+    },
+    {
+      "features": "B. PCA-50",
+      "n_features": 50,
+      "cell_type": "B_cell",
+      "r2_mean": 0.9523163795471191,
+      "r2_std": 0.00657927006015255
+    },
+    {
+      "features": "B. PCA-50",
+      "n_features": 50,
+      "cell_type": "NK_cell",
+      "r2_mean": 0.9709090232849121,
+      "r2_std": 0.002477630071916783
+    },
+    {
+      "features": "B. PCA-50",
+      "n_features": 50,
+      "cell_type": "monocyte",
+      "r2_mean": 0.9263612389564514,
+      "r2_std": 0.008031397325929498
+    },
+    {
+      "features": "B. PCA-50",
+      "n_features": 50,
+      "cell_type": "erythroid",
+      "r2_mean": 0.9301229119300842,
+      "r2_std": 0.00933431369263827
+    },
+    {
+      "features": "B. PCA-50",
+      "n_features": 50,
+      "cell_type": "platelet",
+      "r2_mean": 0.9402557015419006,
+      "r2_std": 0.006207829427441821
+    },
+    {
+      "features": "C. PCA-16 (matched)",
+      "n_features": 16,
+      "cell_type": "neutrophil",
+      "r2_mean": 0.6953577756881714,
+      "r2_std": 0.05458428971667965
+    },
+    {
+      "features": "C. PCA-16 (matched)",
+      "n_features": 16,
+      "cell_type": "T_cell",
+      "r2_mean": 0.9225592732429504,
+      "r2_std": 0.01202013223680486
+    },
+    {
+      "features": "C. PCA-16 (matched)",
+      "n_features": 16,
+      "cell_type": "B_cell",
+      "r2_mean": 0.6622978448867798,
+      "r2_std": 0.02495445028307823
+    },
+    {
+      "features": "C. PCA-16 (matched)",
+      "n_features": 16,
+      "cell_type": "NK_cell",
+      "r2_mean": 0.9231034636497497,
+      "r2_std": 0.009365940107573894
+    },
+    {
+      "features": "C. PCA-16 (matched)",
+      "n_features": 16,
+      "cell_type": "monocyte",
+      "r2_mean": 0.8602684140205383,
+      "r2_std": 0.016822146972908597
+    },
+    {
+      "features": "C. PCA-16 (matched)",
+      "n_features": 16,
+      "cell_type": "erythroid",
+      "r2_mean": 0.8065616130828858,
+      "r2_std": 0.020369040007314192
+    },
+    {
+      "features": "C. PCA-16 (matched)",
+      "n_features": 16,
+      "cell_type": "platelet",
+      "r2_mean": 0.6132048845291138,
+      "r2_std": 0.019754060665221188
+    },
+    {
+      "features": "D. top-200 HVG",
+      "n_features": 200,
+      "cell_type": "neutrophil",
+      "r2_mean": 0.7581148862838745,
+      "r2_std": 0.027522830011524266
+    },
+    {
+      "features": "D. top-200 HVG",
+      "n_features": 200,
+      "cell_type": "T_cell",
+      "r2_mean": 0.9729565143585205,
+      "r2_std": 0.004330498776781631
+    },
+    {
+      "features": "D. top-200 HVG",
+      "n_features": 200,
+      "cell_type": "B_cell",
+      "r2_mean": 0.8997185707092286,
+      "r2_std": 0.015342380618465257
+    },
+    {
+      "features": "D. top-200 HVG",
+      "n_features": 200,
+      "cell_type": "NK_cell",
+      "r2_mean": 0.9387000679969788,
+      "r2_std": 0.0064049769542752506
+    },
+    {
+      "features": "D. top-200 HVG",
+      "n_features": 200,
+      "cell_type": "monocyte",
+      "r2_mean": 0.8516354084014892,
+      "r2_std": 0.023314620055876634
+    },
+    {
+      "features": "D. top-200 HVG",
+      "n_features": 200,
+      "cell_type": "erythroid",
+      "r2_mean": 0.8829772353172303,
+      "r2_std": 0.013919185623767613
+    },
+    {
+      "features": "D. top-200 HVG",
+      "n_features": 200,
+      "cell_type": "platelet",
+      "r2_mean": 0.4724348783493042,
+      "r2_std": 0.0762934458616326
+    },
+    {
+      "features": "E. all genes (K=11374)",
+      "n_features": 11374,
+      "cell_type": "neutrophil",
+      "r2_mean": 0.9265552401542664,
+      "r2_std": 0.007513232340887744
+    },
+    {
+      "features": "E. all genes (K=11374)",
+      "n_features": 11374,
+      "cell_type": "T_cell",
+      "r2_mean": 0.9872139930725098,
+      "r2_std": 0.003915674778280973
+    },
+    {
+      "features": "E. all genes (K=11374)",
+      "n_features": 11374,
+      "cell_type": "B_cell",
+      "r2_mean": 0.9798298597335815,
+      "r2_std": 0.0037151416039290885
+    },
+    {
+      "features": "E. all genes (K=11374)",
+      "n_features": 11374,
+      "cell_type": "NK_cell",
+      "r2_mean": 0.9894081473350524,
+      "r2_std": 0.0014865574774502724
+    },
+    {
+      "features": "E. all genes (K=11374)",
+      "n_features": 11374,
+      "cell_type": "monocyte",
+      "r2_mean": 0.9632012963294982,
+      "r2_std": 0.005964712192262522
+    },
+    {
+      "features": "E. all genes (K=11374)",
+      "n_features": 11374,
+      "cell_type": "erythroid",
+      "r2_mean": 0.9670953989028931,
+      "r2_std": 0.004199163038976656
+    },
+    {
+      "features": "E. all genes (K=11374)",
+      "n_features": 11374,
+      "cell_type": "platelet",
+      "r2_mean": 0.9775362133979797,
+      "r2_std": 0.0017826918288805444
+    },
+    {
+      "features": "F. marker scores (upper bound)",
+      "n_features": 7,
+      "cell_type": "neutrophil",
+      "r2_mean": 0.9999971866607666,
+      "r2_std": 1.27280691290275e-07
+    },
+    {
+      "features": "F. marker scores (upper bound)",
+      "n_features": 7,
+      "cell_type": "T_cell",
+      "r2_mean": 0.9999900221824646,
+      "r2_std": 1.5044004526531728e-06
+    },
+    {
+      "features": "F. marker scores (upper bound)",
+      "n_features": 7,
+      "cell_type": "B_cell",
+      "r2_mean": 0.9999952793121338,
+      "r2_std": 6.566257168731886e-07
+    },
+    {
+      "features": "F. marker scores (upper bound)",
+      "n_features": 7,
+      "cell_type": "NK_cell",
+      "r2_mean": 0.999991774559021,
+      "r2_std": 1.3845736892923939e-06
+    },
+    {
+      "features": "F. marker scores (upper bound)",
+      "n_features": 7,
+      "cell_type": "monocyte",
+      "r2_mean": 0.9999969244003296,
+      "r2_std": 3.212021251990194e-07
+    },
+    {
+      "features": "F. marker scores (upper bound)",
+      "n_features": 7,
+      "cell_type": "erythroid",
+      "r2_mean": 0.9999963879585266,
+      "r2_std": 5.496569577883961e-07
+    },
+    {
+      "features": "F. marker scores (upper bound)",
+      "n_features": 7,
+      "cell_type": "platelet",
+      "r2_mean": 0.9999970436096192,
+      "r2_std": 1.9442446744799723e-07
+    }
+  ],
+  "pivot_r2": {
+    "A. z_bio (K=16, our VAE)": {
+      "B_cell": 0.599,
+      "NK_cell": 0.549,
+      "T_cell": 0.805,
+      "erythroid": 0.681,
+      "monocyte": 0.66,
+      "neutrophil": 0.634,
+      "platelet": 0.375
+    },
+    "B. PCA-50": {
+      "B_cell": 0.952,
+      "NK_cell": 0.971,
+      "T_cell": 0.968,
+      "erythroid": 0.93,
+      "monocyte": 0.926,
+      "neutrophil": 0.826,
+      "platelet": 0.94
+    },
+    "C. PCA-16 (matched)": {
+      "B_cell": 0.662,
+      "NK_cell": 0.923,
+      "T_cell": 0.923,
+      "erythroid": 0.807,
+      "monocyte": 0.86,
+      "neutrophil": 0.695,
+      "platelet": 0.613
+    },
+    "D. top-200 HVG": {
+      "B_cell": 0.9,
+      "NK_cell": 0.939,
+      "T_cell": 0.973,
+      "erythroid": 0.883,
+      "monocyte": 0.852,
+      "neutrophil": 0.758,
+      "platelet": 0.472
+    },
+    "E. all genes (K=11374)": {
+      "B_cell": 0.98,
+      "NK_cell": 0.989,
+      "T_cell": 0.987,
+      "erythroid": 0.967,
+      "monocyte": 0.963,
+      "neutrophil": 0.927,
+      "platelet": 0.978
+    },
+    "F. marker scores (upper bound)": {
+      "B_cell": 1.0,
+      "NK_cell": 1.0,
+      "T_cell": 1.0,
+      "erythroid": 1.0,
+      "monocyte": 1.0,
+      "neutrophil": 1.0,
+      "platelet": 1.0
+    }
+  },
+  "summary": {
+    "A. z_bio (K=16, our VAE)": {
+      "mean": 0.6147142857142859,
+      "median": 0.634,
+      "min": 0.375
+    },
+    "B. PCA-50": {
+      "mean": 0.9304285714285714,
+      "median": 0.94,
+      "min": 0.826
+    },
+    "C. PCA-16 (matched)": {
+      "mean": 0.7832857142857144,
+      "median": 0.807,
+      "min": 0.613
+    },
+    "D. top-200 HVG": {
+      "mean": 0.8252857142857142,
+      "median": 0.883,
+      "min": 0.472
+    },
+    "E. all genes (K=11374)": {
+      "mean": 0.9701428571428572,
+      "median": 0.978,
+      "min": 0.927
+    },
+    "F. marker scores (upper bound)": {
+      "mean": 1.0,
+      "median": 1.0,
+      "min": 1.0
+    }
+  },
+  "ranking_by_mean_r2": [
+    "F. marker scores (upper bound)",
+    "E. all genes (K=11374)",
+    "B. PCA-50",
+    "D. top-200 HVG",
+    "C. PCA-16 (matched)",
+    "A. z_bio (K=16, our VAE)"
+  ]
+}
