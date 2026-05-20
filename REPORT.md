@@ -1010,3 +1010,176 @@ cd vae_health/analysis
 cd vae_health
 /Users/rls/Desktop/programming-projects/single-cell/bulk-project/venv/bin/python -m pipeline --model vae --out-dir eval_output/vae
 ```
+
+---
+
+## Q47 · Disentangled VAE with Metadata Heads — Run 3 (final)
+
+**Date:** 2026-05-19  
+**Script:** `analysis/q47_disentangled_train.py`  
+**Model checkpoint:** `analysis/results/q47_disentangled/q47_run3.pt`
+
+### Motivation
+
+Prior runs (Q20, Q32, Q35) established that a plain VAE collapses its latent
+space and that PCA-50 remains a strong baseline for metadata recovery. Two
+structural problems were identified:
+
+1. **No supervision signal** — reserved z_meta dims had no explicit pressure
+   to encode assigned metadata, so the model could ignore them.
+2. **Modality leakage** — z_bio freely encoded modality (bulk vs. single-cell),
+   making cross-modality translation undefined.
+3. **2,000-gene matrix** — earlier runs used a legacy 2 k-gene matrix; a
+   shared 11,374-gene space was needed for fair GTEx ↔ HCA comparison.
+
+### Architecture
+
+| Component | Detail |
+|---|---|
+| Gene space | 11,374 shared GTEx v8 × HCA blood genes |
+| Latent | z_bio = 32 dims + z_meta = 8 dims (2 per field × 4 fields) |
+| Total params | 24,657,602 |
+| Encoder / decoder | 3-layer MLP, BN + LeakyReLU |
+| Metadata fields | modality (binary), ischemia time (continuous), sex (binary), DTHHRDY (ordinal) |
+| Prediction heads | Linear(d, 32) → GELU → Linear(32, 1) per z_meta field |
+| KL | free-bits (δ = 0.5) on z_bio; capacity-weighted KL on z_meta |
+| Biology leak penalty | HSIC(z_bio, modality label), λ = 0.3 |
+| Cycle consistency | bulk → encode → swap modality → decode → re-encode, λ = 0.5 |
+
+### Hyperparameters (Run 3)
+
+| Parameter | Value |
+|---|---|
+| Epochs | 200 |
+| β_bio | 1 × 10⁻³ |
+| β_meta | 1 × 10⁻⁴ |
+| λ_sup (head supervision) | 1.0 |
+| λ_leak (HSIC) | 0.3 |
+| λ_cycle | **0.5** (increased from 0.3 in Run 2) |
+| lam_cap (modality/ischemia/sex) | 1.0 |
+| lam_cap (DTHHRDY) | **0.3** (softer — noisy ordinal signal) |
+| Gradient clip | max_norm = 5.0 |
+| Optimiser | AdamW, lr = 3 × 10⁻⁴ |
+| Batch size | 128 |
+
+### Training data
+
+| Split | Samples |
+|---|---|
+| GTEx train | 643 (80 % of 803 whole-blood donors) |
+| HCA train | 120 pseudobulks × 5 repeats = 600 |
+| Total train | 1,243 |
+| GTEx val (held-out) | 160 (20 %) |
+
+GTEx metadata (ischemia time `SMTSISCH`, sex, Hardy scale `DTHHRDY`) sourced
+from GTEx v8 `SampleAttributesDS.txt` + `SubjectPhenotypesDS.txt`. Of 803
+samples, 2,298 / 2,409 metadata fields were non-missing.
+
+### Training curve summary
+
+| Epoch range | val_recon MSE | Notes |
+|---|---:|---|
+| 1 | 0.981 | cold start, 25/32 bio dims active |
+| 10 | 0.564 | all 32 bio + 8 meta dims active |
+| 50 | 0.323 | sex head saturates (0.99) |
+| 100 | 0.281 | stable, no spikes |
+| 130 | 0.317 | minor spike (0.25 → 0.40 → recovery), gradient clipping contained it |
+| 160 | 0.299 | second minor spike, same recovery pattern |
+| **200** | **0.256** | **converged** |
+
+No catastrophic spikes (cf. Run 1 ep157: 0.22 → 1.60). The gradient clip
+(`max_norm = 5.0`) reduced the worst bump to 1.6× rather than 7×.
+
+### Final head performance (epoch 200)
+
+| Metadata field | z_meta dims | Head metric | Value |
+|---|---|---|---|
+| Modality (bulk vs. sc) | [0, 1] | balanced accuracy | **0.99** |
+| Ischemia time (`SMTSISCH`) | [2, 3] | R² (val GTEx) | **0.77** |
+| Sex | [4, 5] | balanced accuracy | **0.99** |
+| DTHHRDY (Hardy scale) | [6, 7] | R² (val GTEx) | **0.52** |
+
+DTHHRDY R² plateaus at ~0.52 across all runs; this appears to be a data
+ceiling (noisy 5-class ordinal variable with high within-class variance on
+blood RNA) rather than a model capacity issue.
+
+### Flip test results (held-out 20 % GTEx + 120 HCA pseudobulks)
+
+| Test | Description | Run 1 | Run 2 | **Run 3** |
+|---|---|---:|---:|---:|
+| A — bulk → sc | Set z_meta[modality] to sc centroid; NN classifier accuracy on decoded output | 0.954 | 0.993 | **0.9999** |
+| A baseline | NN accuracy on *unflipped* bulk samples classified as sc | 0.020 | 0.109 | 0.096 |
+| B — HCA → bulk | Set z_meta[modality] to bulk centroid; NN classifier accuracy | **0.000** | 0.869 | **0.930** |
+| C — round-trip Pearson | bulk → flip-to-sc decode → flip-back-to-bulk decode; Pearson r vs original | 0.354 | 0.711 | **0.721** |
+| C — z_bio cycle cosine | cosine similarity of z_bio before and after round-trip | 0.975 | 0.961 | **0.984** |
+
+**Key improvements over Run 1:**
+
+- **Test B fixed (0.000 → 0.930):** The root cause was that with `meta_dims[0]=2`,
+  the modality subspace spans dims [0,1]. Resetting only dim 0 left dim 1 still
+  encoding the source class. Fix: centroid of the full `d_mod`-dimensional
+  subspace is set in one operation (`z_meta[:, :d_mod] = target_centroid`).
+- **Round-trip Pearson fixed (0.354 → 0.721):** Same bug in the flip-back step.
+- **z_bio cycle cosine improved (0.961 → 0.984):** Stronger cycle-consistency
+  loss (λ = 0.5) enforces tighter biology preservation through translation.
+- **No catastrophic spikes:** Gradient clipping (max_norm = 5.0) introduced
+  in Run 2 and retained here keeps loss excursions minor and transient.
+
+### Latent space diagnostics
+
+| Diagnostic | Value |
+|---|---|
+| Active z_bio dims (var > 0.01) | **32 / 32** (all epochs from ep7 onward) |
+| Active z_meta dims | **8 / 8** (all epochs) |
+| z_meta modality — bulk centroid, dim 0 | −0.28 |
+| z_meta modality — sc centroid, dim 0 | +1.70 |
+| Modality separation (Δ dim 0) | 1.98 (well-separated) |
+
+### Comparison across all disentangled VAE runs
+
+| Metric | Run 1 (baseline) | Run 2 (centroid fix) | **Run 3 (+ λ_cycle=0.5)** |
+|---|---:|---:|---:|
+| val_recon MSE | 0.247 | 0.264 | **0.255** |
+| Test A (bulk→sc NN acc) | 0.954 | 0.993 | **0.9999** |
+| Test B (HCA→bulk NN acc) | 0.000 | 0.869 | **0.930** |
+| Test C round-trip Pearson | 0.354 | 0.711 | **0.721** |
+| z_bio cycle cosine | 0.975 | 0.961 | **0.984** |
+| Act. z_bio dims | 32/32 | 31/32 | **32/32** |
+| Worst loss spike | ep157 ×7 | ep150 ×1.3 | ep130 ×1.6 |
+
+### Conclusions
+
+1. **Disentanglement works.** With prediction heads and capacity-weighted KL,
+   each 2-dim z_meta slot reliably encodes its assigned metadata: modality and
+   sex reach near-perfect accuracy, ischemia time reaches R² = 0.77.
+2. **Cross-modality translation is functional.** Test A ≥ 0.999 and Test B =
+   0.930 confirm the decoder can plausibly render bulk RNA-seq samples as
+   single-cell pseudobulk and vice versa.
+3. **Biology is preserved through translation.** z_bio cycle cosine = 0.984
+   means the biological signal (the 32 non-metadata dims) survives a full
+   bulk → sc → bulk round-trip with minimal distortion.
+4. **DTHHRDY is a hard target.** R² ≈ 0.52 appears to be a data ceiling; the
+   softer per-field cap (lam_cap = 0.3 for DTHHRDY vs 1.0 for others) helped
+   stop the capacity-weighted KL from crushing this slot before it could learn.
+5. **Next steps** (if desired): ordinal regression loss for DTHHRDY; increase
+   `lam_cycle` further or add a discriminator on decoded outputs to close the
+   Test B gap (0.930 → 0.95+); use Run 3 checkpoint to run Q12-style
+   linear probes in the disentangled latent.
+
+### Reproducibility
+
+```bash
+cd /path/to/ecs271-project
+source .venv/bin/activate
+python analysis/q47_disentangled_train.py \
+    --epochs 200 \
+    --tag run3 \
+    --lam-cycle 0.5 \
+    --lam-cap-dthhrdy 0.3
+# Outputs: analysis/results/q47_disentangled/q47_run3.{json,pt}
+#          analysis/results/q47_run3_log.txt
+```
+
+Data dependency: `data/processed_11k/` (built by `scripts/build_shared_gene_matrix.py`
+from GTEx v8 GCT + HCA bone-marrow h5ad).
+

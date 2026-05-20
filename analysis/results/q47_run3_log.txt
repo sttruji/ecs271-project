@@ -1,0 +1,50 @@
+[Q47] Loading data — device=mps
+  [data] Using 11K gene matrix from /Users/stevotrujillo/Desktop/ecs271-project/data/processed_11k
+  [metadata] Loading annotations from GTEx_Analysis_v8_Annotations_SampleAttributesDS.txt + GTEx_Analysis_v8_Annotations_SubjectPhenotypesDS.txt
+  [data] GTEx: 803 samples × 11374 genes  (metadata-known fields: 2298/2409)
+  [data] HCA:  120 pseudobulks × 11374 genes
+  train: GTEx 643 + HCA 120×5=600 = 1243 samples
+  val:   GTEx 160 samples  (20 % held-out)
+  genes: 11374
+  params: 24,657,602  latent: z_meta=8 ([2, 2, 2, 2] per field) + z_bio=32
+ep  1  train=9.6384  v_recon=0.9806  act_bio=25/32  act_meta=8/8  heads=['0.99', '0.67', '0.66', '0.60']
+ep 10  train=2.7386  v_recon=0.5644  act_bio=32/32  act_meta=8/8  heads=['0.99', '0.73', '0.69', '0.52']
+ep 20  train=1.2841  v_recon=0.4476  act_bio=32/32  act_meta=8/8  heads=['1.00', '0.71', '0.97', '0.53']
+ep 30  train=0.9162  v_recon=0.3745  act_bio=32/32  act_meta=8/8  heads=['1.00', '0.76', '0.98', '0.47']
+ep 40  train=0.6877  v_recon=0.3544  act_bio=32/32  act_meta=8/8  heads=['1.00', '0.74', '0.98', '0.50']
+ep 50  train=0.5464  v_recon=0.3227  act_bio=32/32  act_meta=8/8  heads=['1.00', '0.75', '0.99', '0.49']
+ep 60  train=0.4739  v_recon=0.3146  act_bio=32/32  act_meta=8/8  heads=['1.00', '0.75', '0.99', '0.49']
+ep 70  train=0.4101  v_recon=0.3116  act_bio=32/32  act_meta=8/8  heads=['1.00', '0.74', '0.99', '0.49']
+ep 80  train=0.3723  v_recon=0.2947  act_bio=32/32  act_meta=8/8  heads=['1.00', '0.76', '0.99', '0.49']
+ep 90  train=0.3438  v_recon=0.2908  act_bio=32/32  act_meta=8/8  heads=['1.00', '0.77', '0.99', '0.50']
+ep100  train=0.3127  v_recon=0.2812  act_bio=32/32  act_meta=8/8  heads=['1.00', '0.78', '0.99', '0.53']
+ep110  train=0.2968  v_recon=0.2829  act_bio=32/32  act_meta=8/8  heads=['1.00', '0.78', '0.98', '0.49']
+ep120  train=0.2665  v_recon=0.2747  act_bio=32/32  act_meta=8/8  heads=['1.00', '0.76', '0.99', '0.52']
+ep130  train=0.5282  v_recon=0.3174  act_bio=32/32  act_meta=8/8  heads=['1.00', '0.73', '0.94', '0.48']
+ep140  train=0.2594  v_recon=0.2699  act_bio=32/32  act_meta=8/8  heads=['1.00', '0.74', '0.99', '0.48']
+ep150  train=0.2346  v_recon=0.2622  act_bio=32/32  act_meta=8/8  heads=['1.00', '0.77', '0.99', '0.51']
+ep160  train=0.3876  v_recon=0.2994  act_bio=32/32  act_meta=8/8  heads=['1.00', '0.75', '0.98', '0.50']
+ep170  train=0.2242  v_recon=0.2586  act_bio=32/32  act_meta=8/8  heads=['1.00', '0.77', '0.99', '0.49']
+ep180  train=0.2146  v_recon=0.2564  act_bio=32/32  act_meta=8/8  heads=['1.00', '0.76', '0.99', '0.48']
+ep190  train=0.2071  v_recon=0.2512  act_bio=32/32  act_meta=8/8  heads=['1.00', '0.76', '0.99', '0.49']
+ep200  train=0.1951  v_recon=0.2555  act_bio=32/32  act_meta=8/8  heads=['0.99', '0.77', '0.99', '0.52']
+
+[Q47] Running flip tests on 20 % held-out set …
+  z_meta[modality]: bulk_centroid[0]=-0.280  sc_centroid[0]=1.701
+  testA_nn_acc_flip_to_sc_BALANCED: 0.9999
+  testA_nn_baseline_orig_to_sc: 0.0958
+  testB_nn_acc_flip_to_bulk_HCA_BALANCED: 0.9300
+  testC_round_trip_pearson: 0.7207
+  testC_z_bio_cycle_cosine: 0.9837
+  biology_preservation_pearson: 0.2105
+  cosine_orig_to_gtex_pool: 0.1377
+  cosine_orig_to_hca_pool: 0.8325
+  cosine_flip_to_gtex_pool: 0.5166
+  cosine_flip_to_hca_pool: 0.1117
+  val_recon_mse: 0.2552
+  n_val_gtex: 160
+  n_hca_pseudobulks: 120
+  z_meta_modality_bulk_mean: -0.2803
+  z_meta_modality_sc_mean: 1.7009
+
+  Saved: q47_run3.json  q47_run3.pt
