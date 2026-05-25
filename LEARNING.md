@@ -34,7 +34,9 @@ Concepts encountered during ECS 271 project — add new ones as they come up.
 
 - [ ] **VICReg** — Bardes et al., ICLR 2022. Variance-Invariance-Covariance Regularization. Prevents embedding collapse by penalising: (1) dimensions with near-zero variance (variance term), (2) high off-diagonal covariance between dims (covariance term). Batch-size robust. Used as auxiliary loss on top of InfoNCE to prevent the encoder from collapsing all embeddings to a point or subspace at small N.
 
-- [ ] **BulkRNABert** — InstaDeepAI, bioRxiv 2024. First BERT-style transformer pretrained on bulk RNA-seq (TCGA + GTEx + ENCODE, ~500k profiles). Treats each gene as a token. Weights on HuggingFace: `InstaDeepAI/BulkRNABert`. Can be used as a frozen encoder for bulk RNA-seq to get rich 768-dim embeddings without training from scratch on small N.
+- [ ] **BulkRNABert** — InstaDeepAI, bioRxiv 2024. First BERT-style transformer pretrained on bulk RNA-seq (TCGA + GTEx + ENCODE, ~500k profiles). Treats each gene as a token (gene expression value = token embedding). Pretrained with masked language modeling: randomly mask some gene values, predict the original. Produces a 768-dim CLS token embedding per sample. Weights on HuggingFace: `InstaDeepAI/BulkRNABert`. Idea: use as a frozen encoder for bulk RNA-seq to get rich embeddings without training from scratch on small N (87 donors).
+
+- [ ] **Hungarian algorithm (linear_sum_assignment)** — Kuhn 1955 / Munkres 1957. Solves the optimal bipartite matching problem: given a cost matrix C[i,j] (e.g. negative cosine similarity between sc donor i and bulk donor j), find the one-to-one assignment that minimises total cost. Runs in O(N³). In our context: rather than greedy argmax (each sc independently picks its nearest bulk — many sc can pick the same bulk), Hungarian enforces that each bulk donor is assigned to exactly one sc donor. Implemented in `scipy.optimize.linear_sum_assignment(-sim_matrix)`. Can dramatically improve retrieval accuracy when a "crowding" confound exists (e.g. disease severity clusters pulling many donors toward the same embedding region).
 
 ---
 
