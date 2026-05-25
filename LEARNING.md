@@ -14,7 +14,7 @@ Concepts encountered during ECS 271 project — add new ones as they come up.
 
 - [ ] **Convex Hull** — the smallest convex shape that encloses a set of points. Used here as a "territory" metric: hull fraction = fraction of sc embeddings that fall inside the convex hull of bulk embeddings. Hull fraction 0 = modalities completely separated; 1 = sc points are inside bulk territory. Does NOT mean paired samples are close to each other.
 
-- [ ] **DANN (Domain Adversarial Neural Network)** — adds a gradient reversal layer before a domain classifier. The encoder tries to fool the classifier (is this bulk or sc?) while the classifier tries to succeed. At convergence, the encoder produces modality-invariant representations.
+- [ ] **DANN (Domain-Adversarial Training of Neural Networks)** — Ganin et al. 2016. Adds a gradient reversal layer (GRL) between the encoder and a domain classifier. Forward pass: normal. Backward pass: gradients from the domain classifier are *negated* before reaching the encoder — so the encoder is pushed to produce representations the classifier *can't* distinguish. At convergence: encoder is modality-invariant (bulk and sc land in the same region), while still minimising the task loss. Key insight: no special training loop needed; GRL makes it a single end-to-end model. Paper: https://arxiv.org/abs/1505.07818
 
 - [ ] **VAE posterior collapse** — when the KL term dominates, the encoder learns to output the prior (μ=0, σ=1) for every input. All latent dims become inactive. The decoder ignores z entirely and just learns the data mean.
 
