@@ -22,6 +22,20 @@ Concepts encountered during ECS 271 project — add new ones as they come up.
 
 - [ ] **FiLM (Feature-wise Linear Modulation)** — conditions a neural network on a side-input (e.g. metadata) by learning per-layer scale (γ) and shift (β) vectors from the side-input. Applied to each hidden layer: `h' = γ ⊙ h + β`. Gives the conditioning signal direct access to every layer.
 
+- [ ] **DCL (Decoupled Contrastive Learning)** — Yeh et al., ECCV 2022. Standard InfoNCE includes the positive pair in the denominator, which creates "negative-positive coupling" — as the positive becomes closer, the denominator shrinks and destabilises the loss. DCL removes the positive from the denominator, separating alignment (pull positive close) from uniformity (push negatives away). Far more stable at small batch sizes. arxiv:2110.06848
+
+- [ ] **MoCo (Momentum Contrast)** — He et al., CVPR 2020. Maintains a large queue of negative embeddings from previous batches. Each step: update the queue with the current batch's embeddings, use the full queue as negatives in InfoNCE. Gives N_queue negatives without needing them all in-batch. Especially powerful when N is small (e.g. 87 donors per fold). The key trick: a momentum encoder (slow-moving copy of the main encoder) encodes the queue entries for consistency.
+
+- [ ] **Hard negative mining** — selecting negatives that are "hard" (close to the anchor but from a different class) rather than random negatives. In biology: a donor with similar disease severity is a hard negative because their expression is similar to the query. Methods: online semi-hard mining (Schroff 2015, FaceNet), adaptive hard weighting (scHSC 2025). Key insight: the confound (disease severity) defines which negatives are hard — use domain knowledge to find them.
+
+- [ ] **Severity-informed contrastive weighting** — novel approach (not yet published): multiply each negative pair's InfoNCE contribution by `1 + γ · similarity(sev_i, sev_j)`. Donors with similar disease severity are harder negatives and contribute more to the loss. Targets the core confound in COMBAT (COVID severity dominates blood expression variation).
+
+- [ ] **Hungarian assignment (linear_sum_assignment)** — instead of greedy argmax retrieval (each query picks its nearest neighbour independently), Hungarian assignment enforces one-to-one matching across all queries simultaneously. Solves the optimal bipartite matching problem. Available in `scipy.optimize.linear_sum_assignment`. Zero cost at inference — just replace argmax with this call.
+
+- [ ] **VICReg** — Bardes et al., ICLR 2022. Variance-Invariance-Covariance Regularization. Prevents embedding collapse by penalising: (1) dimensions with near-zero variance (variance term), (2) high off-diagonal covariance between dims (covariance term). Batch-size robust. Used as auxiliary loss on top of InfoNCE to prevent the encoder from collapsing all embeddings to a point or subspace at small N.
+
+- [ ] **BulkRNABert** — InstaDeepAI, bioRxiv 2024. First BERT-style transformer pretrained on bulk RNA-seq (TCGA + GTEx + ENCODE, ~500k profiles). Treats each gene as a token. Weights on HuggingFace: `InstaDeepAI/BulkRNABert`. Can be used as a frozen encoder for bulk RNA-seq to get rich 768-dim embeddings without training from scratch on small N.
+
 ---
 
 ## Genomics / Biology
