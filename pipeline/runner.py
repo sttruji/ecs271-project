@@ -12,7 +12,8 @@ import pandas as pd
 from .data import GTExBlood, load_gtex_blood, load_metadata
 from .enrichment import DEFAULT_LIBRARIES, enrich_dim_loadings
 from .latent import (correlate_z_with_pcs, evaluate_latent_activity,
-                     evaluate_latent_meta, state_classification_auc)
+                     evaluate_latent_meta, metadata_linear_probe,
+                     state_classification_auc)
 from .reconstruction import evaluate_reconstruction
 
 
@@ -85,12 +86,14 @@ def run_evaluation(model, cfg: EvalConfig, *, gtex: Optional[GTExBlood] = None) 
     (cfg.out_dir / "state_auc.json").write_text(json.dumps(state, indent=2))
 
     # ── Q4 ────────────────────────────────────────────────────────────────
-    print("[5/6] Metadata correlation ...")
+    print("[5/6] Metadata correlation + linear probes ...")
     metadata = load_metadata(gtex.sample_ids)
     metadata.to_csv(cfg.out_dir / "metadata.csv", index=False)
     meta = evaluate_latent_meta(z_all, metadata)
     meta["spearman"].to_csv(cfg.out_dir / "metadata_spearman.csv")
     meta["eta2"].to_csv(cfg.out_dir / "metadata_eta2.csv")
+    probe = metadata_linear_probe(z_all, metadata)
+    (cfg.out_dir / "metadata_probe.json").write_text(json.dumps(probe, indent=2))
 
     # ── Optional: Enrichr on the most-active dims ─────────────────────────
     enrichment_summary: list[dict] = []
@@ -135,7 +138,7 @@ def run_evaluation(model, cfg: EvalConfig, *, gtex: Optional[GTExBlood] = None) 
                 cfg.out_dir / "enrichment_summary.csv", index=False)
 
     # ── consumable summary ────────────────────────────────────────────────
-    summary = _build_summary(cfg, recon, activity, state, meta, enrichment_summary, corr)
+    summary = _build_summary(cfg, recon, activity, state, meta, probe, enrichment_summary, corr)
     (cfg.out_dir / "summary.json").write_text(json.dumps(summary, indent=2))
     return summary
 
@@ -161,6 +164,7 @@ def _build_summary(
     activity: dict,
     state: dict,
     meta: dict,
+    probe: dict,
     enrichment_summary: list[dict],
     corr: np.ndarray,
 ) -> dict:
@@ -192,5 +196,6 @@ def _build_summary(
         "metadata_continuous": summary_meta,
         "metadata_categorical": cat_meta,
         "max_corr_z_with_bulk_pc1_10": [float(v) for v in corr.max(axis=0)],
+        "metadata_linear_probe": probe,
         "enrichment_top_terms": enrichment_summary,
     }

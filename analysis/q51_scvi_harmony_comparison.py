@@ -78,10 +78,13 @@ def train_scvi(bulk_x, sn_x, bulk_tech_str, sn_tech_str, n_latent=12, n_epochs=2
     model = scvi.model.SCVI(adata, n_latent=n_latent, n_hidden=128, n_layers=1,
                              gene_likelihood="normal", dropout_rate=0.1,
                              use_observed_lib_size=False, log_variational=False)
-    print(f"  scVI: training {n_epochs} epochs on {X.shape} (n_latent={n_latent})…")
+    print(f"  scVI: training {n_epochs} epochs on {X.shape} (n_latent={n_latent})…", flush=True)
     model.train(max_epochs=n_epochs, batch_size=64, plan_kwargs={"lr": 1e-3},
-                  early_stopping=False, check_val_every_n_epoch=50, accelerator="cpu")
+                  early_stopping=False, check_val_every_n_epoch=50, accelerator="cpu",
+                  datasplitter_kwargs={"num_workers": 0})
+    print("  scVI: training done, extracting latent…", flush=True)
     z = model.get_latent_representation()
+    print(f"  scVI: latent shape {z.shape}", flush=True)
     z_bulk = z[: len(bulk_x)]
     z_sn = z[len(bulk_x):]
     return z_bulk, z_sn

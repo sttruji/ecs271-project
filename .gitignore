@@ -16,3 +16,9 @@ analysis/results/q20_disentangled/q20_run*.json
 
 # OS/editor cruft
 .DS_Store
+outreach/
+
+# Large binary / model artifacts
+*.npy
+*.pt
+outreach/

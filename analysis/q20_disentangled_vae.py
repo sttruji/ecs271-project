@@ -167,7 +167,7 @@ def train(model, x_train, m_train, x_val, m_val, *, epochs=200, batch=64,
             kl_b = kl_with_free_bits(mu_b, lv_b, free_bits) / x_b.size(0)
             kl_m = kl_per_dim(mu_m, lv_m).sum()
             preds = model.head_predictions(z_m)
-            sup, _ = supervised_loss(preds, [m_b[:, i] for i in range(m_b.size(1))], kinds)
+            sup, _, _per_field = supervised_loss(preds, [m_b[:, i] for i in range(m_b.size(1))], kinds)
 
             # HSIC: leak ONLY on modality (col 0). The other metadata are bio
             # axes — z_bio should be free to redundantly encode them.

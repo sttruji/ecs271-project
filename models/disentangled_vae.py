@@ -1,7 +1,18 @@
 """Disentangled VAE: latent split into z_meta (supervised) + z_bio (free).
 
-Loss = recon + β·KL(z_bio; free-bits) + γ·KL(z_meta) + λ_sup·Σ supervised heads
-       + λ_leak·HSIC(z_bio, m_observed)
+Loss = recon + β_bio·KL(z_bio; free-bits) + β_meta·KL_cap(z_meta) + λ_sup·Σ supervised heads
+       + λ_leak·HSIC(z_bio, modality) + λ_cycle·cycle_bio + λ_cycle_meta·cycle_meta
+
+KL_cap(z_meta): each per-field KL is amplified by (1 + λ_cap·head_loss_k.detach()).
+  → If a reserved z_meta dim FAILS to predict its assigned metadata, its KL weight
+    rises, pushing it back toward the prior (punishment).
+  → If it SUCCEEDS (head_loss_k → 0), weight → 1 (standard KL, slot is earned).
+  → This implements "punish reserved dimensions unless they predict their metadata."
+
+Report finding: only ~30 bulk PCs carry stable biology signal.  z_bio_dim is
+capped at 32 by default; free-bits floor prevents unused dims from consuming
+capacity, so the model naturally concentrates on true signal rather than
+chasing perfect reconstruction.
 
 The decoder takes concat(z_meta, z_bio) so flipping z_meta at inference time
 actually changes the reconstruction.
@@ -18,11 +29,21 @@ from torch import nn
 @dataclass
 class DisentangledConfig:
     input_dim: int
-    z_bio_dim: int = 50
+    # z_bio capped at 32: report found only ~30 PCs carry stable biology signal.
+    # Free-bits floor prevents unused dims from filling up, so active count
+    # naturally stays at the information content of the data.
+    z_bio_dim: int = 32
     meta_fields: list[str] = field(default_factory=lambda: ["modality", "ischemia", "sex", "dthhrdy"])
-    meta_dims: list[int] = field(default_factory=lambda: [1, 1, 1, 1])      # one z dim per field
+    # 2 dims per field: gives MLP head enough room to model the slot non-linearly
+    # while keeping z_meta small (8 total vs 4 before).
+    meta_dims: list[int] = field(default_factory=lambda: [2, 2, 2, 2])
     meta_kinds: list[str] = field(default_factory=lambda: ["bce", "mse", "bce", "mse"])
     hidden: tuple = (1024, 512, 256)
+    # Hidden dims for per-field MLP prediction heads.
+    meta_hidden: tuple = (32,)
+    # Capacity-penalty multiplier: amplifies KL of z_meta dims that fail to
+    # predict their assigned metadata.  0 = standard KL, 1 = default.
+    lam_cap: float = 1.0
 
     @property
     def z_meta_dim(self) -> int:
@@ -44,6 +65,21 @@ def _mlp(dims: list[int], dropout: float = 0.1) -> nn.Sequential:
     return nn.Sequential(*layers)
 
 
+def _head_mlp(in_dim: int, hidden: tuple, out_dim: int = 1) -> nn.Module:
+    """Small MLP prediction head for one z_meta field.
+
+    in_dim > 1: Linear → GELU → (hidden layers) → Linear(out_dim).
+    in_dim == 1: single Linear (nonlinearity on a scalar gives no benefit).
+    """
+    if in_dim == 1 or not hidden:
+        return nn.Linear(in_dim, out_dim)
+    layers: list[nn.Module] = [nn.Linear(in_dim, hidden[0]), nn.GELU()]
+    for i in range(len(hidden) - 1):
+        layers += [nn.Linear(hidden[i], hidden[i + 1]), nn.GELU()]
+    layers.append(nn.Linear(hidden[-1], out_dim))
+    return nn.Sequential(*layers)
+
+
 class DisentangledVAE(nn.Module):
     def __init__(self, config: DisentangledConfig):
         super().__init__()
@@ -56,12 +92,11 @@ class DisentangledVAE(nn.Module):
         self.logvar_bio = nn.Linear(h[-1], config.z_bio_dim)
         self.decoder = _mlp([config.latent_dim] + h[::-1] + [config.input_dim])
 
-        # Per-field heads on the dedicated z_meta slice.
+        # Per-field MLP heads on each dedicated z_meta slice.
+        # Each head sees only the dims assigned to its metadata field.
         self.heads = nn.ModuleList()
-        offset = 0
         for d in config.meta_dims:
-            self.heads.append(nn.Linear(d, 1))
-            offset += d
+            self.heads.append(_head_mlp(d, config.meta_hidden))
 
     def encode(self, x: torch.Tensor):
         h = self.encoder(x)
@@ -108,14 +143,21 @@ def supervised_loss(
     preds: list[torch.Tensor],
     targets: list[torch.Tensor],          # NaN-marked; we mask
     kinds: list[str],
-) -> tuple[torch.Tensor, dict[str, float]]:
-    """Returns (sum loss, per-field stats). Targets contain NaN where unknown."""
+) -> tuple[torch.Tensor, dict[str, float], list[torch.Tensor]]:
+    """Returns (sum loss, per-field stats, per-field loss tensors).
+
+    Targets contain NaN where unknown — those samples are masked out for that
+    field so the auxiliary loss is never penalised on missing metadata.
+    per-field loss tensors are zero-dim tensors used by capacity_weighted_kl_meta.
+    """
     total = preds[0].new_zeros(())
     stats: dict[str, float] = {}
+    per_field: list[torch.Tensor] = []
     for i, (p, y, kind) in enumerate(zip(preds, targets, kinds)):
         mask = torch.isfinite(y)
         if not mask.any():
             stats[f"f{i}_loss"] = 0.0
+            per_field.append(p.new_zeros(()))
             continue
         pm, ym = p[mask], y[mask]
         if kind == "bce":
@@ -126,7 +168,44 @@ def supervised_loss(
             raise ValueError(f"Unknown kind {kind}")
         total = total + loss
         stats[f"f{i}_loss"] = loss.item()
-    return total, stats
+        per_field.append(loss)
+    return total, stats, per_field
+
+
+def capacity_weighted_kl_meta(
+    mu: torch.Tensor,
+    logvar: torch.Tensor,
+    per_field_losses: list[torch.Tensor],
+    meta_dims: list[int],
+    lam_cap: float = 1.0,
+    lam_cap_per_field: list[float] | None = None,
+) -> torch.Tensor:
+    """KL for z_meta with per-field capacity-weighted punishment.
+
+    For each z_meta field k occupying dims [offset, offset+d):
+        KL_k = (1 + cap_k * head_loss_k.detach()) * sum_KL_per_dim_k
+
+    cap_k = lam_cap_per_field[k] if provided, else lam_cap (uniform).
+
+    When head_loss_k is high (failed prediction) → weight > 1 → larger KL →
+    dims are pushed back toward the prior (punished).
+    When head_loss_k → 0 (good prediction) → weight → 1 → standard KL →
+    the reserved slot earns its capacity.
+
+    lam_cap_per_field allows softer punishment for noisy metadata fields
+    (e.g. DTHHRDY is a 0-4 ordinal with uneven distribution; punishing it
+    at the same rate as modality/sex creates a vicious cycle where the slot
+    never gets trained because KL always crushes it back to the prior).
+    """
+    kl_dims = -0.5 * torch.mean(1 + logvar - mu.pow(2) - logvar.exp(), dim=0)
+    total = kl_dims.new_zeros(())
+    offset = 0
+    for k, (loss_k, d) in enumerate(zip(per_field_losses, meta_dims)):
+        cap = lam_cap_per_field[k] if lam_cap_per_field is not None else lam_cap
+        w = 1.0 + cap * loss_k.detach()
+        total = total + w * kl_dims[offset:offset + d].sum()
+        offset += d
+    return total
 
 
 def hsic_penalty(z_bio: torch.Tensor, m: torch.Tensor) -> torch.Tensor:

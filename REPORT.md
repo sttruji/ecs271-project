@@ -30,11 +30,12 @@ across the cohort, the noise floor, and 4 additional GTEx tissues.
 
 ---
 
+
 ## TL;DR
 
 1. **The trained cross-modality VAE has posterior-collapsed.** All 64 latent
    dims have variance < 10⁻³ on 803 GTEx donors (mean variance 1.7×10⁻⁵).
-   Held-out reconstruction R² = **−3.27** — *worse than predicting the mean*.
+   Held-out reconstruction R² = **−3.27** — *worse than predicting the mean*. 
 2. **A vanilla 3-layer MLP autoencoder reaches R² = 0.81** on the same 64-D
    bottleneck and 11,374-gene shared space — slightly under PCA-50 (R² = 0.86)
    but **>1000× better than the trained VAE**. Sane VAE (β = 10⁻³, no
@@ -80,6 +81,8 @@ scaler → 80/20 random train/test split (seed 0).
 | AE-3 (this work) | 0.193 | 0.813 | 0.874 | — |
 | VAE β=10⁻³ (this work) | 0.216 | 0.790 | 0.854 | — |
 
+[comment: define cross-modality VAE, 3 AE3, VAE beta]
+
 The trained VAE is dramatically worse than every other method, including
 trivially predicting zero. Its **per-sample Pearson r is essentially zero** —
 the decoder output is independent of the donor.
@@ -120,6 +123,8 @@ from 5.05 at epoch 1 to 0.43 at epoch 150.
 
 Figure: [analysis/figures/q2_latent_meaning.png](analysis/figures/q2_latent_meaning.png).
 
+[comment: why didnt you try setting a less strong KL?]
+
 ---
 
 ## Q3 · 3-layer MLP autoencoder — sanity-check the architecture
@@ -155,6 +160,9 @@ this donor count).
 
 Figure: [analysis/figures/q3_mlp_autoencoder.png](analysis/figures/q3_mlp_autoencoder.png).
 
+[keep in mind that the majority of the variance currently comes from ischemia time]
+[i want further tests to see whether this is truely merely a linear relationship]
+
 ---
 
 ## Q4 · How well do the PCs encode biology? (Validation)
@@ -183,6 +191,9 @@ Top hit per direction shown (full tables under
 Each top-5 PC has a clean biological identity, with adj-p ≪ 0.05 on at
 least one of GO_BP or KEGG.
 
+[i want to understand what this means, what causes ribosome biogenesis?]
+[and what does the adjusted p value stand for]
+
 ### 4.2 GTEx donor-metadata correlation
 
 Joined each donor to GTEx v10 annotations (downloaded under
@@ -201,6 +212,11 @@ one-way-ANOVA η² for categorical.
 | SMCENTER (sequencing center) | categorical (η²) | PC2 | 0.098 |
 | SEX | categorical (η²) | PC50 | 0.215 |
 
+[tell me about the average of the hardy death classification and the other metadata as well the std, ...]
+[do any of the variables correlate]
+
+
+
 **Interpretation.** PC2 is the *agonal-stress / handling* axis — three of
 the strongest correlations (DTHHRDY 0.66, SMTSISCH 0.65, SMRIN 0.46) all hit
 the same PC, and the pathway hit on the same axis is *Response to Unfolded
@@ -209,6 +225,9 @@ metadata + pathway enrichment) converge on the same biology. PC1 is
 dominated by myeloid cell composition (ribosome biogenesis ↔ phagocytosis +
 batch effect on η²). Sex is a *late* factor (PC50, η² = 0.22) — it isn't a
 top axis of variation in whole-blood transcriptomes.
+
+[no way sex just shows up in pc50]
+
 
 Heatmap: [analysis/figures/q4_metadata_heatmap.png](analysis/figures/q4_metadata_heatmap.png).
 
@@ -232,7 +251,7 @@ Enrichment on the top-3 most-active dims:
 - z15 +: Macromolecule Biosynthesis / Ribosome (adj-p = 9.98×10⁻⁹)
 
 The AE-3 nonlinear axes are non-orthogonal but biologically the same: the
-linear and nonlinear models agree on what whole-blood biology *is*.
+linear and nonlinear models agree on what whole-blood biology *is*. [please expand]
 
 ---
 
@@ -273,6 +292,7 @@ linear and nonlinear models agree on what whole-blood biology *is*.
     ├── REPORT.md                           — this file
     └── (clone scaffolding: scripts/, models/, train/, README.md)
 ```
+[you are missing a view datasets you have used]
 
 The bulk-project deconvolution scripts (`cross_modality_vae.py`,
 `drvi_bulk.py`, `batch_integration.py`) were updated to import canonical
@@ -287,6 +307,7 @@ keep working unchanged.
 5 libraries × PCs 31–251) — 8,430 enrichment hits saved.
 Master tables: [analysis/results/q6_extended_pc_biology/](analysis/results/q6_extended_pc_biology/),
 aggregated digest: [analysis/results/q6_aggregated/q6_pc_biology.md](analysis/results/q6_aggregated/q6_pc_biology.md).
+[how is this different from the prev analysis]
 
 The ten most-active PCs:
 
@@ -306,12 +327,15 @@ The ten most-active PCs:
 | 13 | 0.70 | EGR1 ChIP-Seq (erythroleukemia) | **MSigDB Interferon Alpha Response** | — |
 | 14 | 0.61 | **MSigDB Interferon Gamma Response** | Platelet Activation (Reactome) | — |
 
+[why so much chip-seq in here]
+
 Beyond ~PC30 the per-PC variance drops below 0.25 % each and pathway hits
 become individually less interpretable (each PC is a small axis), but the
 *aggregate* of PCs 30–251 still surfaces meaningful signals like
 SARS-CoV-2 B-cell activation (PC11), interferon responses (PC13–PC14),
 platelet activation (PC14−), etc. The full 251-PC digest is in the
 markdown file linked above.
+[which markdwon, where to find]
 
 Figures: [analysis/figures/q6_eigenvalues.png](analysis/figures/q6_eigenvalues.png)
 (scree + cum var, K_95 marked); [analysis/figures/q6_pc_biology_heatmap.png](analysis/figures/q6_pc_biology_heatmap.png)
@@ -345,6 +369,9 @@ first at PC32, exactly matching Horn and MP.
 Figures: [analysis/figures/q7_horn_parallel.png](analysis/figures/q7_horn_parallel.png),
 [analysis/figures/q8_bootstrap_stability.png](analysis/figures/q8_bootstrap_stability.png).
 
+[i think we should drop the 220 PCs then]
+
+
 ---
 
 ## Q9 · Cross-cohort replication on GSE279480 (255 Null samples)
@@ -374,6 +401,8 @@ with CMV reshaping memory T-cell repertoire — a known biological signal).
 
 Figure: [analysis/figures/q9_gse279480_cohort.png](analysis/figures/q9_gse279480_cohort.png).
 
+[why do people have such a variations of my-ly-composition?]
+
 ---
 
 ## Q10 · Per-sample biology — 5 lowest-ischemia donors
@@ -401,13 +430,15 @@ latent space).
 Per-donor enrichment tables: [analysis/results/q10_per_sample_biology/](analysis/results/q10_per_sample_biology/)
 plus [analysis/results/q10_per_sample_biology/_summary.csv](analysis/results/q10_per_sample_biology/_summary.csv).
 
+[q10 can be removed]
+
 ---
 
 ## Q11 · Cross-tissue PC validation — projecting blood PCs onto 4 other tissues
 
 Downloaded 4 additional GTEx v10 tissues (spleen 277, liver 262, lung
 604, muscle 818 samples) and projected each onto the **blood**
-PCA basis. **Key result: per-tissue mean PC score (blood centred at 0):**
+PCA basis. **Key result: per-tissue mean PC score (blood centred at 0):** [dont understand, explain what you did]
 
 | PC | Blood | Spleen | Liver | Lung | Muscle | Interpretation |
 |---:|---:|---:|---:|---:|---:|---|
@@ -513,6 +544,7 @@ The pipeline takes ~30 s for `--model vae` (just inference) and ~3 min for
 
 ---
 
+[got until here still need to check the rest of the doc] 
 ## What the goals doc said vs what we found
 
 From `bulk-project/HEALTHY_STATE_v1.md` §9.7 (the original VAE goal):
@@ -963,6 +995,115 @@ Per-N checkpoints: `analysis/results/q15_sweep_d{N}.pt`
 
 ---
 
+## Future Testing Plans — PULSAR + N-cluster UCE tokens
+
+*Added 2026-05-19 after Q10 N-cluster experiments (N=4: F1=0.956±0.023 vs baseline 0.948±0.010)*
+
+### P1 · Does the frozen-adapter approach speed up training?
+
+The current N=4 frozen experiment only trains 63K params (shared 1280→32→768
+projector + cluster-type embeddings) vs 87.4M for full fine-tune.  All 10
+folds (N=4 + N=8, 20 epochs each) completed in ~20 min on T4.  Open question:
+at the same wall-clock budget, does the frozen N-cluster adapter reach
+competitive performance faster than full fine-tuning from a random head?
+
+**Experiment:** sweep training epochs {5, 10, 20, 40} for frozen N=4 vs
+full fine-tune, plot F1-vs-epoch learning curves.  If the frozen adapter
+saturates at epoch 5 with F1 ≈ 0.95 while full fine-tune needs 20+,
+that's a meaningful efficiency win for rapid prototyping.
+
+---
+
+### P2 · Test on models with lower baseline performance (e.g. ARC state model)
+
+**Status: partially tested 2026-05-19 — hypothesis REJECTED for simple baselines.**
+
+Tested on same 261-donor lupus cohort (5-fold CV, MPS/CPU local run):
+
+| Model | F1-macro | Δ from baseline |
+|-------|----------|-----------------|
+| Mean UCE pseudobulk → LogReg | 0.951 ± 0.021 | baseline |
+| N=4 cluster UCE → LogReg (concat) | 0.952 ± 0.021 | **+0.001** (noise) |
+| Mean UCE → 2-layer MLP | 0.935 ± 0.020 | baseline |
+| N=4 cluster UCE → MLP (concat) | 0.931 ± 0.028 | **−0.004** |
+| PULSAR frozen (from Colab) | 0.948 ± 0.010 | baseline |
+| PULSAR + N=4 cluster tokens | 0.956 ± 0.023 | **+0.008** |
+
+**Key finding:** cluster tokens do NOT help simpler models — only PULSAR.
+The benefit is structural, not informational: PULSAR's **cross-attention can
+selectively attend to whichever cluster token is diagnostically relevant**
+(e.g. monocyte cluster for IFN-response donors), while LogReg/MLP concatenating
+N×1280-d features just adds collinear noise and hurts regularisation.
+
+Surprise result: **mean UCE → LogReg (0.951) already matches PULSAR frozen
+(0.948)** — UCE embeddings are already saturated for this task, no transformer
+needed.
+
+**Still worth testing on ARC / out-of-domain tasks where:**
+- The single-cell foundation model is pre-trained on a different tissue
+  (out-of-domain UCE → weaker base signal → more room for cluster tokens)
+- The task requires monocyte-specific vs lymphocyte-specific dissection
+  (cluster tokens more informative than the global mean)
+- **ARC state model** if its baseline F1 < 0.90 on this cohort
+
+---
+
+### P3 · Perturbation-prediction embedding as donor representation
+
+Instead of using (1) raw pseudobulk UCE means or (2) VAE z_bio as donor
+tokens, train a model whose *task* is to predict how a bulk sample responds
+to a panel of perturbations (e.g. LINCS L1000 landmark genes, 977-gene
+consensus signatures).
+
+**Motivation:** a perturbation-response profile captures functional state
+rather than just transcriptomic composition.  A lupus donor whose monocytes
+hyper-respond to IFN-γ stimulation would have a distinct perturbation
+signature even if their resting-state transcriptome is similar to a healthy
+donor.
+
+**Sketch:**
+1. Train a bulk-RNA encoder on LINCS L1000 or CMAP data: input = resting
+   bulk RNA, target = Δ-expression after perturbation X (regression or
+   contrastive).
+2. Extract the encoder's latent as a "perturbation-readiness" embedding.
+3. Inject this as a donor token into PULSAR (same architecture as z_bio
+   token, replacing or augmenting it).
+4. Evaluate whether perturbation embedding > transcriptome pseudobulk for
+   disease classification.
+
+---
+
+### P4 · "VAE flip": bulk-primary, sc-cluster tokens secondary
+
+The current setup is **sc-primary** (PULSAR MCT processes 256 single cells)
+with a donor-level bulk/pseudobulk token prepended.  The *flip* is:
+
+**bulk-primary**: start from a bulk RNA-seq VAE encoder (GTEx/LINCS-trained),
+then inject N cluster tokens derived from *available* scRNA as auxiliary
+conditioning.
+
+**Why it could help:**
+- Bulk RNA-seq has higher per-gene UMI counts and lower dropout than scRNA →
+  cleaner signal per donor
+- For donors where scRNA is sparse, the bulk encoder provides a reliable
+  anchor; cluster tokens provide cell-type decomposition only when available
+- Mirrors the original cross-modality VAE goal (Q53–Q55): bulk as the
+  "ground truth" modality, scRNA as the compositional side-channel
+
+**Experiment sketch:**
+1. Train or reuse the FiLM MetaInjection VAE (Q53–Q55) bulk encoder as the
+   backbone — freeze it
+2. For each donor, compute N=4 UCE cluster means from scRNA → project to
+   768-d via the same shared bottleneck used in N-cluster experiments
+3. FiLM-modulate the bulk encoder's latent with each cluster token
+   (one FiLM layer per cluster, summed or attention-pooled)
+4. Compare lupus F1 against scRNA-primary PULSAR approaches
+
+This is also the natural path to a **paired bulk+sc classifier** that
+degrades gracefully when scRNA is unavailable (fall back to bulk-only mode).
+
+---
+
 *Reproducibility: every number above can be regenerated with*
 
 ```bash
@@ -978,3 +1119,176 @@ cd vae_health/analysis
 cd vae_health
 /Users/rls/Desktop/programming-projects/single-cell/bulk-project/venv/bin/python -m pipeline --model vae --out-dir eval_output/vae
 ```
+
+---
+
+## Q47 · Disentangled VAE with Metadata Heads — Run 3 (final)
+
+**Date:** 2026-05-19  
+**Script:** `analysis/q47_disentangled_train.py`  
+**Model checkpoint:** `analysis/results/q47_disentangled/q47_run3.pt`
+
+### Motivation
+
+Prior runs (Q20, Q32, Q35) established that a plain VAE collapses its latent
+space and that PCA-50 remains a strong baseline for metadata recovery. Two
+structural problems were identified:
+
+1. **No supervision signal** — reserved z_meta dims had no explicit pressure
+   to encode assigned metadata, so the model could ignore them.
+2. **Modality leakage** — z_bio freely encoded modality (bulk vs. single-cell),
+   making cross-modality translation undefined.
+3. **2,000-gene matrix** — earlier runs used a legacy 2 k-gene matrix; a
+   shared 11,374-gene space was needed for fair GTEx ↔ HCA comparison.
+
+### Architecture
+
+| Component | Detail |
+|---|---|
+| Gene space | 11,374 shared GTEx v8 × HCA blood genes |
+| Latent | z_bio = 32 dims + z_meta = 8 dims (2 per field × 4 fields) |
+| Total params | 24,657,602 |
+| Encoder / decoder | 3-layer MLP, BN + LeakyReLU |
+| Metadata fields | modality (binary), ischemia time (continuous), sex (binary), DTHHRDY (ordinal) |
+| Prediction heads | Linear(d, 32) → GELU → Linear(32, 1) per z_meta field |
+| KL | free-bits (δ = 0.5) on z_bio; capacity-weighted KL on z_meta |
+| Biology leak penalty | HSIC(z_bio, modality label), λ = 0.3 |
+| Cycle consistency | bulk → encode → swap modality → decode → re-encode, λ = 0.5 |
+
+### Hyperparameters (Run 3)
+
+| Parameter | Value |
+|---|---|
+| Epochs | 200 |
+| β_bio | 1 × 10⁻³ |
+| β_meta | 1 × 10⁻⁴ |
+| λ_sup (head supervision) | 1.0 |
+| λ_leak (HSIC) | 0.3 |
+| λ_cycle | **0.5** (increased from 0.3 in Run 2) |
+| lam_cap (modality/ischemia/sex) | 1.0 |
+| lam_cap (DTHHRDY) | **0.3** (softer — noisy ordinal signal) |
+| Gradient clip | max_norm = 5.0 |
+| Optimiser | AdamW, lr = 3 × 10⁻⁴ |
+| Batch size | 128 |
+
+### Training data
+
+| Split | Samples |
+|---|---|
+| GTEx train | 643 (80 % of 803 whole-blood donors) |
+| HCA train | 120 pseudobulks × 5 repeats = 600 |
+| Total train | 1,243 |
+| GTEx val (held-out) | 160 (20 %) |
+
+GTEx metadata (ischemia time `SMTSISCH`, sex, Hardy scale `DTHHRDY`) sourced
+from GTEx v8 `SampleAttributesDS.txt` + `SubjectPhenotypesDS.txt`. Of 803
+samples, 2,298 / 2,409 metadata fields were non-missing.
+
+### Training curve summary
+
+| Epoch range | val_recon MSE | Notes |
+|---|---:|---|
+| 1 | 0.981 | cold start, 25/32 bio dims active |
+| 10 | 0.564 | all 32 bio + 8 meta dims active |
+| 50 | 0.323 | sex head saturates (0.99) |
+| 100 | 0.281 | stable, no spikes |
+| 130 | 0.317 | minor spike (0.25 → 0.40 → recovery), gradient clipping contained it |
+| 160 | 0.299 | second minor spike, same recovery pattern |
+| **200** | **0.256** | **converged** |
+
+No catastrophic spikes (cf. Run 1 ep157: 0.22 → 1.60). The gradient clip
+(`max_norm = 5.0`) reduced the worst bump to 1.6× rather than 7×.
+
+### Final head performance (epoch 200)
+
+| Metadata field | z_meta dims | Head metric | Value |
+|---|---|---|---|
+| Modality (bulk vs. sc) | [0, 1] | balanced accuracy | **0.99** |
+| Ischemia time (`SMTSISCH`) | [2, 3] | R² (val GTEx) | **0.77** |
+| Sex | [4, 5] | balanced accuracy | **0.99** |
+| DTHHRDY (Hardy scale) | [6, 7] | R² (val GTEx) | **0.52** |
+
+DTHHRDY R² plateaus at ~0.52 across all runs; this appears to be a data
+ceiling (noisy 5-class ordinal variable with high within-class variance on
+blood RNA) rather than a model capacity issue.
+
+### Flip test results (held-out 20 % GTEx + 120 HCA pseudobulks)
+
+| Test | Description | Run 1 | Run 2 | **Run 3** |
+|---|---|---:|---:|---:|
+| A — bulk → sc | Set z_meta[modality] to sc centroid; NN classifier accuracy on decoded output | 0.954 | 0.993 | **0.9999** |
+| A baseline | NN accuracy on *unflipped* bulk samples classified as sc | 0.020 | 0.109 | 0.096 |
+| B — HCA → bulk | Set z_meta[modality] to bulk centroid; NN classifier accuracy | **0.000** | 0.869 | **0.930** |
+| C — round-trip Pearson | bulk → flip-to-sc decode → flip-back-to-bulk decode; Pearson r vs original | 0.354 | 0.711 | **0.721** |
+| C — z_bio cycle cosine | cosine similarity of z_bio before and after round-trip | 0.975 | 0.961 | **0.984** |
+
+**Key improvements over Run 1:**
+
+- **Test B fixed (0.000 → 0.930):** The root cause was that with `meta_dims[0]=2`,
+  the modality subspace spans dims [0,1]. Resetting only dim 0 left dim 1 still
+  encoding the source class. Fix: centroid of the full `d_mod`-dimensional
+  subspace is set in one operation (`z_meta[:, :d_mod] = target_centroid`).
+- **Round-trip Pearson fixed (0.354 → 0.721):** Same bug in the flip-back step.
+- **z_bio cycle cosine improved (0.961 → 0.984):** Stronger cycle-consistency
+  loss (λ = 0.5) enforces tighter biology preservation through translation.
+- **No catastrophic spikes:** Gradient clipping (max_norm = 5.0) introduced
+  in Run 2 and retained here keeps loss excursions minor and transient.
+
+### Latent space diagnostics
+
+| Diagnostic | Value |
+|---|---|
+| Active z_bio dims (var > 0.01) | **32 / 32** (all epochs from ep7 onward) |
+| Active z_meta dims | **8 / 8** (all epochs) |
+| z_meta modality — bulk centroid, dim 0 | −0.28 |
+| z_meta modality — sc centroid, dim 0 | +1.70 |
+| Modality separation (Δ dim 0) | 1.98 (well-separated) |
+
+### Comparison across all disentangled VAE runs
+
+| Metric | Run 1 (baseline) | Run 2 (centroid fix) | **Run 3 (+ λ_cycle=0.5)** |
+|---|---:|---:|---:|
+| val_recon MSE | 0.247 | 0.264 | **0.255** |
+| Test A (bulk→sc NN acc) | 0.954 | 0.993 | **0.9999** |
+| Test B (HCA→bulk NN acc) | 0.000 | 0.869 | **0.930** |
+| Test C round-trip Pearson | 0.354 | 0.711 | **0.721** |
+| z_bio cycle cosine | 0.975 | 0.961 | **0.984** |
+| Act. z_bio dims | 32/32 | 31/32 | **32/32** |
+| Worst loss spike | ep157 ×7 | ep150 ×1.3 | ep130 ×1.6 |
+
+### Conclusions
+
+1. **Disentanglement works.** With prediction heads and capacity-weighted KL,
+   each 2-dim z_meta slot reliably encodes its assigned metadata: modality and
+   sex reach near-perfect accuracy, ischemia time reaches R² = 0.77.
+2. **Cross-modality translation is functional.** Test A ≥ 0.999 and Test B =
+   0.930 confirm the decoder can plausibly render bulk RNA-seq samples as
+   single-cell pseudobulk and vice versa.
+3. **Biology is preserved through translation.** z_bio cycle cosine = 0.984
+   means the biological signal (the 32 non-metadata dims) survives a full
+   bulk → sc → bulk round-trip with minimal distortion.
+4. **DTHHRDY is a hard target.** R² ≈ 0.52 appears to be a data ceiling; the
+   softer per-field cap (lam_cap = 0.3 for DTHHRDY vs 1.0 for others) helped
+   stop the capacity-weighted KL from crushing this slot before it could learn.
+5. **Next steps** (if desired): ordinal regression loss for DTHHRDY; increase
+   `lam_cycle` further or add a discriminator on decoded outputs to close the
+   Test B gap (0.930 → 0.95+); use Run 3 checkpoint to run Q12-style
+   linear probes in the disentangled latent.
+
+### Reproducibility
+
+```bash
+cd /path/to/ecs271-project
+source .venv/bin/activate
+python analysis/q47_disentangled_train.py \
+    --epochs 200 \
+    --tag run3 \
+    --lam-cycle 0.5 \
+    --lam-cap-dthhrdy 0.3
+# Outputs: analysis/results/q47_disentangled/q47_run3.{json,pt}
+#          analysis/results/q47_run3_log.txt
+```
+
+Data dependency: `data/processed_11k/` (built by `scripts/build_shared_gene_matrix.py`
+from GTEx v8 GCT + HCA bone-marrow h5ad).
+

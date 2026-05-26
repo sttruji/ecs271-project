@@ -5,8 +5,9 @@ import numpy as np
 import pandas as pd
 from scipy.stats import f_oneway, spearmanr
 from sklearn.decomposition import PCA
-from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import StratifiedKFold, cross_val_score
+from sklearn.linear_model import LogisticRegression, Ridge
+from sklearn.model_selection import KFold, StratifiedKFold, cross_val_score
+from sklearn.preprocessing import StandardScaler
 
 
 def evaluate_latent_activity(z: np.ndarray, var_threshold: float = 0.01) -> dict:
@@ -130,3 +131,78 @@ def state_classification_auc(
         "state_b_fraction": float(label.mean()),
         "anchors": list(anchor_genes),
     }
+
+
+def metadata_linear_probe(
+    z: np.ndarray,
+    metadata: pd.DataFrame,
+    *,
+    cv_splits: int = 5,
+    seed: int = 0,
+) -> dict:
+    """Cross-validated linear probes for two dominant GTEx metadata factors.
+
+    SMTSISCH → Ridge regression, CV R² (continuous ischemia time in minutes)
+    DTHHRDY  → LogisticRegression OvR, CV balanced-accuracy (5-class Hardy scale)
+
+    Both use StandardScaler on z before fitting so the probe is scale-invariant.
+    A collapsed z (all variance < 1e-12) returns chance-level results immediately.
+
+    Returns:
+        {"SMTSISCH": {"cv_r2": float, "cv_r2_std": float, "n": int},
+         "DTHHRDY":  {"cv_balanced_acc": float, "cv_balanced_acc_std": float,
+                      "n": int, "n_classes": int, "chance": float}}
+    """
+    results: dict = {}
+
+    collapsed_reg = {"cv_r2": 0.0, "cv_r2_std": 0.0, "n": 0, "note": "z collapsed"}
+    if float(z.var()) < 1e-12:
+        return {
+            "SMTSISCH": collapsed_reg,
+            "AGE_mid":  collapsed_reg,
+            "DTHHRDY":  {"cv_balanced_acc": 0.2, "cv_balanced_acc_std": 0.0,
+                         "n": 0, "n_classes": 5, "chance": 0.2, "note": "z collapsed"},
+        }
+
+    def _ridge_probe(col: str) -> dict:
+        v = pd.to_numeric(metadata[col], errors="coerce").values
+        mask = np.isfinite(v)
+        if mask.sum() < cv_splits * 2:
+            return {"cv_r2": float("nan"), "cv_r2_std": float("nan"),
+                    "n": int(mask.sum()), "note": "too few samples"}
+        z_s = StandardScaler().fit_transform(z[mask])
+        kf = KFold(n_splits=cv_splits, shuffle=True, random_state=seed)
+        scores = cross_val_score(Ridge(alpha=1.0), z_s, v[mask], cv=kf, scoring="r2")
+        return {"cv_r2": float(scores.mean()), "cv_r2_std": float(scores.std()),
+                "n": int(mask.sum())}
+
+    # ── continuous regressions ────────────────────────────────────────────
+    for col in ("SMTSISCH", "AGE_mid"):
+        results[col] = _ridge_probe(col)
+
+    # ── DTHHRDY (classification) ─────────────────────────────────────────
+    hardy = pd.to_numeric(metadata["DTHHRDY"], errors="coerce").values
+    mask2 = np.isfinite(hardy)
+    y_h = hardy[mask2].astype(int)
+    classes = np.unique(y_h)
+    if len(classes) >= 2 and mask2.sum() >= cv_splits * len(classes):
+        z_h = StandardScaler().fit_transform(z[mask2])
+        skf = StratifiedKFold(n_splits=cv_splits, shuffle=True, random_state=seed)
+        scores2 = cross_val_score(
+            LogisticRegression(max_iter=2000, C=1.0),
+            z_h, y_h, cv=skf, scoring="balanced_accuracy",
+        )
+        results["DTHHRDY"] = {
+            "cv_balanced_acc": float(scores2.mean()),
+            "cv_balanced_acc_std": float(scores2.std()),
+            "n": int(mask2.sum()),
+            "n_classes": int(len(classes)),
+            "chance": float(1 / len(classes)),
+        }
+    else:
+        results["DTHHRDY"] = {
+            "cv_balanced_acc": float("nan"), "cv_balanced_acc_std": float("nan"),
+            "n": int(mask2.sum()), "note": "too few samples or classes",
+        }
+
+    return results
